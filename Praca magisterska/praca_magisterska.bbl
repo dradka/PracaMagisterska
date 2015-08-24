@@ -1,0 +1,49 @@
+\begin{thebibliography}{10}
+
+\bibitem{Choco3}
+{Choco 3 Solver - User Guide}.
+\newblock \url{http://choco-solver.org/user_guide/1_overview.html}.
+
+\bibitem{CLP}
+{Constraint logic programming - Wikipedia}.
+\newblock \url{https://en.wikipedia.org/wiki/Constraint_logic_programming}.
+
+\bibitem{Graphviz}
+{Graphviz - Graph Visualization Software}.
+\newblock \url{http://www.graphviz.org}.
+
+\bibitem{JPGD}
+{JPGD - Java-based Parser for Graphviz Documents}.
+\newblock \url{http://www.alexander-merz.com/graphviz}.
+
+\bibitem{EclipseSite}
+{The ECLiPSe Constraint Programming System}.
+\newblock \url{http://eclipseclp.org}.
+
+\bibitem{Latoszek-Berendsen}
+{A. Latoszek-Berendsen, H. Tange, H. J. van den Herik, A. Hasman}.
+\newblock {From Clinical Practice Guidelines to Computer-interpretable
+  Guidelines}.
+
+\bibitem{Boyd}
+{Cynthia M. Boyd, Jonathan Darer, Chad Boult, Linda P. Fried, Lisa Boult,
+  Albert W. Wu}.
+\newblock {Clinical Practice Guidelines and Quality of Care for Older Patients
+  With Multiple Comorbid Diseases}.
+
+\bibitem{Eclipse}
+{Kamil Janczura, Tomasz Gabiga}.
+\newblock {Wprowadzenie do Programowanie Logicznego z Ograniczeniami z
+  wykorzystaniem ECLiPSe.}
+
+\bibitem{Piovesan}
+{Luca Piovesan, Paolo Terenziani}.
+\newblock {A Mixed-Initiative approach to the conciliation of Clinical
+  Guidelines for comorbid patients}.
+
+\bibitem{SzWilk}
+{Szymon Wilk, Martin Michalowski, Xing Tan and Wojtek Michalowski}.
+\newblock {Using First-Order Logic to Represent Clinical Practice Guidelines
+  and to Mitigate Adverse Interactions}.
+
+\end{thebibliography}
