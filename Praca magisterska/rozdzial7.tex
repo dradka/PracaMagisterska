@@ -1,0 +1,21 @@
+\chapter{Podsumowanie}
+
+\section{Osiągnięte cele}
+% SW: Tutaj warto jeszcze raz krótko opisać, jakie cele postawiliśmy sobie przy realizacji tej pracy (uogólnienie podejścia bazującego na CLP oraz implementacja rozszerzonego podejścia w formie interaktywnego SWDK).
+
+Podsumowując, wszystkie zamierzenia pracy zostały zrealizowane. Wynikiem pracy jest działający program wyszukujący konflikty występujące między stosowanymi terapiami chorób i proponujący rozwiązania ewentualnych konfliktów. 
+
+\section{Problemy przy realizacji pracy}
+% SW: Czy konieczność opanowania nowej metodologii (CLP) oraz powiązanych narzędzi nie stanowiła również pewnego problemu? Jeśli tak, to warto o tym wspomnieć w tym miejscu, podkreślając, że udało się tego Panu dokonać.
+Do problemów przy realizacji pracy należy zaliczyć kwestię związaną z wyborem biblioteki służącej do przetwarzania grafów. Ostatecznie wybrana została biblioteka JPGD, ponieważ jest to dość prosta biblioteka. W bardzo łatwy sposób uzyskuje się dostęp do obiektu klasy Graph i podrzędnych obiektów klas Node oraz Edge. Niestety, skorzystanie z tej biblioteki wiązało się z naprawą pewnych błędów związanych z ponownym uzyskiwaniem grafu w wersji tekstowej. Konieczna była modyfikacja funkcji toString dla klas Graph, Node oraz Edge, ponieważ generowane początkowo przez bibliotekę grafy w wersji tekstowej nie pozwalały na wygenerowanie grafu w wersji obrazkowej przez program dot.exe. Przyczyna błędu tkwiła w tym, że biblioteka nie radziła sobie z pustymi wartościami atrybutów. Ponadto, trzeba było zrezygnować z korzystania z podgrafów, ponieważ były one niewłaściwie przez bibliotekę interpretowane.
+
+\section{Kierunki dalszego rozwoju}
+
+% SW: Kierunki dlaszego rozwoju można podzielić na te związane z samym podejściem (metodą) oraz na te związane z programem (implementacją). W ramach tych pierwszych można wspomnieć o uwzględnianiu czasu w wytycznych oraz konfliktach (np. konflikty zachodzą, jeśli dwie akcje wykonywane są w tym samym oknie czasowym -- w przeciwnym razie konfliktu nie ma) oraz o uwzględnianiu kosztów podczas usuwania konfliktów (jeśli kilka sposobów usunięcia konfliktu jest możliwych, wówczas wybieramy ten "najtańszy"). Jeśli chodzi o natomiast o implementację, to tutaj można rozważyć inne metody interakcji (w tym większą "klikalność"), połączenie z zewnętrznymi systemami w celu importu danych pacjenta oraz przygotowanie wersji mobilnej.
+
+Dalszy rozwój projektu mógłby dążyć do bardziej interaktywnej odpowiedzi na pytania. Program mógłby pozwalać na klikanie na krawędzie grafu 
+zamiast wybierać odpowiedzi za pomocą 
+
+% SW: Termin "radiobutton" ma charakter slangowy -- lepiej mówić o "polu wyboru".
+
+radiobuttonów. Ponadto, program mógłby wspierać także inne formaty grafów, nie tylko format Graphviza o rozszerzeniu dot. 

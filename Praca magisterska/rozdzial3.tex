@@ -1,0 +1,40 @@
+\chapter{Programowanie logiczne z ograniczeniami (CLP)}
+
+% SW: Powiedziałbym, że CLP pozwala na użycie programowania logicznego do rozwwiązywania problemów z ograniczeniami (constraint satisfaction problems, CSP). 
+Programowanie logiczne z ograniczeniami\cite{CLP} jest rodzajem programowania z ograniczeniami, w którym programowanie logiczne jest rozszerzone o koncepcję spełnienia ograniczeń. Przykładowym ograniczeniem może być wyrażenie postaci X+Y>5. 
+% SW: Tutaj raczej należałoby powiedzieć, że program CLP składa się z następujących elementów
+Ogólnie przypadek CLP składa się z następujących cech:
+\begin{itemize}
+% SW: Zmienne nie muszą być całkowitoliczbowe -- musza mieć jednak skończone dziedziny.
+\item{Skończonego zbioru zmiennych typu całkowitoliczbowego z wartościami ze skończonych dziedzin}
+\item{Zbioru ograniczeń między zmiennymi}
+\item{Rozwiązań problemu polegających na przypisaniu wartości do zmiennych, które spełniają ograniczenia}
+\end{itemize}
+Przykładowym zastosowaniem programowania logicznego z ograniczeniami jest zagadka SEND + MORE  = MONEY.\cite{Eclipse} Zagadka ta polega na przypisaniu cyfr z zakresu od 0 do 9 do zmiennych odpowiadających literom zawartym w równaniu tak, aby równanie było spełnione. Każda litera ma swoją unikalną wartość cyfrową. Ponadto litery S i M mają wartości różne od 0.
+
+% SW: Każdy z takich przykładów należałoby potraktować jako osobny rysunek i zamieścić do nich odwołanie w tekście.
+
+\begin{verbatim}
+    SEND
+  + MORE
+ -------
+   MONEY
+\end{verbatim}
+\newpage
+% SW: Tutaj warto wyjaśnić, że mówimy o środowisku do uruchamiania programów CLP, a nie o popularnym środowisku programistycznym. Poza tym warto dodać, że nieco bardziej szczegółowy opis środowiska znajduje się w punkcie 4.1.
+Rozwiązaniem tego problemu jest następujący program napisany w ECLiPSe:
+\begin{verbatim}
+:-lib(ic).
+sendmore1(Digits):-
+Digits = [S,E,N,D,M,O,R,Y],
+Digits :: [0..9],
+alldifferent(Digits),
+S #\= 0,
+M #\= 0,
+1000*S + 100*E + 10*N + D
++ 1000*M + 100*O + 10*R + E
+#= 10000*M + 1000*O + 100*N + 10*E + Y,
+labeling(Digits).
+\end{verbatim}
+Po skompilowaniu tego programu wystarczy wywołać funkcję sendmore1(Digits), aby otrzymać rozwiązanie zagadki.
+% SW: Warto podać rozwiązanie tej zagadki i przypisanie cyfr do poszczególnych zmiennych. Poza tym warto też krótko wyjaśnić, że CLP może być stosownae do znacznie poważniejszych problemów i podać ich przykłady. Są one wymienione w książce Niederlińskiego (do pobrania za darmo ze strony ECLiPSe'a) na stronach 7 i 8.

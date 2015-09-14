@@ -1,0 +1,182 @@
+\chapter{Działanie systemu}
+
+% SW: W obecnej formie ta sekcja jest bardzo skrótowa. Powinien Pan w "rozbiegówce" wyjaśnić, że pokaże Pan działanie systemu na kilku przykładach. Większość to rzeczywiste wytyczne (uproszczone na potrzeby testowania. Wykorzystywane są też przykłady sztuczne demonstrujące zachowanie algorytmu w granicznych wypadkach (tutaj chodzi mi o przykład, gdzie w ramach usuwania jednego konfliktu wprowadzanych jest kilka zmian). Jeśli natomiast chodzi o przykłady rzeczywiste, to dodałbym także przykład z dawkami leków -- brakuje go do pełnej demonstracji Pana dokonań.
+
+% SW: Również na wstępie powinien Pan wyjaśnić, że opisując poszczególne przykłady pokaże Pan rozważane wytyczne w formie grafów z zaznaczonymi ścieżkami odpowiadającymi dostępnym danym pacjenta, dostępną wiedzę na temat konfliktów i sposobów ich rozwiązania, a także wynikowe grafy (a przynajmniej ich zmodyfikowane fragmenty). Przedstawiając konflikty powinien zaznaczyć Pan te, które zostały wykryte i usunięte dla danego pacjenta. Wreszcie konflikty i sposoby ich usunięcia powinien Pan przedstawić korzystając ze składni, którą Pan zaproponował (jest to bardzo eleganckie rozwiązanie i warto się nim pochwalić).
+
+\section{Przypadek 1 - atak astmy i wrzód trawienny}
+
+Wytyczne dla ataku astmy (ang. \textit{asthma exacerbation}) przedstawiono na rys. \ref{fig:ag_ae}.
+
+% SW: Każdy graf, zestaw danych pacjenta oraz lista konfliktów powinien zostac potraktowany jako rysunek z numerem i tytułem (wprowadziłem odpowiednią zmianę poniżej), a w tekście powinno się do niego znaleźć odwołanie).
+
+% SW: Warto byłoby ujednolicić wszystkie diagramy, aby w wierzchołku kontekstowym pojawiał sie zawsze akronim lub nazwa choroby. Obecnie mamy albo choroby, albo zdania "Patient diagnosed with ...".  
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{img/asthma.png}
+\caption{Wytyczne dla ataku astmy}
+\label{fig:ag_ae}
+\end{figure}
+
+\newpage
+Wrzód trawienny (peptic ulcer) – graf:
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{img/peptic-ulcer.png}
+\end{figure}
+\newpage
+\noindent Odpowiedzi na pytania:
+\begin{enumerate}
+\item{Atak astmy:
+	\begin{itemize}
+	\item{Respiratory arrest?: no}
+	\item{Response to treatment?: good}
+	\end{itemize}
+}
+\item{Wrzód trawienny:
+	\begin{itemize}
+	\item{Complicated ulcer symptoms?: yes}
+	\end{itemize}
+}
+\end{enumerate}
+Konflikty:
+\begin{verbatim}
+If diagnosed(PE) and execute(oral corticosteroids), then 
+replace execute(oral corticosteroids) -> execute(inhaled corticosteroids)
+
+If diagnosed(PE) and execute(NSAID)
+then add execute(PPI) after execute(NSAID)
+
+If execute(eradication therapy) and execute(inhaled corticosteroids), then
+replace execute(inhaled corticosteroids) -> execute(oral corticosteroids)
+\end{verbatim}
+Znalezione konflikty:
+\begin{verbatim}
+If diagnosed(PE) and execute(NSAID) 
+then add execute(PPI) after execute(NSAID)
+\end{verbatim}
+\newpage
+\section{Przypadek 2 - migotanie przedsionków, przewlekła choroba nerek i nadciśnienie}
+
+Migotanie przedsionków  (atrial fibrillation) – graf:
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{img/afib-ver-4.png}
+\end{figure}
+\newpage
+Przewlekła choroba nerek (chronic kidney disease) – graf:
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.8\textwidth]{img/ckd-simplified-ver-5.png}
+\end{figure}
+\newpage
+Nadciśnienie (hypertension) – graf:
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{img/htn-ver-3.png}
+\end{figure}
+\newpage
+\noindent Odpowiedzi na pytania:
+\begin{enumerate}
+\item{Migotanie przedsionków:
+	\begin{itemize}
+	\item{AFib type?: paroxysmal}
+	\end{itemize}
+}
+\item{Przewlekła choroba nerek:
+	\begin{itemize}
+	\item{GFR level?: >=40}
+	\end{itemize}
+}
+\item{Nadciśnienie:
+	\begin{itemize}
+	\item{Age?: >=55}
+	\item{BP Test \#1?: controlled}
+	\end{itemize}
+}
+% SW: Tutaj warto zaznaczyć, że te dane (to pytanie) nie pojawiają się jawnie w żadnych rozważanych wytycznych, ale są uwzględnione podczas sprawdzania konfliktów, dlatego użytkownik jest proszony o podanie odpowiedniej wartości.
+
+\item{CHA2DS2-VASc = 5}
+\end{enumerate}
+Konflikty:
+\begin{verbatim}
+If patient diagnosed with HTN and CKD, then remove Step 1 from the algorithm for HTN
+
+If patient diagnosed with HTN, AFib and CKD, then delete “diuretics” from Step 3 
+in the algorithm for HTN
+
+If patient diagnosed with CKD and AFib, then replace aspirin with warfarin 
+in the algorithm for CKD
+
+If patient diagnosed with AFib and CKD, then replace amiodarone with BB 
+in the algorithm for AFib
+
+If patient diagnosed with AFib and CKD, and CHA2DS2-VASc > 2
+then replace aspirin with warfarin as maintenance therapy in the algorithm for AFib
+
+If patient diagnosed with Afib and CKD, and CHA2DS2-VASc <= 1
+then replace warfarin with aspirin as the long-term therapy in the algorithm for AFib
+\end{verbatim}
+Znalezione konflikty:
+\begin{verbatim}
+If patient diagnosed with HTN and CKD, then remove Step 1 from the algorithm for HTN
+
+If patient diagnosed with HTN, AFib and CKD, then delete “diuretics” from Step 3
+in the algorithm for HTN
+
+If patient diagnosed with CKD and AFib, then replace aspirin with warfarin 
+in the algorithm for CKD
+
+If patient diagnosed with AFib and CKD, then replace amiodarone with BB 
+in the algorithm for AFib
+
+If patient diagnosed with AFib and CKD, and CHA2DS2-VASc > 2
+then replace aspirin with warfarin as maintenance therapy in the algorithm for AFib
+\end{verbatim}
+\newpage
+\section{Przypadek 3 - wrzód dwunastnicy i przemijający atak niedokrwienny}
+
+Wrzód dwunastnicy (duodenal ulcer) – graf:
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{img/du.png}
+\end{figure}
+\newpage
+Przemijający atak niedokrwienny (transient ischemic attack) – graf:
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{img/tia.png}
+\end{figure}
+\newpage
+\noindent Odpowiedzi na pytania:
+\begin{enumerate}
+\item{Wrzód dwunastnicy:
+	\begin{itemize}
+	\item{H.pylori?: negative}
+	\item{Z-E syndrome?: positive}
+	\end{itemize}
+}
+\item{Przemijający atak niedokrwienny:
+	\begin{itemize}
+	\item{Hypoglycemia?: negative}
+	\item{Face-arm-speech test (FAST)?: positive}
+	\item{Neurological symptoms?: resolved}
+	\item{Risk of stroke?: elevated}
+	\end{itemize}
+}
+\end{enumerate}
+Konflikty:
+\begin{verbatim}
+if diagnosed(DU) and execute(A) and not execute(PPI) and not execute(D), then 
+(1) replace execute(A) -> execute(CL)
+
+if diagnosed(DU) and execute(A) and not execute(PPI) and execute(D), then
+(1) replace not execute(PPI) -> execute(PPI) (wprowadź PPI)
+(2) replace dosage(A, x) -> dosage(A, x – 50) (obniż dawkę A o 50 jednostek)
+\end{verbatim}
+Znalezione konflikty:
+\begin{verbatim}
+if diagnosed(DU) and execute(A) and not execute(PPI) and execute(D), then
+(1) replace not execute(PPI) -> execute(PPI) (wprowadź PPI)
+(2) replace dosage(A, x) -> dosage(A, x – 50) (obniż dawkę A o 50 jednostek)
+\end{verbatim}
