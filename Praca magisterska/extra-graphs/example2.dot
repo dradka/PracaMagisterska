@@ -1,0 +1,23 @@
+digraph example_2 {
+	ranksep=0.2;
+	node [shape=box, style=filled, fillcolor=green, fontname=Calibri, fontsize=11];
+	edge [fontname="Calibri Italic", fontsize=10];
+
+	// Event nodes
+
+	e_end [shape=circle, label="", width=0.3, penwidth=6, fillcolor="gray"];	
+	
+	// Action nodes
+	a1 [label="Akcja A1"];
+	a2 [label="Akcja A2"];
+	a3 [label="Akcja A3"];
+	a4 [label="Akcja A4"];
+	// Parallel
+	p1 [shape=circle, label="", width=0.2, fillcolor=black, color=blue];
+	p2 [shape=circle, label="", width=0.2, fillcolor=black];
+
+	// Arcs
+	p1 -> {a1 a2};
+	a1 -> p2 -> a4 -> e_end;
+	a2 -> a3 -> p2;
+}
