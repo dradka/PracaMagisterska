@@ -1,0 +1,24 @@
+digraph example_1 {
+	ranksep=0.1;
+	node [shape=box, style=filled, fillcolor=green, fontname=Calibri, fontsize=11];
+	edge [fontname="Calibri Italic", fontsize=10];
+
+	
+	// Action nodes
+	a1 [label="Akcja A1"];
+	a2 [label="Akcja A2"];
+	a3 [label="Akcja A3"];
+	// Decisions
+	d1 [shape=diamond, fillcolor=yellow, label="Decyzja D1?",color=blue];
+	// Parallel
+	p1 [shape=circle, label="", width=0.2, fillcolor=black, color=blue];
+	p2 [shape=circle, label="", width=0.2, fillcolor=black, color=blue];
+
+	// Arcs
+	p1 -> {a1 d1} [color="blue"];
+	a1 -> p2 [color="blue"];
+	d1 -> a2 [label="tak"];
+	d1 -> a3 [label="nie"]
+	{a2  a3} -> p2; 
+	
+}

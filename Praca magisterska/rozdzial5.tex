@@ -1,6 +1,6 @@
 \chapter{Implementacja}
 
-% SW: Sądzę, że tę sekcję warto byłoby rozpocząć od przedstawienia (na poziomie pseudo-kodu) strategii wyszukiwania i rozwiązywania konfliktów -- to istotny wynik pracy. Po jej omówieniu i podkreśleniu rozszerzeń (więcej liczba wytycznych > 2, możliwość uwzględniania dawek leków, możliwość stosowania wielu operatorów modyfikujących wytyczne i wielu operacji w ramach operatora) może Pan przejść do opisu implementacji, jako realizacji drugiego głównego celu pracy.
+% SW2: Ten rodział powienien rozpoczynać się "wprowadzeniem" do implementacji -- rozpoczynanie opisu od listy katalogów jest dezorientujące. To wprowadzenie powinno przedstawiać -- może nawet w formie grafu -- główne kroki w programie (opisane później szczegółowo w kolejnych podpunktach), wprowadzać terminologię używaną w bardziej szczegółowych opisach (nadal nie wiem, co rozumie Pan przez "terapię" lub "element terapii"), wyjaśniać sposób identyfikowania wierzchołków grafu/elementóW terapii i na końcu wreszcie opisywać źródła danych/wiedzy wykorzystywane przez program (tutaj wreszcie mogą pojawić się katalogi i ich opis).
  
 \section{Struktura katalogów}
 
@@ -9,95 +9,193 @@
 \item{Konflikty – zawiera opisy konfliktów, jakie występują między chorobami oraz zmiany, które należy wprowadzić w przypadku wystąpienia konfliktów}
 \item{Grafy – zawiera zmodyfikowane grafy chorób przedstawiające aktualnie przebytą ścieżkę oraz grafy wynikowe prezentujące rozwiązania. Grafy są w dwóch formatach – tekstowym w formacie dot oraz graficznym w formacie png. 
 % SW: Rozumiem, że zawartość tego katalogu jest kasowana *podczas* zamykania programu?
-Po zamknięciu programu zawartość tego katalogu jest kasowana}
+Podczas zamykania programu zawartość tego katalogu jest kasowana}
+\end{itemize}
+\section{Klasy systemu}
+\begin{itemize}
+\item{AddToTherapy - dodawanie identyfikatorów węzłów do listy opisującej konkretną terapię}
+\item{ChocoClass - rozwiązanie problemu CLP}
+\item{Color - kolorowanie wierzchołków i krawędzi grafów}
+\item{CreateTherapies - generowanie terapii}
+\item{ExecuteInteractions - wprowadzanie zmian w terapiach w przypadku wykrycia konfliktów}
+\item{GoForward - przechodzenie do kolejnego węzła decyzyjnego}
+\item{GraphFunctions - przydatne funkcje związane z grafami, np. znalezienie węzłów docelowych określonego węzła}
+\item{ImageGraph - wyświetlanie grafów}
+\item{MainClass - obsługa zdarzenia kliknięcia przycisku Dalej}
+\item{RadioButtonList - tworzenie i obsługa zdarzeń list pól wyboru służących do udzielania odpowiedzi na pytania}
+\item{Results - wyświetlanie wyników}
+\item{Window - okno programu}
 \end{itemize}
 
+% SW2: W całym tym opisie mówimy o METODACH, a nie o FUNKCJACH (Java jest językiem obiektowym).
 \section{Wybór chorób}
+% SW2: Opis każdego z istotnych kroków programu warto rozpocząć od krótkiej (1-2 zdania) informacji, co jest jego głównym celem. W tym przypadku celem jest umożliwienie użytkownikowi wyboru tych wytycznych, które będą rozważane dla aktualnego pacjenta.
 
-% SW: Termin "checkbox" to slang, którego należy unikać w oficjalnych publikacjach. Zamiast niego proszę użyć terminu "pole wyboru".
-W katalogu algorytmy program szuka plików posiadających rozszerzenie dot. Dla każdego takiego pliku tworzony jest checkbox. Checkbox posiada etykietę równą nazwie choroby. 
-% SW:Jeśli odwołuje się Pan do elementów okna programu, należy tutaj zamieścić przykładowy ekran i wskazać na nim, o który element codzi.
-Utworzony checkbox jest następnie dodawany do globalnej listy checkboxów o nazwie checkBoxGroup oraz do panela znajdującego się w lewym górnym rogu okna programu. Po wybraniu chorób, tzn. po kliknięciu w odpowiednie checkboxy i kliknięciu przycisku „Dalej”, nazwy wybranych chorób są dodawane do listy o nazwie selectedDiseases i program przechodzi do fazy wyświetlania grafów. 
-
-% SW: Przed przedstawieniem tak szczegółowego opisu działania, powinien Pan wymienić i krótko opisać główne klasy w systemie (przynajmniej te pojawiające się w opisie), aby ułatwić zrozumienie tego opisu. Poza tym warto zmienić formatowanie fragmentów tekstu (nazwy klas i metod) oraz podzielić tekst na krótsze akapity. Wreszcie proszę się upewnić, że w poniższym opisie podaje Pan informacje, do jakiej klasy należą wywoływane metody.
+% SW2: W jakiej klasie/metodzie zrealizowana jest ta funkcjonalność? Taką informację proszę zamieścić dla wszystkich omawianych kroków programu.
+W katalogu Algorytmy program szuka plików posiadających rozszerzenie DOT. Dla każdego takiego pliku tworzone jest pole wyboru. Pole wyboru posiada etykietę równą nazwie choroby. 
+% SW2: W jakiej klasie znajduje się pole checkBoxGroup? Proszę podać jej szczegółową "lokalizację". Podobna uwaga dotyczy wszystkich tych miejsc, gdzie odwołuje się Pan do pól w różnych klasach.
+Utworzone pole wyboru jest następnie dodawane do globalnej listy pól wyboru o nazwie \texttt{checkBoxGroup} oraz do panelu 
+znajdującego się w lewym górnym rogu okna programu (rys. \ref{fig:wybor_chorob}). 
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{img/wybor_chorob.png}
+% SW2: Każdy rysunek MUSI mieć swój tytuł i numer, a w tekście MUSI się znaleźć do niego odwołanie. Poza tym w tym przypadku rysunek powinien zostać wykadrowany tak, aby ograniczał się przede wszystkim do panelu wyboru. Nie ma potrzeby zamieszczania wielkiego okna ekranu w sytuacji, gdy chcemy zademonstrować tylko jego niewielki fragment.
+\caption{Panel wyboru chorób}
+\label{fig:wybor_chorob}
+\end{figure}
+Po wybraniu chorób, tzn. po kliknięciu w odpowiednie pola wyboru i kliknięciu przycisku „Dalej”, nazwy wybranych chorób są dodawane do listy o nazwie \texttt{selectedDiseases} i program przechodzi do fazy wyświetlania grafów. 
 
 \section{Wyświetlanie grafów}
 
-Na początku program odczytuje z funkcji getGraph graf znajdujący się w pliku o rozszerzeniu dot oraz pobiera węzeł początkowy grafu. Operacje te wykonywane są dla każdej z wybranych chorób. Funkcja getGraph korzysta z funkcji parse obiektu klasy Parser należącego do biblioteki JPGD. Po odczytaniu grafu za pomocą funkcji getStartNode program znajduje węzeł początkowy grafu. Znalezienie takiego węzła polega na wyszukaniu węzła, który nie posiada 
-% SW: Tutaj raczej chodzi o krawędź dochodzącą.
-krawędzi wejściowej. Następnie dla każdej choroby wywoływane są funkcje execute, newImageGraph oraz createRadioButtonList. Pierwsza z nich przemieszcza się po grafie, 
-% SW: Nie szukamy "pytań" w zaleceniach, ale pierwszego kroku decyzyjnego, aby zebrać dane pacjenta analizowne w tym kroku. Aby zebrać te dane musimy zadać użytkownikowi pytanie.
-aby odnaleźć pierwsze pytanie w procedurze medycznej, oraz wywołuje funkcję color, która zaznacza przebytą ścieżkę w grafie. Podczas poruszania się po grafie do listy list o nazwie dataIdList dodawane są identyfikatory węzłów, na które program natrafił. Dzięki dataIdList funkcja color może pokolorować kontury przebytych węzłów oraz przebyte krawędzie, a także je pogrubić. 
-% SW: Co to jest "element terapii"? Czy sa to tylko wierzchołki związane z akcjami? To sugerowałoby rozróżnienie między elementem terapii, a węzłem. Nie jest też jasne, czy element terapii to obiekt, czy tylko jego nazwa -- pisze Pan o "częsci elementu terapii przed znakiem zapytania". 
-Funkcja ta dla każdego elementu terapii określonej choroby znajdującego się w dataIdList szuka w grafie węzła posiadającego identyfikator o tej samej wartości, co element terapii lub węzła, którego identyfikator jest równy części elementu terapii przed znakiem zapytania. 
-% SW: Z poniższego opisu wynika, że element terapii to nazwa/identyfikator. To należy jasno na początku wyjaśnić. Również na początku należy wyjaśnić, jak tworzy Pan identyfikatory dla krawędzi wychodzących z węzłów decyzyjnych, aby później było jasne, dlaczego mówimy o części "elementu terapii" przed znakiem zapytania.
-Element terapii dla węzłów, przy których udziela się odpowiedzi na pytania, składa się z dwóch części. W pierwszej z nich znajduje się identyfikator węzła, natomiast w drugiej etykieta krawędzi, która została wybrana. Obie części są oddzielone od siebie znakiem zapytania. W przypadku, gdy element terapii nie posiada znaku zapytania, zaznaczany jest znaleziony węzeł oraz wszystkie jego krawędzie wyjściowe.  Jeśli element terapii posiada znak zapytania, zaznaczany jest znaleziony węzeł oraz krawędź, której etykieta jest równa części elementu terapii po znaku zapytania.
- 
-Po wywołaniu funkcji color wywołana zostaje funkcja newImageGraph, której zadaniem jest umieszczenie na etykiecie (obiekt JLabel) podanej jako parametr określonego obrazu grafu. Na początku funkcja zapisuje do pliku wynik funkcji toString wywołanej dla grafu (wynik funkcji toString należało poprawić, biblioteka JPGD zawiera drobne błędy). Następnie wywoływana jest funkcja getImageGraphPath, która uruchamia program dot i tworzy z zapisanego wcześniej pliku tekstowego graf w postaci obrazu w formacie PNG. W kolejnym kroku funkcja newImageGraph tworzy obiekt klasy BufferedImage z wygenerowanym w poprzednim kroku obrazem. Później funkcja dokonuje skalowania obrazu tak, aby mógł on się zmieścić na etykiecie. 
+% SW2: Tutaj celem jest stworzenie graficznej reprezentacji wybranych wytycznych. Wytyczne przedstawiane są postaci grafu, w którym zaznaczno odwiedzone wierzchołki i krawędzie (odpowiadające wykonanym akcjom, podjętym wyborom oraz wyborom oczekującym na informację zwrotną od użytkownika).
 
-% SW: Tutaj lepiej mówić o pewnym progu narzuconym na rozmiar, aby uniknąć (słusznego skądinąd) zarzutu o nieskalowalności intefejsu w programie.
-Jeśli szerokość lub wysokość obrazu przekracza 900 pikseli, obraz zmniejszany jest do 2/3 wielkości tak, aby był on czytelny (w tym przypadku do etykiety dodawane są suwaki). Ponadto, jeżeli szerokość i wysokość obrazu jest mniejsza od wielkości etykiety, to na etykiecie umieszczany jest obraz bez skalowania, w skali 1:1.
+% SW2: Co to znaczy, że program odczytuje z funkcji graf? To chyba metoda odczytuje graf z pliku i zwraca go do wywołującej metody?
+Na początku program odczytuje z funkcji \texttt{GraphFunctions.getGraph} graf znajdujący się w pliku o rozszerzeniu dot oraz pobiera 
+% SW2: Węzeł początkowy to korzeń grafu.
+węzeł początkowy grafu. Operacje te wykonywane są dla wytycznych związanych z każdą z wybranych chorób. Funkcja \texttt{getGraph} korzysta z funkcji \texttt{parse} obiektu klasy \texttt{Parser} z biblioteki JPGD. 
+% SW2: To już napisał Pan wyżej -- proszę unikać powtórzeń
+Po odczytaniu grafu za pomocą funkcji \texttt{GraphFunctions.getStartNode} program znajduje węzeł początkowy grafu. Znalezienie takiego węzła polega na wyszukaniu węzła, który nie posiada 
+% SW: Tutaj raczej chodzi o krawędź dochodzącą.
+krawędzi wejściowej. 
+
+Następnie dla każdej choroby wywoływane są funkcje \texttt{MainClass.execute}, \texttt{ImageGraph.new ImageGraph} oraz \texttt{RadioButtonList.createRadioButtonList}. Pierwsza z nich przemieszcza się po grafie, 
+% SW2: Dlaczego przechodzimy tylko do pierwszego kroku? Co w sytuacji, w której wyświetlamy graf, dla którego mamy więcej informacji (np. odpowiedzi na 2-3 początkowe pytania)?
+aby odnaleźć pierwszy krok decyzyjny w wytycznych, oraz wywołuje funkcję \texttt{Color.color}, która zaznacza przebytą ścieżkę w grafie. Podczas poruszania się po grafie do listy list o nazwie \texttt{dataIdList} dodawane są identyfikatory węzłów, na które program natrafił. Dzięki \texttt{dataIdList} funkcja \texttt{Color.color} może pokolorować kontury przebytych węzłów oraz przebyte krawędzie, a także je pogrubić. 
+% SW: Co to jest "element terapii"? Czy sa to tylko wierzchołki związane z akcjami? To sugerowałoby rozróżnienie między elementem terapii, a węzłem. Nie jest też jasne, czy element terapii to obiekt, czy tylko jego nazwa -- pisze Pan o "częsci elementu terapii przed znakiem zapytania". 
+
+% SW2: Biorąc pod uwagę Pana wyjaśnienie Color to klasa, a nie metoda.
+Funkcja \texttt{Color} dla każdego elementu terapii określonej choroby znajdującego się w \texttt{dataIdList} szuka w grafie węzła posiadającego identyfikator o tej samej wartości, co element terapii lub węzła, którego identyfikator jest równy części elementu terapii przed znakiem zapytania. Element terapii to identyfikator węzła w przypadku węzłów akcji, natomiast dla węzłów decyzji elementem terapii są identyfikator węzła i etykieta wybranej krawędzi oddzielone znakiem zapytania.
+% SW: Z poniższego opisu wynika, że element terapii to nazwa/identyfikator. To należy jasno na początku wyjaśnić. Również na początku należy wyjaśnić, jak tworzy Pan identyfikatory dla krawędzi wychodzących z węzłów decyzyjnych, aby później było jasne, dlaczego mówimy o części "elementu terapii" przed znakiem zapytania.
+% SW2: Czy przez znaznaczanie rozumie Pan zmianę koloru oraz pogrubianie konturu/linii dla węzła lub krawędzi poprzez zmianę odpowiednich atrybutów? Poza tym poniższy opis nie jest chyba zgodny z zachowaniem programu -- jeśli wartość związana z węzłem decyzyjnym nie jest znana, żadna z krawędzy wyjściowych nie jest zaznaczana.
+W przypadku, gdy element terapii nie posiada znaku zapytania, zaznaczany jest znaleziony węzeł oraz wszystkie jego krawędzie wyjściowe.  Jeśli element terapii zawiera znak zapytania, zaznaczany jest znaleziony węzeł oraz krawędź, której etykieta jest równa części elementu terapii po znaku zapytania.
  
-Ostatnim krokiem jest wywołanie funkcji createRadioButtonList. Funkcja ta dla każdego elementu terapii, który posiada znak zapytania tworzy panel. Pierwszym elementem panelu jest etykieta węzła. 
+Po wywołaniu funkcji color wywołana zostaje funkcja \texttt{ImageGraph.newImageGraph}, której zadaniem jest wygenerowanie i wyświetlenie nowego obrazu grafu. Na początku funkcja zapisuje do pliku wynik funkcji \texttt{toString} wywołanej dla grafu (wynik funkcji \texttt{toString} należało poprawić, biblioteka JPGD zawiera drobne błędy). Następnie wywoływana jest funkcja \texttt{ImageGraph.getImageGraphPath}, która uruchamia program DOT i tworzy z zapisanego wcześniej pliku tekstowego graf w postaci obrazu w formacie PNG. W kolejnym kroku funkcja \texttt{ImageGraph.newImageGraph} tworzy obiekt klasy \texttt{BufferedImage} z wygenerowanym w poprzednim kroku obrazem. Później funkcja dokonuje skalowania obrazu tak, aby mógł on się zmieścić na etykiecie. 
+% SW: Tutaj lepiej mówić o pewnym progu narzuconym na rozmiar, aby uniknąć (słusznego skądinąd) zarzutu o nieskalowalności intefejsu w programie.
+Jeśli szerokość lub wysokość obrazu przekracza próg 900 pikseli, obraz zmniejszany jest do 2/3 wielkości tak, aby był on czytelny (w tym przypadku do etykiety dodawane są suwaki). Ponadto, jeżeli szerokość i wysokość obrazu jest mniejsza od wielkości etykiety, to na etykiecie umieszczany jest obraz bez skalowania, w skali 1:1.
+ 
+Ostatnim krokiem jest wywołanie funkcji \texttt{RadioButtonList.createRadioButtonList}. 
+% SW2: Tutaj powinien Pan wyjaśnić, że elementy terapii zawierające znak zapytania odpowiadają krokom decyzyjnym.
+Funkcja ta dla każdego elementu terapii, który posiada znak zapytania tworzy panel. Pierwszym elementem panelu jest etykieta węzła. 
 % SW: Pola wyboru zamiast "radiobuttonów".
-Pozostałe elementy stanowią radiobuttony z etykietami, których wartości są równe etykietom krawędzi węzła z pytaniem. 
-% SW: Rozumiem, że chodzi tutaj o sytuację, w której nie znamy jeszcze pewnych danych -- to warto wyjaśnić w jednoznaczny sposób.
-Do tych radiobuttonów dodawany jest jeszcze jeden z etykietą „brak wartości”. Część elementu terapii po znaku zapytania pozwala na wybranie aktywnego radiobuttona. 
+Pozostałe elementy stanowią pola wyboru z etykietami, których wartości są równe etykietom krawędzi węzła decyzyjnego. 
+Do tych pól wyboru dodawany jest jeszcze jeden z etykietą „brak wartości”, przydatny w sytuacji, gdy nie znamy jeszcze danych. 
+% SW2: Ta część elementu terapii nie tyle pozwala na wybranie jednej z możliwości, ale na przechowanie informacji o wyborze.
+Część elementu terapii po znaku zapytania pozwala na wybranie aktywnego pola wyboru. 
 % SW: Chwilę wcześniej pisał Pan o tworzeniu pól wyboru dla "braku wartości". Dlaczego to Pan powtarza?
-Na końcu tworzony jest jeszcze jeden panel, tym razem dla pytania, na które jeszcze nie została udzielona odpowiedź, dla niego zaznaczony jest radiobutton z etykietą „brak wartości”. Przy pierwszym wyświetleniu grafu tworzony jest tylko ten panel. Ponadto, dla każdego radiobuttona przypisywane jest zdarzenie updateRadioButtonList.
+% SW2: Kiedy aktualizowana jest lista lastNodes? Nigdy wcześniej nie wspomina Pan o niej w opisie. Czy jest ona aktualizowana przez MainClass.execute? To należy wyjaśnić.
+Na końcu tworzony jest jeszcze jeden panel, tym razem dla pytania, na które jeszcze nie została udzielona odpowiedź, dla niego zaznaczone jest pole wyboru z etykietą „brak wartości”. Panel ten jest związany z węzłem znajdującym się na liście lastNodes. Przy pierwszym wyświetleniu grafu tworzony jest tylko ten panel. Ponadto, dla każdego pola wyboru przypisywane jest zdarzenie \texttt{RadioButtonList.updateRadioButtonList}.
 % SW: Myślę, że tutaj pomocne byłoby pokazanie przykładowego ekranu i wskazanie na powiązanie między pytaniami, a aktualną ścieżką w grafie.
  
 % SW: Zamiasts opisywać, lepiek pokazać ekran.
-Ostatecznie grafy prezentowane są po prawej stronie ekranu na zakładkach. Każda zakładka dotyczy jednej wybranej na początku programu choroby. Z lewej strony ekranu pojawiają się natomiast zakładki z listami radiobuttonów. W tym przypadku również jedna zakładka dotyczy pojedynczej choroby. Listy radiobuttonów pozwalają na udzielanie odpowiedzi na pytania zawarte w procedurach medycznych.
-
+Ostatecznie grafy prezentowane są po prawej stronie ekranu na zakładkach. Każda zakładka dotyczy wytycznych związanych z jedną z wybranych chorób. Z lewej strony ekranu pojawiają się natomiast zakładki z listami pól wyboru. W tym przypadku również jedna zakładka dotyczy specyficznych wytycznych. Listy pól wyboru pozwalają na udzielanie odpowiedzi na pytania zawarte w wytycznych klinicznych. 
+% SW2: Do rysunku odwołujemy się przez podanie jego numeru
+Przykład wyświetlanych grafów przedstawiono na rys. \ref{fig:wyswietlanie_grafow}.
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{img/wyswietlanie_grafow.png}
+\caption{Wyświetlanie grafów}
+\label{fig:wyswietlanie_grafow}
+\end{figure}
 
 \section{Udzielanie odpowiedzi na pytania}
+% SW2: Biorąc pod uwagę opis, w tym kroku pozwalamy na interakcję z użytkownikiem oraz dokonujemy aktualizacji wyświetlanego grafu. Pojawia się więc pytanie, czym różni się się wyświetlanie grafu po raz pierwszy od kolejnych wyświetleń. Jeśli nie ma różnić (a tak mi się wydaje), to warto połączyć te dwa kroki w jeden (Wyświetlanie i aktualizacja grafów) oraz uprościć ich opis.
 
-Po kliknięciu na jeden z radiobuttonów uruchamiana jest procedura updateRadioButtonList. Na początku procedura szuka elementu w liście elementów terapii, którego dotyczy pytanie. Jeśli wybrany radiobutton ma etykietę „brak wartości”, usuwane są wszystkie elementy terapii od elementu, którego dotyczy pytanie, do ostatniego elementu listy. 
-% SW: Rozumiem, że dotyczy to sytuacji, w której użytkownik zmienia wartość pytania, na które odpowiedział wcześniej (a dokładnie uznaje, że nie ma odpowiednich danych). Wtedy musimy cofnąć się w ścieżce do miejsca odpowiadającego zmienionemu krokowi decyzyjnemu. To warto jawnie napisać. I na pewno przydałyby się dwa fragmenty ekranu pokazujące zmianę.
+Po kliknięciu na jedno z pól wyboru uruchamiana jest procedura \texttt{updateRadioButtonList}. Na początku procedura szuka elementu w liście elementów terapii, którego dotyczy pytanie. Jeśli zaznaczone pole wyboru ma etykietę „brak wartości”, usuwane są wszystkie elementy terapii od elementu, którego dotyczy pytanie, do ostatniego elementu listy. W sytuacji tej cofamy się z udzielaniem odpowiedzi na pytania do jednego z poprzednich pytań.
+% SW2: Wyrzuciłbym opis związany z lastNodes -- te szczegóły niczego nie wnoszą.
 
-W kolejnym kroku program ustawia na liście lastNodes węzeł, którego identyfikator jest równy parametrowi question procedury updateRadioButtonList. 
-% SW: Wydaje mi się, że powtarza się Pan tutaj.
-Parametr ten ma wartość równą identyfikatorowi węzła zawierającego pytanie, którego dotyczy wybrany radiobutton. 
-% SW: Rozumiem, że lista lastNodes jest wykorzystywana także podczas wyświetlania grafów opisanego w poprzednim punkcie. Należałoby więc tam o niej wspomnieć -- tutaj pojawia się z zaskoczenia, tym bardziej, że wcześniej pisał Pan o metodzie createRadioButtonList.
-Ustawienie węzła na liście lastNodes jest potrzebne do utworzenia ostatniego pytania w procedurze createRadioButtonList. 
+W kolejnym kroku program ustawia na liście \texttt{lastNodes} węzeł, którego identyfikator jest równy parametrowi question procedury \texttt{updateRadioButtonList}. 
+Parametr ten ma wartość równą identyfikatorowi węzła zawierającego pytanie, którego dotyczy zaznaczone pole wyboru. 
 
-Jeśli natomiast wybrany radiobutton nie posiada etykiety równej „brak wartości” i nie istnieje element na liście elementów terapii, który jest związany z pytaniem, to do tej listy dodawany jest element o wartości równej question?answer, gdzie answer jest parametrem procedury updateRadioButtonList o wartości równej etykiecie krawędzi, z którą jest związany wybrany radiobutton. 
-% SW: Rozumiem, że powyższy opis dotyczy sytuacji, w której użytkownik udziela po raz pierwszy odpowiedzi na to pytanie, dlatego nie mam jeszcze zapisanej odpowiedzi (a dokładnie krawędzi wychodzącej związanej z odpowiedzią). Jeśli tak, to warto przeformułować ten opis, aby było to jaśniejsze.
+% SW2: Ten opis wydaje się niepotrzebnie złożony. Jak rozumiem, działanie programu podczas aktualizacji grafów jest następujące:
+% a) po udzieleniu odpowiedzi na wybrane pytanie usuwane są wszystkie elementy terapii znajdujące się po aktualizowanym pytaniu,
+% b) jeśli odpowiedź na pytanie jest znana (inna niż "brak danych"), wówczas poruszamy się po grafie, aż dochodzimy do kolejnego kroku decyzyjnego lub liścia w grafie, włączając do terapii wszystkie odwiedzone akcje
+% c) jeśli odpowiedź na pytanie jest nieznana ("brak danych"), zatrzymujemy się na aktualizowanym pytaniu
 
-% SW: Wcześniej założył już Pan, że opis dotyczy sytuacji, w której mamy jakąś odpowiedź (wybór jest inny niż "brak wartości"), więc nie ma potrzeby tego powtarzać (powtórzenia utrudniają zrozumienie).
-Jeśli nie wybrano radiobuttona o etykiecie „brak wartości” i istnieje element związany z pytaniem, to w liście elementów terapii podmieniany jest element, który jest związany z pytaniem na wartość question?answer, a następnie usuwane są wszystkie elementy listy terapii, które się znajdują za podmienionym elementem. 
-% SW: Co to jest za tajemniczy węzeł o nazwie "n"? Czy to po prostu kolejny węzeł po tym węźle decyzyjnym, dla którego dodano lub zmieniono odpowiedź? Jeśli tak, to może lepiej nazwać go "next"? Poza tym tutaj cały czas obowiązuje założenie, że nie wybrano "braku wartości" (tak mi się przynajmniej wydaje), więc nie musi Pan tego po raz kolejny powtarzać.
-Następnie jeśli nie wybrano radiobuttona posiadającego etykietę „brak wartości” pod węzeł o nazwie n podstawiany jest węzeł, który jest pierwszym węzłem krawędzi o etykiecie answer wychodzącej z węzła o identyfikatorze question. 
+Jeśli natomiast zaznaczone pole wyboru nie posiada etykiety równej „brak wartości” i nie istnieje element na liście elementów terapii, który jest związany z pytaniem, to do tej listy dodawany jest element o wartości równej \texttt{question?answer}, gdzie \texttt{answer} jest parametrem procedury \texttt{updateRadioButtonList} o wartości równej etykiecie krawędzi, z którą jest związane zaznaczone pole wyboru. W sytuacji tej użytkownik udziela po raz pierwszy odpowiedzi na pytanie. 
 
-W kolejnym kroku wywoływana jest procedura goForward, która jako parametr przyjmuje m. in. węzeł n. Procedura ta wywołuje metodę addToTherapy, 
+Jeśli istnieje element związany z pytaniem, to w liście elementów terapii podmieniany jest element, który jest związany z pytaniem na wartość \texttt{question?answer}, a następnie usuwane są wszystkie elementy listy terapii, które się znajdują za podmienionym elementem. 
+Następnie pod węzeł o nazwie next podstawiany jest węzeł, który jest pierwszym węzłem krawędzi o etykiecie \texttt{answer} wychodzącej z węzła o identyfikatorze \texttt{question}. 
+
+W kolejnym kroku wywoływana jest procedura \texttt{goForward}, która jako parametr przyjmuje m. in. węzeł \texttt{next}. 
+% SW2: Jeśli procedura ta jest wykorzystywana również podczas wyświetlania grafów, to dlaczego Pan o niej nie wspomniał? Połączenie opisów wyświetlania i aktualizacji grafów pozwoli na uniknięcie tego typu problemów.
+Procedura ta jest uruchamiana także podczas wyświetlania grafów. Najpierw 
+% SW2: Rozumiem, że metoda addToTherapy dodaje aktualny węzeł (n?) do terapii. Jeśli tak, to należy to napisać, aby czytelnik nie musiał się domyślać.
+\texttt{goForward} wywołuje metodę \texttt{addToTherapy}, 
+% SW2: Co to znaczy, że węzeł n odpowiada węzłowi next? Czy to jeden i ten sam węzeł? Jeśli tak, to lepiej zostać przy jednej zmiennej i nie mnożyć niepotrzebnie bytów.
+jeśli węzeł \texttt{n} (odpowiadający węzłowi \texttt{next}) zawiera nie więcej niż jedną krawędź wyjściową lub węzeł \texttt{n} jest węzłem zaczynającym ścieżki równoległe 
+% SW2: Poniższy warunek sprawia wrażenie bardzo zawiłego -- w tekście powinno znaleźć się wyjaśnienie, jakiej sytuacji on odpowiada. Przydałaby się też prosta ilustracja graficzna.
+i nie jest to węzeł kończący ścieżki równoległe w przypadku, gdy program nie przeszedł jeszcze wszystkich ścieżek równoległych w określonym miejscu. 
 % SW: Poniższe sformułowanie może brzmieć dość zaskakująco przy pierwszym czytaniu (odruchowo przyjmuje się, że węzęł kończący ścieżki równoległe nie może być węzłem rozpoczynającym). U nas jest to jednak możliwe -- węzeł parallel może kończyć jeden blok równoległy i ropoczyąć kolejny. Warto dodać taki komentarz, aby recenzent nie miał wątpliwości.
-jeśli węzeł n zawiera zero lub jeden krawędzi wyjściowych lub węzeł n jest węzłem zaczynającym ścieżki równoległe i nie jest to węzeł kończący ścieżki równoległe w przypadku, gdy program nie przeszedł jeszcze wszystkich ścieżek równoległych w określonym miejscu. 
-% SW: Czy jeśli powyższe warunki nie są spełnione, wówczas metoda addToTherapy nie jest wywoływana?
+% SW2: Jak już wspomniałem, opis reprezentacji grafu oraz sposób identyfikowania wierzchołków/krokrów powinien pojawić się orzed opisem poszczególnych kroków, aby czytelnik wiedział, czego może oczekiwać. Takie szatkowanie informacji znacznie zmniejsza czytelność tekstu.
+Procedura \texttt{addToTherapy}, jeśli etykieta węzła posiada wartość dawki podaną w nawiasach kwadratowych, dodaje do listy elementów terapii identyfikator węzła, po nim znak równości, a następnie wartość dawki. Gdy węzeł nie posiada podanej dawki do listy elementów terapii dodawany jest tylko jego identyfikator. 
 
-Procedura addToTherapy, jeśli etykieta węzła posiada wartość dawki podaną w nawiasach kwadratowych, dodaje do listy elementów terapii identyfikator węzła, po nim znak równości, a następnie wartość dawki. Gdy węzeł nie posiada podanej dawki do listy elementów terapii dodawany jest tylko jego identyfikator. 
-% SW: Rozumiem, że powyższa procedura uruchamiana jest także podczas wyświetlania grafów -- wtedy elementami terapii stają się wszystkie wierzchołki związane z akcjami, które znajdują się na ścieżce prowadzącej do pierwszego bloku dezyjnego? Jeśli tak, to powinen wspomnieć o tym wcześniej.
-
-% SW: O jakim warunku jest tutaj mowa -- o warunku kontynuacji czy zakończenia?
-Następnie program wykonuje pętlę while, której warunek składa się z trzech przypadków. 
-% SW: Czy o warunku pierwszym nie pisał Pan już wcześniej? Rozumiem, że tym razem sprawdzamy go dla węzłów innych niz next. Jeśli tak, to może warto to opisać.
+% SW2: Czy ta pętla stanowi część metody goForward? Jeśli tak, powinien jawnie Pan to napisać. Co jest celem tej pętli? Przejście tak daleko w "dół" grafu, jak to tylko możliwe?
+Następnie program wykonuje pętlę while, której warunek kontynuacji obejmuje 3 przypadki. 
+% SW2: Dla każdego z tych warunków powinien Pan podać intuicyjna interpretację oraz ilustrację (np. fragment odpowiedniego grafu).
 Pierwszy warunek sprawdza, czy węzeł posiada jedną krawędź wyjściową i nie jest to węzeł kończący ścieżki równoległe chyba, że program zakończył przechodzenie po ścieżkach równoległych związanych z tym węzłem. 
 % SW: O tym warunku również była mowa przy okazji metody addToTherapy. Rozumiem, że tutaj jest on sprawdzany dla aktualnego węzła (niekoniecznie n).
+% SW2: Te wszystkie informacje o etykietach, krawędziach wchodzących i wychodzących itp. powinni znaleźć się na samym początku przy opisie preprezentacji grafu.
 Drugi warunek sprawdza, czy węzeł rozpoczyna ścieżki równoległe, a trzeci czy węzeł kończy ścieżki równoległe. Węzeł rozpoczynający ścieżki równoległe charakteryzuje się tym, że posiada więcej niż jedną krawędź wyjściową oraz nie ma etykiety. Natomiast węzeł kończący ścieżki równoległe posiada więcej niż jedną krawędź wejściową, nie ma etykiety oraz liczba jego krawędzi wyjściowych jest większa od zera. 
-% SW: Tutaj dobrze byłoby pokazać fragment kodu, bo opis jest niejasny. Powyżej pisze Pan o jednej pętli while, a tutaj pojawia się kolejna -- czy to pętla wewnętrzna. Pokazanie uproszczonego kodu byłoby najlepszym rozwiązaniem.
-Pierwszy warunek jest sprawdzany w kolejnej pętli while, aby dodać do listy elementów terapii wszystkie węzły, które mają tylko jedną krawędź wyjściową, czyli droga, po której należy się poruszać jest z góry znana. 
-% SW: Rozumiem, że po zakończeniu tej pętli zatrzymujemy się na wirzchołku, który jest liściem (nie ma żadnych krawędzy wychodzących), albo ma co najmniej dwie krawędzie wychodzące. Jeśli tak, to warto przeformułować opis.
-Po wykonaniu tej pętli while uzyskujemy węzeł, który nie posiada jednej krawędzi wyjściowej.
+Pierwszy warunek jest sprawdzany w kolejnej pętli while, aby dodać do listy elementów terapii wszystkie węzły, które mają tylko jedną krawędź wyjściową, czyli droga, po której należy się poruszać jest jednoznacznie określona. 
+Po wykonaniu tej pętli while uzyskujemy węzeł, który jest liściem (nie posiada żadnej krawędzi wyjściowej), 
+% SW2: Rozumiem, że oznacza to, że wierzchołek, na którym się zatrzymaliśmy, to liść, krok decyzyjny albo początek klilku równoległych ścieżek, czy tak?
+albo ma więcej niż jedną krawędź wyjściową.
 
-W kolejnym kroku sprawdzany jest dla aktualnego węzła drugi warunek w instrukcji if, czyli czy węzeł rozpoczyna ścieżki równoległe. Jeśli jest on spełniony, uzyskany węzeł jest zapisywany do listy węzłów parallelNodes, 
-% SW: Co zawiera lista parallelPaths? Liczby? Dlaczego zapisuje Pan na niej wartość 0?
-a w liście parallelPaths zapisywana jest liczba 0. Później wywoływana jest funkcja parallelPath. Funkcja ta jest wywoływana również w dla trzeciego przypadku, czyli gdy uzyskany węzeł kończy ścieżki równoległe, a program nie przeszedł jeszcze przez wszystkie te ścieżki. 
-% SW: Co robi dokładnie metoda parallePath? Rozumiem, że porusza się ona po grafie. Czy może się poruszac w obu kierunkach (do przodu, gdy jest wywoływana dla wierzchołka rozpoczynającego ścieżki równoległe, i do tyłu, gdy wywoływana jest dla wierzchołka kończącego takie ścieżki)?
-Funkcja parallelPath jest w postaci pętli while, która działa dopóki program nie przejdzie przez wszystkie ścieżki równoległe i uzyskany węzeł nie jest węzłem zawierającym pytanie. Pętla while zapisuje do listy elementów terapii wszystkie przebyte po drodze węzły. Na końcu procedura goForward zapisuje do listy węzłów lastNodes uzyskany węzeł, jeśli liczba krawędzi wyjściowych węzła jest większa od jeden, czyli jest to węzeł z pytaniem.
+W kolejnym kroku sprawdzany jest dla aktualnego węzła drugi warunek w instrukcji if, czyli czy węzeł rozpoczyna ścieżki równoległe. Jeśli jest on spełniony, uzyskany węzeł jest zapisywany do listy węzłów \texttt{parallelNodes}, 
+a w liście \texttt{parallelPaths} zapisywana jest liczba 0. 
+% SW2: Co rozumie Pan pod pojęciemn "numer krawędzi ścieżek równoległych"? Jak zinterpretować wartość 0? Ponieważ nigdzie później nie wspomina Pan o liście parallelPaths, można usunąć wszelkie informacje o niej, bo bardziej one przeszkadzają, niż pomagają. 
+Lista \texttt{parallelPaths} zawiera numer krawędzi ścieżek równoległych, na której aktualnie przebywa program. Później wywoływana jest funkcja \texttt{parallelPath}. 
+% SW2: O ile wywołanie parallelPaths dla węzła rozpoczynającego ścieżki równoległe jest intuicyjne (idziemy w głąb grafu), to nie bardzo rozumiem, dlaczego metoda ta jest wywoływana także dla grafu kończącego ścieżki równoległe. To MUSI być wyjaśnione w tekście.
+Funkcja ta jest wywoływana również w dla trzeciego przypadku, czyli gdy uzyskany węzeł kończy ścieżki równoległe, a program nie przeszedł jeszcze przez wszystkie te ścieżki. 
+% SW2: To jest więcej niż while z 3 warunkami -- tutaj mamy dwie zagnieżdżone pętle. Z jakiej metody pochodzi ten fragnent -- czy z goForward?
+Poniższy fragment kodu przedstawia pętlę while z 3 warunkami:
 
-Procedura updateRadioButtonList w kolejnym kroku dla wszystkich
+% SW2: Fragment kodu powinien być traktowany jako rysunek lub listing -- powinien mieć swój unikalny numer, a w tekście powinno się znaleźć odwołanie do niego. Poza tym, jeśli zamieszcza Pan fragment kodu, to w tekście (lub w legendzie rysunku) powinno znaleźć się wyjaśnienie wszystkich występujacych tam symboli -- obecnie nie jest jasne, co to jest list i inList oraz dlaczego wierzchołki równoległe mają przypisany identyfikator choroby. Może Pan też na mniej szczegółowy pseudo-kod, ale również wtedy należy się upewnić, że wyjaśnienia są kompletne. Poza tym na listingu warto pokazać numery linii, a następnie odwołać się do nich w opisie.
+
+\newpage
+\begin{verbatim}
+while((
+(list.size()>1)&&(n.getAttribute("label").equals("")))
+  ||((inList.size()>1)&& n.getAttribute("label").equals("")
+     &&(list.size()>0)&&(parallelNodes.get(idOfDisease)!=null))
+  ||((list.size()==1) 
+     && (inList.size()<=1 || (inList.size()>1 && !n.getAttribute("label").equals(""))
+ 	     ||(inList.size()>1 && n.getAttribute("label").equals("")
+	        && parallelNodes.get(idOfDisease)==null))))
+//warunek1 lub warunek2 lub warunek3
+{
+    while((list.size()==1) && 
+    		(inList.size()<=1 || (inList.size()>1 && !n.getAttribute("label").equals(""))
+    		||(inList.size()>1 && n.getAttribute("label").equals("") 
+    		   && parallelNodes.get(idOfDisease)==null)))
+    //warunek1: węzeł posiada jedną krawędź wyjściową i nie jest to węzeł 
+    //kończący ścieżki równoległe chyba, że program zakończył przechodzenie 
+    //po ścieżkach równoległych związanych z tym węzłem
+    {
+    	//dodawanie elementów do terapii i przemieszczanie się 
+    	//po grafie do momentu, gdy liczba krawędzi wychodzących jest równa 1
+    }
+    if((inList.size()>1)&& n.getAttribute("label").equals("")&&(list.size()>0)
+        &&(parallelNodes.get(idOfDisease)!=null))
+    //warunek2: węzeł kończy ścieżki równoległe
+    {
+        //wywołanie funkcji parallelPath
+    }
+    else if((list.size()>1)&&(n.getAttribute("label").equals("")))
+    //warunek3: węzeł rozpoczyna ścieżki równoległe
+    {
+        //wywołanie funkcji parallelPath
+    }
+}
+\end{verbatim}
+% SW2: Co rozumie Pan przez "wszystkie ścieżki równoległe"? Wszystkie ścieżki równoległe rozpoczynające się (lub kończące) we wskazanym wierzchołku? To wymaga wyjaśnienia. Nie jest jasne, czy poruszamy się zgodnie kierunkiem krawędzi, czy możemy poruszać się pod prąd. Wreszcie, nie jest jasne, co się stanie w sytuacji, jeśli po wierzchołku kończącym ścieżki równoległe będą same akcje i żadnego pytania? Czy parallelPath kończy działanie także przy osiągnięciu liścia?
+Funkcja \texttt{parallelPath} jest w postaci pętli while, która działa dopóki program nie przejdzie przez wszystkie ścieżki równoległe i uzyskany węzeł nie jest węzłem zawierającym pytanie. Pętla while zapisuje do listy elementów terapii wszystkie przebyte po drodze węzły. Na końcu procedura \texttt{goForward} zapisuje do listy węzłów \texttt{lastNodes} uzyskany węzeł, 
+% SW2: Również wierzchołki rozpoczynające ścieżki równoległe mogą mieć dwie lub więcej krawędzie wychodzące
+jeśli liczba krawędzi wyjściowych węzła jest większa od jeden, czyli jest to węzeł z pytaniem.
+
+Procedura \texttt{updateRadioButtonList} w kolejnym kroku odznacza wszystkie węzły i krawędzie i następnie koloruje je na nowo na podstawie listy elementów terapii. Tworzony jest także nowy obraz grafu za pomocą procedury \texttt{newImageGraph}. Na końcu tworzona jest nowa lista pytań i odpowiedzi za pomocą procedury \texttt{createRadioButtonList}. 
 % SW: O jakich przypadkach Pan tutaj mówi? Wszystkich przypadkach modyfikacji danych pacjenta? Tutaj potrzebny jest bardzo precyzyjny opis.
- przypadków odznacza wszystkie węzły i krawędzie i następnie koloruje je na nowo na podstawie listy elementów terapii. Tworzony jest także nowy obraz grafu za pomocą procedury newImageGraph. Na końcu tworzona jest nowa lista pytań i odpowiedzi za pomocą proceury createRadioButtonList. 
+
 
 \section{Generowanie terapii}
 
