@@ -1,11 +1,18 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: praca_magisterska.aux
+A level-1 auxiliary file: rozdzial1.aux
+A level-1 auxiliary file: rozdzial2.aux
+A level-1 auxiliary file: rozdzial3.aux
+A level-1 auxiliary file: rozdzial4.aux
+A level-1 auxiliary file: rozdzial5.aux
+A level-1 auxiliary file: rozdzial6.aux
+A level-1 auxiliary file: rozdzial7.aux
 The style file: plain.bst
 Database file #1: bibliografia.bib
 Warning--to sort, need author or key in CLP
 Warning--to sort, need author or key in EclipseSite
 Warning--to sort, need author or key in Choco3
-Warning--to sort, need author or key in JPGD
 Warning--to sort, need author or key in Graphviz
+Warning--to sort, need author or key in JPGD
 Warning--empty journal in Latoszek-Berendsen
 Warning--empty year in Latoszek-Berendsen
 Warning--empty journal in Boyd
@@ -16,4 +23,6 @@ Warning--empty journal in Piovesan
 Warning--empty year in Piovesan
 Warning--empty journal in SzWilk
 Warning--empty year in SzWilk
-(There were 15 warnings)
+Warning--empty journal in SzWilk2
+Warning--empty year in SzWilk2
+(There were 17 warnings)

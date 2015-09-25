@@ -1,12 +1,12 @@
 \chapter{Programowanie logiczne z ograniczeniami (CLP)}
 
 % SW: Powiedziałbym, że CLP pozwala na użycie programowania logicznego do rozwwiązywania problemów z ograniczeniami (constraint satisfaction problems, CSP). 
-Programowanie logiczne z ograniczeniami\cite{CLP} jest rodzajem programowania z ograniczeniami, w którym programowanie logiczne jest rozszerzone o koncepcję spełnienia ograniczeń. Przykładowym ograniczeniem może być wyrażenie postaci X+Y>5. 
+Programowanie logiczne z ograniczeniami\cite{CLP} pozwala na użycie programowania logicznego do rozwiązywania problemów z ograniczeniami. Przykładowym ograniczeniem może być wyrażenie postaci X+Y>5. 
 % SW: Tutaj raczej należałoby powiedzieć, że program CLP składa się z następujących elementów
-Ogólnie przypadek CLP składa się z następujących cech:
+Program CLP składa się z następujących elementów:
 \begin{itemize}
 % SW: Zmienne nie muszą być całkowitoliczbowe -- musza mieć jednak skończone dziedziny.
-\item{Skończonego zbioru zmiennych typu całkowitoliczbowego z wartościami ze skończonych dziedzin}
+\item{Skończonego zbioru zmiennych z wartościami ze skończonych dziedzin}
 \item{Zbioru ograniczeń między zmiennymi}
 \item{Rozwiązań problemu polegających na przypisaniu wartości do zmiennych, które spełniają ograniczenia}
 \end{itemize}
@@ -22,7 +22,7 @@ Przykładowym zastosowaniem programowania logicznego z ograniczeniami jest zagad
 \end{verbatim}
 \newpage
 % SW: Tutaj warto wyjaśnić, że mówimy o środowisku do uruchamiania programów CLP, a nie o popularnym środowisku programistycznym. Poza tym warto dodać, że nieco bardziej szczegółowy opis środowiska znajduje się w punkcie 4.1.
-Rozwiązaniem tego problemu jest następujący program napisany w ECLiPSe:
+Rozwiązaniem tego problemu jest następujący program napisany w ECLiPSe (jest to kompilator programów CLP, a nie popularne środowisko programistyczne Eclipse, bardziej szczegółowy opis tego programu znajduje się w punkcie 4.1):
 \begin{verbatim}
 :-lib(ic).
 sendmore1(Digits):-
@@ -36,5 +36,9 @@ M #\= 0,
 #= 10000*M + 1000*O + 100*N + 10*E + Y,
 labeling(Digits).
 \end{verbatim}
-Po skompilowaniu tego programu wystarczy wywołać funkcję sendmore1(Digits), aby otrzymać rozwiązanie zagadki.
+Po skompilowaniu tego programu wystarczy wywołać funkcję sendmore1(Digits), aby otrzymać rozwiązanie zagadki. Rozwiązaniem jest następujące przypisanie cyfr do zmiennych: S=9, E=5, N=6, D=7, M=1, O=0, R=8, Y=2. 
+
+Można zauważyć na podstawie przykładu, że komendy w ECLiPSe składają się ze zdań zakończonych kropką, poszczególne fragmenty zdań są oddzielone od siebie przecinkami. Znak równości między zmiennymi lub wartościami liczbowymi to „\#=”, znak nierówności to „\#\textbackslash=”. Można stosować także operatory and i or i przypisywać ich wartość do zmiennych za pomocą znaku równości. 
+
+CLP może być wykorzystane do rozwiązywania trudniejszych zadań. Do przykładowych zadań należy popularne zadanie z farmerem, wilkiem, gęsią i kapustą. Polega ono na tym, że farmer posiada łódkę, na której może się zmieścić on i jeszcze jeden element. Zadaniem farmera jest przewieźć wszystkie elementy z jednej strony rzeki na drugą. Problem stanowi fakt, że farmer nie może zostawić wilka i gęsi samych, bo wilk zje gęś, a także nie może zostawić gęsi z kapustą, ponieważ gęś zje kapustę. Innym przykładem jest zadanie o nazwie osiem królowych. Polega ono na tym, że na szachownicy o wymiarach 8x8 należy umieścić 8 królowych w taki sposób, aby żadna z nich nie mogła zbić innej królowej.
 % SW: Warto podać rozwiązanie tej zagadki i przypisanie cyfr do poszczególnych zmiennych. Poza tym warto też krótko wyjaśnić, że CLP może być stosownae do znacznie poważniejszych problemów i podać ich przykłady. Są one wymienione w książce Niederlińskiego (do pobrania za darmo ze strony ECLiPSe'a) na stronach 7 i 8.

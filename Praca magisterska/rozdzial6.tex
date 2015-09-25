@@ -1,12 +1,12 @@
 \chapter{Działanie systemu}
-
+Działanie systemu zostanie zaprezentowane w oparciu o kilka przykładów. Dla każdego przykładu przedstawione zostały grafy z zaznaczonymi ścieżkami, które zostały wybrane podczas etapu udzielania odpowiedzi. Odpowiedzi na pytania są także przedstawione w formie tekstowej. Następnie, dla każdego przykładu przedstawiono listę konfliktów, które mogą wystąpić oraz zmiany, jakie należy wprowadzić w przypadku ich wystąpienia. Na końcu przykładów zaprezentowane są znalezione konflikty.
 % SW: W obecnej formie ta sekcja jest bardzo skrótowa. Powinien Pan w "rozbiegówce" wyjaśnić, że pokaże Pan działanie systemu na kilku przykładach. Większość to rzeczywiste wytyczne (uproszczone na potrzeby testowania. Wykorzystywane są też przykłady sztuczne demonstrujące zachowanie algorytmu w granicznych wypadkach (tutaj chodzi mi o przykład, gdzie w ramach usuwania jednego konfliktu wprowadzanych jest kilka zmian). Jeśli natomiast chodzi o przykłady rzeczywiste, to dodałbym także przykład z dawkami leków -- brakuje go do pełnej demonstracji Pana dokonań.
 
 % SW: Również na wstępie powinien Pan wyjaśnić, że opisując poszczególne przykłady pokaże Pan rozważane wytyczne w formie grafów z zaznaczonymi ścieżkami odpowiadającymi dostępnym danym pacjenta, dostępną wiedzę na temat konfliktów i sposobów ich rozwiązania, a także wynikowe grafy (a przynajmniej ich zmodyfikowane fragmenty). Przedstawiając konflikty powinien zaznaczyć Pan te, które zostały wykryte i usunięte dla danego pacjenta. Wreszcie konflikty i sposoby ich usunięcia powinien Pan przedstawić korzystając ze składni, którą Pan zaproponował (jest to bardzo eleganckie rozwiązanie i warto się nim pochwalić).
 
 \section{Przypadek 1 - atak astmy i wrzód trawienny}
-
-Wytyczne dla ataku astmy (ang. \textit{asthma exacerbation}) przedstawiono na rys. \ref{fig:ag_ae}.
+Wytyczne dla ataku astmy (ang. \textit{asthma exacerbation}) przedstawiono na rys. \ref{fig:ag_ae}.\\*
+Wytyczne dla wrzodu trawiennego (ang. \textit{peptic ulcer}) przedstawiono na rys. \ref{fig:pu}.
 
 % SW: Każdy graf, zestaw danych pacjenta oraz lista konfliktów powinien zostac potraktowany jako rysunek z numerem i tytułem (wprowadziłem odpowiednią zmianę poniżej), a w tekście powinno się do niego znaleźć odwołanie).
 
@@ -19,10 +19,11 @@ Wytyczne dla ataku astmy (ang. \textit{asthma exacerbation}) przedstawiono na ry
 \end{figure}
 
 \newpage
-Wrzód trawienny (peptic ulcer) – graf:
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{img/peptic-ulcer.png}
+\caption{Wytyczne dla wrzodu trawiennego}
+\label{fig:pu}
 \end{figure}
 \newpage
 \noindent Odpowiedzi na pytania:
@@ -57,23 +58,28 @@ then add execute(PPI) after execute(NSAID)
 \end{verbatim}
 \newpage
 \section{Przypadek 2 - migotanie przedsionków, przewlekła choroba nerek i nadciśnienie}
-
-Migotanie przedsionków  (atrial fibrillation) – graf:
+Wytyczne dla migotania przedsionków (ang. \textit{atrial fibrillation}) przedstawiono na rys. \ref{fig:afib}.\\*
+Wytyczne dla przewlekłej choroby nerek (ang. \textit{chronic kidney disease}) przedstawiono na rys. \ref{fig:htn}.\\*
+Wytyczne dla nadciśnienia (ang. \textit{hypertension}) przedstawiono na rys. \ref{fig:htn}.
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{img/afib-ver-4.png}
+\includegraphics[width=0.5\textwidth]{img/afib-ver-4.png}
+\caption{Wytyczne dla migotania przedsionków}
+\label{fig:afib}
 \end{figure}
 \newpage
-Przewlekła choroba nerek (chronic kidney disease) – graf:
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{img/ckd-simplified-ver-5.png}
+\caption{Wytyczne dla przewlekłej choroby nerek}
+\label{fig:ckd}
 \end{figure}
 \newpage
-Nadciśnienie (hypertension) – graf:
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{img/htn-ver-3.png}
+\caption{Wytyczne dla nadciśnienia}
+\label{fig:htn}
 \end{figure}
 \newpage
 \noindent Odpowiedzi na pytania:
@@ -95,8 +101,7 @@ Nadciśnienie (hypertension) – graf:
 	\end{itemize}
 }
 % SW: Tutaj warto zaznaczyć, że te dane (to pytanie) nie pojawiają się jawnie w żadnych rozważanych wytycznych, ale są uwzględnione podczas sprawdzania konfliktów, dlatego użytkownik jest proszony o podanie odpowiedniej wartości.
-
-\item{CHA2DS2-VASc = 5}
+\item{CHA2DS2-VASc = 5 (Parametr ten nie pojawia się jawnie w wytycznych, użytkownik jest proszony o podanie tej wartości.)}
 \end{enumerate}
 Konflikty:
 \begin{verbatim}
@@ -135,17 +140,20 @@ then replace aspirin with warfarin as maintenance therapy in the algorithm for A
 \end{verbatim}
 \newpage
 \section{Przypadek 3 - wrzód dwunastnicy i przemijający atak niedokrwienny}
-
-Wrzód dwunastnicy (duodenal ulcer) – graf:
+Wytyczne dla wrzodu dwunastnicy (ang. \textit{duodenal ulcer}) przedstawiono na rys. \ref{fig:du}.\\*
+Wytyczne dla przemijającego ataku niedokrwiennego (ang. \textit{transient ischemic attack}) przedstawiono na rys. \ref{fig:tia}.
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{img/du.png}
+\caption{Wytyczne dla wrzodu dwunastnicy}
+\label{fig:du}
 \end{figure}
 \newpage
-Przemijający atak niedokrwienny (transient ischemic attack) – graf:
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{img/tia.png}
+\caption{Wytyczne dla przemijającego ataku niedokrwiennego}
+\label{fig:tia}
 \end{figure}
 \newpage
 \noindent Odpowiedzi na pytania:

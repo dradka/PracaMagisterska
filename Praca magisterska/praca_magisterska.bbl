@@ -46,4 +46,10 @@
 \newblock {Using First-Order Logic to Represent Clinical Practice Guidelines
   and to Mitigate Adverse Interactions}.
 
+\bibitem{SzWilk2}
+{Szymon Wilk, Wojtek Michalowski, Martin Michalowski, Ken Farion, Marisela
+  Mainegra Hing, Subhra Mohapatra}.
+\newblock {Mitigation of Adverse Interactions in Pairs of Clinical Practice
+  Guidelines Using Constraint Logic Programming}.
+
 \end{thebibliography}
