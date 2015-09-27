@@ -25,10 +25,10 @@
 \contentsline {section}{\numberline {5.7}Wy\IeC {\'s}wietlanie wynik\IeC {\'o}w}{22}
 \contentsline {chapter}{\numberline {6}Dzia\IeC {\l }anie systemu}{25}
 \contentsline {section}{\numberline {6.1}Przypadek 1 - atak astmy i wrz\IeC {\'o}d trawienny}{25}
-\contentsline {section}{\numberline {6.2}Przypadek 2 - migotanie przedsionk\IeC {\'o}w, przewlek\IeC {\l }a choroba nerek i nadci\IeC {\'s}nienie}{29}
-\contentsline {section}{\numberline {6.3}Przypadek 3 - wrz\IeC {\'o}d dwunastnicy i przemijaj\IeC {\k a}cy atak niedokrwienny}{34}
-\contentsline {chapter}{\numberline {7}Podsumowanie}{37}
-\contentsline {section}{\numberline {7.1}Osi\IeC {\k a}gni\IeC {\k e}te cele}{37}
-\contentsline {section}{\numberline {7.2}Problemy przy realizacji pracy}{37}
-\contentsline {section}{\numberline {7.3}Kierunki dalszego rozwoju}{37}
-\contentsline {chapter}{Bibliografia}{39}
+\contentsline {section}{\numberline {6.2}Przypadek 2 - migotanie przedsionk\IeC {\'o}w, przewlek\IeC {\l }a choroba nerek i nadci\IeC {\'s}nienie}{28}
+\contentsline {section}{\numberline {6.3}Przypadek 3 - wrz\IeC {\'o}d dwunastnicy i przemijaj\IeC {\k a}cy atak niedokrwienny}{33}
+\contentsline {chapter}{\numberline {7}Podsumowanie}{36}
+\contentsline {section}{\numberline {7.1}Osi\IeC {\k a}gni\IeC {\k e}te cele}{36}
+\contentsline {section}{\numberline {7.2}Problemy przy realizacji pracy}{36}
+\contentsline {section}{\numberline {7.3}Kierunki dalszego rozwoju}{36}
+\contentsline {chapter}{Bibliografia}{38}

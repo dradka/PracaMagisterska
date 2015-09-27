@@ -27,7 +27,7 @@ Wytyczne postępowania klinicznego są w tej technice prezentowane w postaci gra
 
 % SW: W poniższym opisie powinien się Pan skupić na tych elementach pojdeścia, o których wspomniałem powyżej (stosowaniu wielu wytycznych i wykrywania/naprawiania wielku konfliktów). Jak już wspomniałem, wiele elementów zostnie już opisanych przy okazji przedstawienia naszego podejścia z CLP.
 
-Wytyczne postępowania klinicznego są w tym podejściu opisane, podobnie jak w poprzednim podejściu, opisywane za pomocą grafu akcji z wierzchołkami kontekstu, decyzji i akcji.\cite{SzWilk} Słownictwo podejścia logiki pierwszego rzędu składa się ze stałych (pisanych dużymi literami), zmiennych (pisanych małymi literami) oraz predykatów. Do predykatów należą:
+Wytyczne postępowania klinicznego są w tym podejściu opisane, podobnie jak w poprzednim podejściu, za pomocą grafu akcji z węzłami kontekstu, decyzji i akcji.\cite{SzWilk} Słownictwo podejścia logiki pierwszego rzędu składa się ze stałych (pisanych dużymi literami), zmiennych (pisanych małymi literami) oraz predykatów. Do predykatów należą:
 \begin{itemize}
 \item{node(x) – x jest węzłem}
 \item{action(x) – x jest węzłem akcji}
@@ -40,7 +40,7 @@ Wytyczne postępowania klinicznego są w tym podejściu opisane, podobnie jak w 
 \item{disease(d) – d jest chrobą}
 \item{diagnosed(d) – pacjent choruje na chorobę d}
 \end{itemize}
-W tym podejściu także stosowane są operatory interakcji i rewizji. Operator rewizji składa się z dwóch części. Pierwsza część jest podobna do operatora interakcji, również zbudowana jest ze zdania opisującego konflikt, który może wystąpić. Druga część składa się z par formuł, które opisują pojedyncze interakcje operatora. Pary formuł mogą być w trzech postaciach:
+W tym podejściu także stosowane są operatory interakcji i rewizji. Operator interakcji opisuje konflikt. Operator rewizji składa się z dwóch części. Pierwsza część jest podobna do operatora interakcji, również zbudowana jest ze zdania opisującego konflikt, który może wystąpić. Druga część składa się z par formuł, które opisują pojedyncze zmiany. Pary formuł mogą być w trzech postaciach:
 \begin{itemize}
 \item{(x, $\emptyset$) – oznacza, że formuła x jest usuwana}
 \item{($\emptyset$, x) – oznacza, że formuła x jest dodawana}
@@ -50,7 +50,7 @@ W tym podejściu także stosowane są operatory interakcji i rewizji. Operator r
 
 % SW: To podejście wykorzystuje paraydmat "mieszanej inicjatywy" (mixed initiative), w której użytkownik współpracuje z systemem komputerowym, aby rozwiązać problem -- nie jest to więc podejście automatyczne.
 \subsection{Podejście Piovesana}
-Podejście to wykorzystuje paradygmat "mieszanej inicjatywy", w której użytkownik współpracuje z systemem komputerowym, aby rozwiązać problem.\cite{Piovesan} Oznacza to, że nie jest to podejście automatyczne. Ten sposób wykrywania i usuwania konfliktów oferuje techniki unikania i naprawiania konfliktów. Do technik tych należą: wybieranie bezpiecznej alternatywy oraz czasowe unikanie konfliktu. Wybieranie bezpiecznej alternatywy polega na wyborze alternatywnej ścieżki w wytycznych, która unika interakcji. Tymczasowe unikanie polega natomiast na stosowaniu leków w takich momentach czasu, w których nie występuje interakcja pomiędzy nimi. Do technik naprawiania konfliktów należą: modyfikacja dawek leków, monitorowanie efektów oraz osłabianie interakcji poprzez rozszerzenie zaleceń o dodatkowe akcje. 
+Podejście to wykorzystuje paradygmat "mieszanej inicjatywy", w której użytkownik współpracuje z systemem komputerowym, aby rozwiązać problem.\cite{Piovesan} Oznacza to, że nie jest to podejście automatyczne. Ten sposób wykrywania i usuwania konfliktów oferuje techniki unikania i naprawiania konfliktów. Do technik unikania konfliktów tych należą: wybieranie bezpiecznej alternatywy oraz czasowe unikanie konfliktu. Wybieranie bezpiecznej alternatywy polega na wyborze alternatywnej ścieżki w wytycznych, która unika interakcji. Tymczasowe unikanie polega natomiast na stosowaniu leków w takich momentach czasu, w których nie występuje interakcja pomiędzy nimi. Do technik naprawiania konfliktów należą: modyfikacja dawek leków, monitorowanie efektów oraz osłabianie interakcji poprzez rozszerzenie zaleceń o dodatkowe akcje. 
 
 Wytyczne w tej metodzie wykrywania i usuwania konfliktów są reprezentowane w postaci hierarchicznego grafu składającego się z węzłów będących akcjami i krawędzi modelujących relacje między akcjami. Podejście rozróżnia akcje atomowe i akcje złożone (plany). Ontologie wykorzystywane w tym podejściu są mocno zintegrowane z obecnymi ontologiami medycznymi, takimi jak SNOMED CT dla pojęć medycznych i ATC dla klasyfikacji leków.
 
