@@ -20,9 +20,9 @@ Przykładowym zastosowaniem programowania logicznego z ograniczeniami jest zagad
  -------
    MONEY
 \end{verbatim}
-\newpage
 % SW: Tutaj warto wyjaśnić, że mówimy o środowisku do uruchamiania programów CLP, a nie o popularnym środowisku programistycznym. Poza tym warto dodać, że nieco bardziej szczegółowy opis środowiska znajduje się w punkcie 4.1.
 Rozwiązaniem tego problemu jest następujący program napisany w ECLiPSe (jest to kompilator programów CLP, a nie popularne środowisko programistyczne Eclipse, bardziej szczegółowy opis tego programu znajduje się w punkcie 4.1):
+\newpage
 \begin{verbatim}
 :-lib(ic).
 sendmore1(Digits):-
@@ -40,5 +40,7 @@ Po skompilowaniu tego programu wystarczy wywołać funkcję sendmore1(Digits), a
 
 Można zauważyć na podstawie przykładu, że komendy w ECLiPSe składają się ze zdań zakończonych kropką, poszczególne fragmenty zdań są oddzielone od siebie przecinkami. Znak równości między zmiennymi lub wartościami liczbowymi to „\#=”, znak nierówności to „\#\textbackslash=”. Można stosować także operatory and i or i przypisywać ich wartość do zmiennych za pomocą znaku równości. 
 
-CLP może być wykorzystane do rozwiązywania trudniejszych zadań. Do przykładowych zadań należy popularne zadanie z farmerem, wilkiem, gęsią i kapustą. Polega ono na tym, że farmer posiada łódkę, na której może się zmieścić on i jeszcze jeden element. Zadaniem farmera jest przewieźć wszystkie elementy z jednej strony rzeki na drugą. Problem stanowi fakt, że farmer nie może zostawić wilka i gęsi samych, bo wilk zje gęś, a także nie może zostawić gęsi z kapustą, ponieważ gęś zje kapustę. Innym przykładem jest zadanie o nazwie osiem królowych. Polega ono na tym, że na szachownicy o wymiarach 8x8 należy umieścić 8 królowych w taki sposób, aby żadna z nich nie mogła zbić innej królowej.
+CLP może być wykorzystane do rozwiązywania innych zadań.\cite{niederlinski} Do przykładowych zadań należy popularne zadanie z farmerem, wilkiem, gęsią i kapustą. Polega ono na tym, że farmer posiada łódkę, na której może się zmieścić on i jeszcze jeden element. Zadaniem farmera jest przewieźć wszystkie elementy z jednej strony rzeki na drugą. Problem stanowi fakt, że farmer nie może zostawić wilka i gęsi samych, bo wilk zje gęś, a także nie może zostawić gęsi z kapustą, ponieważ gęś zje kapustę. Innym przykładem jest zadanie o nazwie osiem królowych. Polega ono na tym, że na szachownicy o wymiarach 8x8 należy umieścić 8 królowych w taki sposób, aby żadna z nich nie mogła zbić innej królowej.
+
+Programowanie logiczne z ograniczeniami może być również użyte do rozwiązywania trudniejszych problemów. Do problemów tych należą m.in. harmonogramowanie pracy lakierni samochodowej czy projektowanie inteligentnych systemów okablowania dla dużych budynków.
 % SW: Warto podać rozwiązanie tej zagadki i przypisanie cyfr do poszczególnych zmiennych. Poza tym warto też krótko wyjaśnić, że CLP może być stosownae do znacznie poważniejszych problemów i podać ich przykłady. Są one wymienione w książce Niederlińskiego (do pobrania za darmo ze strony ECLiPSe'a) na stronach 7 i 8.

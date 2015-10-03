@@ -8,7 +8,7 @@
 \contentsline {section}{\numberline {2.2}Wykrywanie i usuwanie konflikt\IeC {\'o}w w wytycznych post\IeC {\k e}powania klinicznego}{3}
 \contentsline {subsection}{\numberline {2.2.1}Programowanie logiczne z ograniczeniami}{3}
 \contentsline {subsection}{\numberline {2.2.2}Logika pierwszego rz\IeC {\k e}du}{4}
-\contentsline {subsection}{\numberline {2.2.3}Podej\IeC {\'s}cie Piovesana}{4}
+\contentsline {subsection}{\numberline {2.2.3}Podej\IeC {\'s}cie wykorzystuj\IeC {\k a}ce paradygmat mieszanej inicjatywy}{4}
 \contentsline {chapter}{\numberline {3}Programowanie logiczne z ograniczeniami (CLP)}{6}
 \contentsline {chapter}{\numberline {4}Wykorzystane biblioteki i narz\IeC {\k e}dzia}{8}
 \contentsline {section}{\numberline {4.1}ECLiPSe}{8}
@@ -16,19 +16,16 @@
 \contentsline {section}{\numberline {4.3}Graphviz}{9}
 \contentsline {section}{\numberline {4.4}JPGD - A Java parser for Graphviz documents}{11}
 \contentsline {chapter}{\numberline {5}Implementacja}{13}
-\contentsline {section}{\numberline {5.1}Struktura katalog\IeC {\'o}w}{13}
-\contentsline {section}{\numberline {5.2}Klasy systemu}{13}
-\contentsline {section}{\numberline {5.3}Wyb\IeC {\'o}r chor\IeC {\'o}b}{13}
-\contentsline {section}{\numberline {5.4}Wy\IeC {\'s}wietlanie graf\IeC {\'o}w}{14}
-\contentsline {section}{\numberline {5.5}Udzielanie odpowiedzi na pytania}{16}
-\contentsline {section}{\numberline {5.6}Wyszukiwanie konflikt\IeC {\'o}w}{19}
-\contentsline {section}{\numberline {5.7}Wy\IeC {\'s}wietlanie wynik\IeC {\'o}w}{22}
-\contentsline {chapter}{\numberline {6}Dzia\IeC {\l }anie systemu}{25}
-\contentsline {section}{\numberline {6.1}Przypadek 1 - atak astmy i wrz\IeC {\'o}d trawienny}{25}
+\contentsline {section}{\numberline {5.1}Wyb\IeC {\'o}r chor\IeC {\'o}b}{15}
+\contentsline {section}{\numberline {5.2}Wy\IeC {\'s}wietlanie graf\IeC {\'o}w oraz udzielanie odpowiedzi na pytania}{16}
+\contentsline {section}{\numberline {5.3}Wyszukiwanie konflikt\IeC {\'o}w}{18}
+\contentsline {section}{\numberline {5.4}Wy\IeC {\'s}wietlanie wynik\IeC {\'o}w}{21}
+\contentsline {chapter}{\numberline {6}Dzia\IeC {\l }anie systemu}{24}
+\contentsline {section}{\numberline {6.1}Przypadek 1 - atak astmy i wrz\IeC {\'o}d trawienny}{24}
 \contentsline {section}{\numberline {6.2}Przypadek 2 - migotanie przedsionk\IeC {\'o}w, przewlek\IeC {\l }a choroba nerek i nadci\IeC {\'s}nienie}{28}
-\contentsline {section}{\numberline {6.3}Przypadek 3 - wrz\IeC {\'o}d dwunastnicy i przemijaj\IeC {\k a}cy atak niedokrwienny}{33}
-\contentsline {chapter}{\numberline {7}Podsumowanie}{36}
-\contentsline {section}{\numberline {7.1}Osi\IeC {\k a}gni\IeC {\k e}te cele}{36}
-\contentsline {section}{\numberline {7.2}Problemy przy realizacji pracy}{36}
-\contentsline {section}{\numberline {7.3}Kierunki dalszego rozwoju}{36}
-\contentsline {chapter}{Bibliografia}{38}
+\contentsline {section}{\numberline {6.3}Przypadek 3 - wrz\IeC {\'o}d dwunastnicy i przemijaj\IeC {\k a}cy atak niedokrwienny}{32}
+\contentsline {chapter}{\numberline {7}Podsumowanie}{35}
+\contentsline {section}{\numberline {7.1}Osi\IeC {\k a}gni\IeC {\k e}te cele}{35}
+\contentsline {section}{\numberline {7.2}Problemy przy realizacji pracy}{35}
+\contentsline {section}{\numberline {7.3}Kierunki dalszego rozwoju}{35}
+\contentsline {chapter}{Bibliografia}{37}

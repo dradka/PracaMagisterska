@@ -3,53 +3,65 @@
 \bibitem{Choco3}
 {Choco 3 Solver - User Guide}.
 \newblock \url{http://choco-solver.org/user_guide/1_overview.html}.
+\newblock [Przeglądano 2015-09-29].
 
 \bibitem{CLP}
 {Constraint logic programming - Wikipedia}.
 \newblock \url{https://en.wikipedia.org/wiki/Constraint_logic_programming}.
+\newblock [Przeglądano 2015-09-29].
 
 \bibitem{Graphviz}
 {Graphviz - Graph Visualization Software}.
 \newblock \url{http://www.graphviz.org}.
+\newblock [Przeglądano 2015-09-29].
 
 \bibitem{JPGD}
 {JPGD - Java-based Parser for Graphviz Documents}.
 \newblock \url{http://www.alexander-merz.com/graphviz}.
+\newblock [Przeglądano 2015-09-29].
 
 \bibitem{EclipseSite}
 {The ECLiPSe Constraint Programming System}.
 \newblock \url{http://eclipseclp.org}.
+\newblock [Przeglądano 2015-09-29].
 
 \bibitem{Latoszek-Berendsen}
 {A. Latoszek-Berendsen, H. Tange, H. J. van den Herik, A. Hasman}.
 \newblock {From Clinical Practice Guidelines to Computer-interpretable
   Guidelines}.
+\newblock {\em Methods Inf Med.}, 49(6):550--570, 2010.
 
 \bibitem{Boyd}
-{Cynthia M. Boyd, Jonathan Darer, Chad Boult, Linda P. Fried, Lisa Boult,
-  Albert W. Wu}.
+{C. M. Boyd, J. Darer, C. Boult, L. P. Fried, L. Boult, A. W. Wu}.
 \newblock {Clinical Practice Guidelines and Quality of Care for Older Patients
   With Multiple Comorbid Diseases}.
+\newblock {\em JAMA}, 294(6):716--724, 2005.
 
 \bibitem{Eclipse}
-{Kamil Janczura, Tomasz Gabiga}.
+{K. Janczura, T. Gabiga}.
 \newblock {Wprowadzenie do Programowanie Logicznego z Ograniczeniami z
   wykorzystaniem ECLiPSe.}
 
 \bibitem{Piovesan}
-{Luca Piovesan, Paolo Terenziani}.
+{L. Piovesan, P. Terenziani}.
 \newblock {A Mixed-Initiative approach to the conciliation of Clinical
   Guidelines for comorbid patients}.
 
+\bibitem{niederlinski}
+A.~Niederliński.
+\newblock {\em Programowanie w logice z ograniczeniami. Łagodne wprowadzenie
+  dla platformy ECLiPSe}.
+\newblock Wydawnictwo Pracowni Komputerowej Jacka Skalmierskiego, 2014.
+
 \bibitem{SzWilk}
-{Szymon Wilk, Martin Michalowski, Xing Tan and Wojtek Michalowski}.
+{S. Wilk, M. Michalowski, X. Tan and W. Michalowski}.
 \newblock {Using First-Order Logic to Represent Clinical Practice Guidelines
   and to Mitigate Adverse Interactions}.
 
 \bibitem{SzWilk2}
-{Szymon Wilk, Wojtek Michalowski, Martin Michalowski, Ken Farion, Marisela
-  Mainegra Hing, Subhra Mohapatra}.
+{S. Wilk, W. Michalowski, M. Michalowski, K. Farion, M. M. Hing, S. Mohapatra}.
 \newblock {Mitigation of Adverse Interactions in Pairs of Clinical Practice
   Guidelines Using Constraint Logic Programming}.
+\newblock {\em Journal of Biomedical Informatics}, 46(2):341--353, 2013.
 
 \end{thebibliography}
