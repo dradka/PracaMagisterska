@@ -20,12 +20,13 @@
 \contentsline {section}{\numberline {5.2}Wy\IeC {\'s}wietlanie graf\IeC {\'o}w oraz udzielanie odpowiedzi na pytania}{16}
 \contentsline {section}{\numberline {5.3}Wyszukiwanie konflikt\IeC {\'o}w}{18}
 \contentsline {section}{\numberline {5.4}Wy\IeC {\'s}wietlanie wynik\IeC {\'o}w}{21}
-\contentsline {chapter}{\numberline {6}Dzia\IeC {\l }anie systemu}{24}
-\contentsline {section}{\numberline {6.1}Przypadek 1 - atak astmy i wrz\IeC {\'o}d trawienny}{24}
-\contentsline {section}{\numberline {6.2}Przypadek 2 - migotanie przedsionk\IeC {\'o}w, przewlek\IeC {\l }a choroba nerek i nadci\IeC {\'s}nienie}{28}
-\contentsline {section}{\numberline {6.3}Przypadek 3 - wrz\IeC {\'o}d dwunastnicy i przemijaj\IeC {\k a}cy atak niedokrwienny}{32}
-\contentsline {chapter}{\numberline {7}Podsumowanie}{35}
-\contentsline {section}{\numberline {7.1}Osi\IeC {\k a}gni\IeC {\k e}te cele}{35}
-\contentsline {section}{\numberline {7.2}Problemy przy realizacji pracy}{35}
-\contentsline {section}{\numberline {7.3}Kierunki dalszego rozwoju}{35}
-\contentsline {chapter}{Bibliografia}{37}
+\contentsline {section}{\numberline {5.5}Przyk\IeC {\l }adowe dzia\IeC {\l }anie programu}{23}
+\contentsline {chapter}{\numberline {6}Dzia\IeC {\l }anie systemu}{28}
+\contentsline {section}{\numberline {6.1}Przypadek 1 - atak astmy i wrz\IeC {\'o}d trawienny}{28}
+\contentsline {section}{\numberline {6.2}Przypadek 2 - migotanie przedsionk\IeC {\'o}w, przewlek\IeC {\l }a choroba nerek i nadci\IeC {\'s}nienie}{32}
+\contentsline {section}{\numberline {6.3}Przypadek 3 - wrz\IeC {\'o}d dwunastnicy i przemijaj\IeC {\k a}cy atak niedokrwienny}{36}
+\contentsline {chapter}{\numberline {7}Podsumowanie}{39}
+\contentsline {section}{\numberline {7.1}Osi\IeC {\k a}gni\IeC {\k e}te cele}{39}
+\contentsline {section}{\numberline {7.2}Problemy przy realizacji pracy}{39}
+\contentsline {section}{\numberline {7.3}Kierunki dalszego rozwoju}{39}
+\contentsline {chapter}{Bibliografia}{41}

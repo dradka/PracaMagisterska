@@ -12,7 +12,7 @@ W grafach może zajść sytuacja, w której należy poruszać się po ścieżkac
 \label{fig:sciezki_rownolegle}
 \end{figure}
 
-Program posiada 3 istotne katalogi, które przechowują różnego typy danych. Należą do nich:
+Program posiada trzy istotne katalogi, które przechowują różnego typy danych. Należą do nich:
 \begin{itemize}
 \item{Algorytmy – zawiera pliki o rozszerzeniu dot opisujące grafy procedur medycznych chorób}
 \item{Konflikty – zawiera opisy konfliktów, jakie występują między chorobami oraz zmiany, które należy wprowadzić w przypadku wystąpienia konfliktów}
@@ -49,9 +49,7 @@ Po wybraniu chorób, tzn. po kliknięciu w odpowiednie pola wyboru i kliknięciu
 \section{Wyświetlanie grafów oraz udzielanie odpowiedzi na pytania}
 Ten krok pozwala na utworzenie graficznej reprezentacji wytycznych oraz wybór ścieżki grafu zgodnej z danymi pacjenta. Po wybraniu chorób i kliknięciu przycisku „Dalej” program dla każdej choroby odczytuje za pomocą metody \texttt{GraphFunctions.getGraph} grafy z pliku o rozszerzeniu dot. Następnie, program pobiera korzenie każdego z grafów za pomocą metody \texttt{GraphFunctions.get\-StartNode}. W następnym etapie program wywołuje metodę \texttt{GoForward.goForward}, która przemieszcza się po grafie do momentu, gdy napotka pierwszy węzeł decyzji. Parametrem metody \texttt{goForward} jest m.in. korzeń grafu.
 
-Najpierw \texttt{goForward} wywołuje metodę \texttt{addToTherapy}. Metoda \texttt{addToTherapy} jest wywoływana, jeśli węzeł \texttt{next} zawiera nie więcej niż jedną krawędź wyjściową lub węzeł \texttt{next} jest węzłem zaczynającym ścieżki równoległe i nie jest to węzeł kończący ścieżki równoległe w przypadku, gdy program nie przeszedł jeszcze wszystkich ścieżek równoległych w określonym miejscu. Metoda \texttt{addToTherapy}, jeśli etykieta węzła posiada wartość dawki podaną w nawiasach kwadratowych, dodaje do listy elementów terapii identyfikator węzła, po nim znak równości, a następnie wartość dawki. Gdy węzeł nie posiada podanej dawki, do listy elementów terapii dodawany jest tylko jego identyfikator. 
-
-Następnie program wykonuje pętlę while, której warunek kontynuacji obejmuje 3 przypadki. Pętla ta stanowi część metody \texttt{goForward}. Pierwszy warunek sprawdza, czy węzeł posiada jedną krawędź wyjściową i nie jest to węzeł kończący ścieżki równoległe chyba, że program zakończył przechodzenie po ścieżkach równoległych związanych z tym węzłem. Drugi warunek sprawdza, czy węzeł rozpoczyna ścieżki równoległe, a trzeci czy węzeł kończy ścieżki równoległe. 
+Najpierw \texttt{goForward} dodaje aktualny węzeł do listy elementów terapii. Następnie program wykonuje pętlę while, której warunek kontynuacji obejmuje trzy przypadki. Pętla ta stanowi część metody \texttt{goForward}. Pierwszy warunek sprawdza, czy węzeł posiada jedną krawędź wyjściową. Drugi warunek sprawdza, czy węzeł rozpoczyna ścieżki równoległe, a trzeci czy węzeł kończy ścieżki równoległe. 
 
 Pierwszy warunek jest sprawdzany w kolejnej pętli while, aby dodać do listy elementów terapii wszystkie węzły, które mają tylko jedną krawędź wyjściową, czyli droga, po której należy się poruszać jest jednoznacznie określona. 
 Po wykonaniu tej pętli while uzyskujemy węzeł, który jest liściem (nie posiada żadnej krawędzi wyjściowej), albo ma więcej niż jedną krawędź wyjściową.
@@ -60,7 +58,7 @@ W kolejnym kroku sprawdzany jest dla aktualnego węzła drugi warunek w instrukc
 
 Po wywołaniu metody \texttt{goForward} program wywołuje metodę \texttt{Color.color}, która zaznacza przebytą ścieżkę w grafie. Metoda \texttt{goForward} do listy list o nazwie \texttt{dataIdList} dodawała identyfikatory węzłów, na które program natrafił. Dzięki \texttt{dataIdList} metoda \texttt{color} może pokolorować kontury przebytych węzłów oraz przebyte krawędzie, a także je pogrubić. 
  
-Po wywołaniu metody color wywołana zostaje metoda \texttt{ImageGraph.newImageGraph}, której zadaniem jest wygenerowanie i wyświetlenie nowego obrazu grafu. Na początku metoda zapisuje do pliku wynik metody \texttt{toString} wywołanej dla grafu. Następnie wywoływana jest metoda \texttt{ImageGraph.getImageGraphPath}, która uruchamia program dot.exe i tworzy z zapisanego wcześniej pliku tekstowego graf w postaci obrazu w formacie PNG. W kolejnym kroku metoda \texttt{ImageGraph.newImageGraph} tworzy obiekt klasy \texttt{BufferedImage} z wygenerowanym w poprzednim kroku obrazem. Później metoda dokonuje skalowania obrazu tak, aby mógł on się zmieścić na etykiecie. 
+Po wywołaniu metody \texttt{color} wywołana zostaje metoda \texttt{ImageGraph.newImageGraph}, której zadaniem jest wygenerowanie i wyświetlenie nowego obrazu grafu. Na początku metoda zapisuje do pliku wynik metody \texttt{toString} wywołanej dla grafu. Następnie wywoływana jest metoda \texttt{ImageGraph.getImageGraphPath}, która uruchamia program dot.exe i tworzy z zapisanego wcześniej pliku tekstowego graf w postaci obrazu w formacie PNG. W kolejnym kroku metoda \texttt{ImageGraph.newImageGraph} tworzy obiekt klasy \texttt{BufferedImage} z wygenerowanym w poprzednim kroku obrazem. Później metoda dokonuje skalowania obrazu tak, aby mógł on się zmieścić na etykiecie. 
 
 Jeśli szerokość lub wysokość obrazu przekracza próg 900 pikseli, obraz zmniejszany jest do 2/3 wielkości tak, aby był on czytelny (w tym przypadku do etykiety dodawane są suwaki). Ponadto, jeżeli szerokość i wysokość obrazu jest mniejsza od wielkości etykiety, to na etykiecie umieszczany jest obraz bez skalowania, w skali 1:1.
  
@@ -96,7 +94,7 @@ Po wykonaniu metody \texttt{setVariables} program dodaje ograniczenia konfliktó
 
 W następnym kroku program wywołuje metodę \texttt{findSolution} obiektu klasy \texttt{Solver}, które dokonuje znalezienie rozwiązania problemu. Jeśli rozwiązanie istnieje, do \texttt{avoidedConflicts} dodawany jest numer konfliktu na liście \texttt{conflictsList}. Jeśli natomiast nie ma rozwiązania, do \texttt{foundConflicts} dodawany jest konflikt oraz do \texttt{interactionsList} dodawane są zmiany odpowiadające konfliktowi. Ponadto, gdy nie ma rozwiązania program wywołuje metodę \texttt{execute\-Interactions}, która dokonuje zmian w terapiach, a także program wywołuje rekurencyjnie metodę \texttt{findSolutions}, aby sprawdzić, czy wprowadzone zmiany nie spowodowały wystąpienia konfliktów, dla których już dokonało się przeglądu, oraz aby sprawdzić kolejne konflikty. Po wywołaniu metody \texttt{findSolutions} program ustawia wartość stop na true, co powoduje, że program nie sprawdza wystąpienia kolejnych konfliktów, ponieważ zrobiła już to wywołana rekurencyjnie metoda \texttt{findSolutions}. 
 
-Ostatecznie, program dokonuje rozwiązania problemu z tymi ograniczeniami w postaci konfliktów, które znajdują się na liście \texttt{avoidedConflicts}. Po wygenerowaniu pierwszego rozwiązania program tworzy listę o nazwie \texttt{solutions}. Następnie w pętli do/while, która działa dopóki istnieje kolejne rozwiązanie, program zapisuje do zmiennej \texttt{solution} po przecinku nazwy zmiennych terapii, które posiadają wartość równą jeden. Następnie, jeśli zmienna \texttt{solution} nie znajduje się jeszcze w liście \texttt{solutions}, zmienna dodawana jest do tej listy. Na końcu program do listy \texttt{therapies} dodaje rozwiązania. Polega to na tym, że dla każdego elementu listy \texttt{solutions} o nazwie \texttt{elem} program tworzy listę o nazwie \texttt{therapiesSolution}. Następnie tworzy tablicę o nazwie \texttt{array} zawierającą elementy, które były w zmiennej \texttt{elem} rozdzielone przecinkami. W kolejnym kroku dla każdej choroby znajdującej się w liście \texttt{diseases} szuka elementu w tablicy \texttt{array}, którego nazwa rozpoczyna się od nazwy choroby. Następnie do listy \texttt{therapiesSolution} dodaje listę z \texttt{therapiesDiseases} o numerze równym numerowi choroby i podnumerze równym X znajdującym się w nazwie zmiennej terapii „choroba\_terapiaX”. Na końcu program wywołuje metodę \texttt{setResults}, która pozwala na zaprezentowanie wyników. 
+Ostatecznie, program dokonuje rozwiązania problemu z tymi ograniczeniami w postaci konfliktów, które znajdują się na liście \texttt{avoidedConflicts}. Po wygenerowaniu pierwszego rozwiązania program tworzy listę o nazwie \texttt{solutions}. Następnie w pętli do/while, która działa dopóki istnieje kolejne rozwiązanie, program zapisuje do zmiennej \texttt{solution} po przecinku nazwy zmiennych terapii, które posiadają wartość równą jeden. Następnie, jeśli zmienna \texttt{solution} nie znajduje się jeszcze w liście \texttt{solutions}, zmienna dodawana jest do tej listy. Na końcu program do listy \texttt{therapies} dodaje rozwiązania. Polega to na tym, że dla każdego elementu listy \texttt{solutions} o nazwie \texttt{elem} program tworzy listę o nazwie \texttt{therapiesSolution}. Następnie tworzy tablicę o nazwie \texttt{array} zawierającą elementy, które były w zmiennej \texttt{elem} rozdzielone przecinkami. W kolejnym kroku dla każdej choroby znajdującej się w liście \texttt{diseases} szuka elementu w tablicy \texttt{array}, którego nazwa rozpoczyna się od nazwy choroby. Następnie do listy \texttt{therapiesSolution} dodaje listę z \texttt{therapiesDiseases} o numerze równym numerowi choroby i podnumerze równym X znajdującym się w nazwie zmiennej terapii „choroba\_terapiaX”. Lista \texttt{therapiesDiseases} zawiera terapie wszystkich wybranych chorób zgodne z udzielonymi odpowiedziami na pytania znajdujące się w wytycznych. Na końcu program wywołuje metodę \texttt{setResults}, która pozwala na zaprezentowanie wyników. 
 
 \section{Wyświetlanie wyników}
 Ostatni krok polega na wyświetleniu grafów wynikowych prezentujących rozwiązania, a także utworzeniu listy znalezionych konfliktów wraz z wprowadzanymi zmianami. Program prezentuje wyniki za pomocą metody \texttt{setResults}. Na początku metoda wywołuje inną metodę o nazwie \texttt{setGraphs}. Zajmuje się ona wyświetleniem wyników w postaci grafów. Najpierw metoda usuwa wszystkie zakładki z rozwiązaniami z zakładki „Grafy”. W kolejnym kroku wywołuje dwie pętle, z których druga się zawiera w pierwszej. Pierwsza pętla porusza się po rozwiązaniach, druga po terapiach pojedynczego rozwiązania. Dla każdej terapii, która jest związana z określoną chorobą, tworzony jest odpowiedni graf. Następnie metoda wywołuje pętlę po grupach zmian poszczególnych konfliktów oraz po pojedynczych zmianach. 
@@ -109,3 +107,45 @@ W przypadku, gdy typ zmiany to „remove”, program przypisuje znalezionemu wę
 
 Po wywołaniu metody \texttt{setGraphs} program tworzy rozwiązania tekstowe. Polega to na utworzeniu dla każdego rozwiązania i dla każdej choroby pojedynczego rozwiązania dwóch pól tekstowych. Pierwsze z nich przedstawia etykiety przebytych węzłów, a drugie ich identyfikatory. Etykietę węzła otrzymuje się przez znalezienie węzła o identyfikatorze równym elementowi terapii, a następnie odczytanie jego etykiety. Dla węzła pytającego program wypisuje dodatkowo etykietę wybranej krawędzi. Jeśli jest taka potrzeba, program szuka etykiety węzła w pliku nazwy.txt. Drugie pole tekstowe, z identyfikatorami, program tworzy wypisując elementy terapii z listy. Elementy są oddzielone od siebie znakiem nowej linii. Po utworzeniu pól tekstowych program umieszcza je na panelu, który jest z kolei umieszczany na zakładce. Na końcu program wypisuje w odpowiednim polu tekstowym konflikty i związane z nimi zmiany. Podczas wypisywania konfliktów i zmian program szuka odpowiednich etykiet węzłów w grafie lub w pliku nazwy.txt. 
 
+\section{Przykładowe działanie programu}
+W tym przykładzie zostały wybrane dwie choroby: migotanie przedsionków (ang. attrial fibrillation, rys. \ref{fig:afib_przyklad}) oraz przewlekła choroba nerek (ang. chronic kidney disease, rys. \ref{fig:ckd_przyklad}).
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{img/afib-ver-4_przyklad.png}
+\caption{Wytyczne dla migotania przedsionków}
+\label{fig:afib_przyklad}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{img/ckd-simplified-ver-5_przyklad.png}
+\caption{Wytyczne dla przewlekłej choroby nerek}
+\label{fig:ckd_przyklad}
+\end{figure}
+Węzły grafów posiadają etykiety zawierające na końcu w nawiasach identyfikatory swoich węzłów. Dla pierwszej z chorób na początku program zatrzymuje się na pierwszym pytaniu „AFib Type?”, zapisując wcześniej do listy elementów terapii węzeł startowy, węzeł określający chorobę oraz węzeł „Perform CHA2DS2-VASc test”. Po udzieleniu odpowiedzi „paroxysmal” program dodaje do listy „d\_paroxys\_afib?paroxysmal”, a następnie trzy węzły: „Short-term therapy: BB”, „Rhythm control therapy: amiodarone” i „Long-term oral anticoagulation: warfarin”. Następnie program dodaje węzeł rozpoczynający ścieżki równoległe, następnie dwa węzły znajdujące się na ścieżkach równoległych (najpierw węzeł „CCB”, następnie węzeł „ACE inhibitor”), a później węzeł kończący ścieżki równoległe. Ostatecznie program dodaje węzeł końcowy grafu. 
+
+Dla drugiej choroby, czyli przewlekłej choroby nerek, program zatrzymuje się na pytaniu „GFR level?”, dodając po drodze węzeł startowy oraz węzeł choroby. Po udzieleniu odpowiedzi „<40” program dodaje do listy „d\_gfr?<40”, a następnie trafia na węzeł rozpoczynający ścieżki równoległe, który również jest dodawany do listy. W kolejnym kroku program zatrzymuje się na  pytaniu znajdującym się na lewej równoległej krawędzi: „Anemia present?”. Po udzieleniu odpowiedzi „no” program dodaje do listy „d\_anemia\_present?no”, a następnie wraca do prawej krawędzi równoległej i zatrzymuje się na pytaniu „Mineral metabolism abnormalities?”. Po udzieleniu odpowiedzi „absent” program dodaje do listy „d\_metabolism\_anomalies\_present?absent”. Następnie program umieszcza na liście węzeł kończący ścieżki równoległe, który jednocześnie rozpoczyna kolejne ścieżki równoległe. W kolejnym kroku program dodaje element znajdujący się na lewej krawędzi równoległej, czyli „CV risk management”, a następnie elementy znajdujące się na prawej krawędzi równoległej, czyli „Antiplatelets: aspirin” oraz „ACE inhibitor”. Ostatecznie dodawany jest węzeł kończący ścieżki równoległe, węzeł „Lifestyle management” oraz węzeł końcowy grafu.
+
+Po udzieleniu odpowiedzi na pytania i kliknięciu przycisku „Dalej” program przechodzi do fazy wyszukiwania konfliktów. Najpierw program odczytuje plik z konfliktami dotyczącymi migotania przedsionków oraz przewlekłej choroby nerek. Plik ten ma następującą zawartość:
+\begin{verbatim}
+c_htn c_ckd:remove a_step1_acei,remove a_step1_ccb
+c_afib c_ckd c_htn:remove a_step3_diuretric
+c_afib c_ckd:replace a_antiplatelets with warfarin,replace a_rct_a with BB
+c_afib c_ckd &CHA2DS2-VASc>2:replace a_mt_asa with warfarin2
+c_afib c_ckd &CHA2DS2-VASc<=1:replace a_oa_w with aspirin1,
+replace a_ltoa_w with aspirin2
+\end{verbatim}
+Następnie program uruchamia okienko dialogowe z jedną zmienną do uzupełnienia o nazwie CHA2\-DS2-VASc. Po przypisaniu do tej zmiennej wartości 5 program zaczyna wyszukiwać konflikty. Ostatecznie program znajduje dwa konflikty: (c\_afib c\_ckd) oraz (c\_afib c\_ckd \&CHA2DS2-VASc>2). Pierwsze dwa konflikty nie wystąpiły, ponieważ nie wybrano choroby o identyfikatorze c\_htn. Ostatni konflikt nie wystąpił natomiast dlatego, że zmienna CHA2DS2-VASc przyjmuje wartość większą od 1.
+
+W kolejnym kroku program tworzy zmodyfikowane grafy wynikowe, które zawierają zmiany wprowadzone w celu uniknięcia konfliktów. Graf dla migotania przedsionków został przedstawiony na rys. \ref{fig:afib_rozw}, natomiast graf dla przewlekłej choroby nerek jest na rys. \ref{fig:ckd_rozw}. W grafie dla migotania przedsionków zamieniony został węzeł „Maintenance therapy: aspirin” na węzeł „Maintenance therapy: Warfarin” oraz węzeł „Rhytm control therapy: amiodarone” na węzeł „BB”. W grafie dla przewlekłej choroby nerek został zamieniony węzeł „Antiplatelets: aspirin” na węzeł „Warfarin”.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{img/rozwiazanie1afib-ver-4.png}
+\caption{Wytyczne dla migotania przedsionków}
+\label{fig:afib_rozw}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{img/rozwiazanie1ckd-simplified-ver-5.png}
+\caption{Wytyczne dla przewlekłej choroby nerek}
+\label{fig:ckd_rozw}
+\end{figure}

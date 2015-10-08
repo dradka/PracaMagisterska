@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.1)  3 OCT 2015 18:05
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.1)  8 OCT 2015 13:15
 entering extended mode
 **praca_magisterska.tex
 
@@ -1274,90 +1274,126 @@ aca magisterska/img/wybor_chorob.png>] [16] [17]
 File: img/wyswietlanie_grafow.png Graphic file (type png)
 
 <use img/wyswietlanie_grafow.png>
-Package pdftex.def Info: img/wyswietlanie_grafow.png used on input line 83.
+Package pdftex.def Info: img/wyswietlanie_grafow.png used on input line 81.
 (pdftex.def)             Requested size: 426.79135pt x 226.68144pt.
  [18 <C:/Users/Darek/Desktop/PracaMagisterska-master/PracaMagisterska-master/Pr
 aca magisterska/img/wyswietlanie_grafow.png>]
-[19] [20] [21] [22]) [23]
+[19] [20] [21] <img/afib-ver-4_przyklad.png, id=94, 419.5675pt x 685.56125pt>
+File: img/afib-ver-4_przyklad.png Graphic file (type png)
+
+<use img/afib-ver-4_przyklad.png>
+Package pdftex.def Info: img/afib-ver-4_przyklad.png used on input line 114.
+(pdftex.def)             Requested size: 209.78323pt x 342.77979pt.
+ [22]
+<img/ckd-simplified-ver-5_przyklad.png, id=98, 1016.79875pt x 1040.88875pt>
+File: img/ckd-simplified-ver-5_przyklad.png Graphic file (type png)
+
+<use img/ckd-simplified-ver-5_przyklad.png>
+Package pdftex.def Info: img/ckd-simplified-ver-5_przyklad.png used on input li
+ne 120.
+(pdftex.def)             Requested size: 406.7123pt x 416.34813pt.
+ [23 <C:/Users/Darek/Desktop/PracaMagisterska-master/PracaMagisterska-master/Pr
+aca magisterska/img/afib-ver-4_przyklad.png>] [24 <C:/Users/Darek/Desktop/Praca
+Magisterska-master/PracaMagisterska-master/Praca magisterska/img/ckd-simplified
+-ver-5_przyklad.png>]
+<img/rozwiazanie1afib-ver-4.png, id=108, 470.75874pt x 685.56125pt>
+File: img/rozwiazanie1afib-ver-4.png Graphic file (type png)
+
+<use img/rozwiazanie1afib-ver-4.png>
+Package pdftex.def Info: img/rozwiazanie1afib-ver-4.png used on input line 142.
+
+(pdftex.def)             Requested size: 235.3788pt x 342.77979pt.
+
+<img/rozwiazanie1ckd-simplified-ver-5.png, id=109, 721.69624pt x 992.70876pt>
+File: img/rozwiazanie1ckd-simplified-ver-5.png Graphic file (type png)
+
+<use img/rozwiazanie1ckd-simplified-ver-5.png>
+Package pdftex.def Info: img/rozwiazanie1ckd-simplified-ver-5.png used on input
+ line 148.
+(pdftex.def)             Requested size: 288.67339pt x 397.07648pt.
+ [25]) [26 <C:/Users/Darek/Desktop/PracaMagisterska-master/PracaMagisterska-mas
+ter/Praca magisterska/img/rozwiazanie1afib-ver-4.png>] [27 <C:/Users/Darek/Desk
+top/PracaMagisterska-master/PracaMagisterska-master/Praca magisterska/img/rozwi
+azanie1ckd-simplified-ver-5.png>]
 ("C:\Users\Darek\Desktop\PracaMagisterska-master\PracaMagisterska-master\Praca 
 magisterska\rozdzial6.tex"
 Rozdzia\l  6.
-<img/asthma.png, id=101, 788.9475pt x 697.60625pt>
+<img/asthma.png, id=121, 603.25375pt x 771.88374pt>
 File: img/asthma.png Graphic file (type png)
  <use img/asthma.png>
 Package pdftex.def Info: img/asthma.png used on input line 16.
-(pdftex.def)             Requested size: 394.47278pt x 348.80226pt.
+(pdftex.def)             Requested size: 301.62613pt x 385.94092pt.
 
-[24
+[28
 
 
 
-] [25 <C:/Users/Darek/Desktop/PracaMagisterska-master/PracaMagisterska-master/P
+] [29 <C:/Users/Darek/Desktop/PracaMagisterska-master/PracaMagisterska-master/P
 raca magisterska/img/asthma.png>]
-<img/peptic-ulcer.png, id=110, 714.67pt x 693.59125pt>
+<img/peptic-ulcer.png, id=131, 571.13374pt x 767.86874pt>
 File: img/peptic-ulcer.png Graphic file (type png)
 
 <use img/peptic-ulcer.png>
 Package pdftex.def Info: img/peptic-ulcer.png used on input line 24.
-(pdftex.def)             Requested size: 357.33412pt x 346.79477pt.
- [26 <C:/Users/Darek/Desktop/PracaMagisterska-master/PracaMagisterska-master/Pr
-aca magisterska/img/peptic-ulcer.png>] [27]
-<img/afib-ver-4.png, id=118, 417.56pt x 685.56125pt>
+(pdftex.def)             Requested size: 285.56618pt x 383.93343pt.
+ [30 <C:/Users/Darek/Desktop/PracaMagisterska-master/PracaMagisterska-master/Pr
+aca magisterska/img/peptic-ulcer.png>] [31]
+<img/afib-ver-4.png, id=139, 417.56pt x 685.56125pt>
 File: img/afib-ver-4.png Graphic file (type png)
  <use img/afib-ver-4.png>
 Package pdftex.def Info: img/afib-ver-4.png used on input line 54.
 (pdftex.def)             Requested size: 208.77948pt x 342.77979pt.
 
-[28 <C:/Users/Darek/Desktop/PracaMagisterska-master/PracaMagisterska-master/Pra
+[32 <C:/Users/Darek/Desktop/PracaMagisterska-master/PracaMagisterska-master/Pra
 ca magisterska/img/afib-ver-4.png>]
-<img/ckd-simplified-ver-5.png, id=123, 1016.79875pt x 1040.88875pt>
+<img/ckd-simplified-ver-5.png, id=144, 1016.79875pt x 1040.88875pt>
 File: img/ckd-simplified-ver-5.png Graphic file (type png)
 
 <use img/ckd-simplified-ver-5.png>
 Package pdftex.def Info: img/ckd-simplified-ver-5.png used on input line 61.
 (pdftex.def)             Requested size: 406.7123pt x 416.34813pt.
- [29 <C:/Users/Darek/Desktop/PracaMagisterska-master/PracaMagisterska-master/Pr
-aca magisterska/img/ckd-simplified-ver-5.png>] <img/htn-ver-3.png, id=129, 679.
+ [33 <C:/Users/Darek/Desktop/PracaMagisterska-master/PracaMagisterska-master/Pr
+aca magisterska/img/ckd-simplified-ver-5.png>] <img/htn-ver-3.png, id=149, 679.
 53876pt x 1113.15875pt>
 File: img/htn-ver-3.png Graphic file (type png)
 
 <use img/htn-ver-3.png>
 Package pdftex.def Info: img/htn-ver-3.png used on input line 68.
 (pdftex.def)             Requested size: 339.76855pt x 556.57802pt.
- [30 <C:/Users/Darek/Desktop/PracaMagisterska-master/PracaMagisterska-master/Pr
-aca magisterska/img/htn-ver-3.png>] [31]
-<img/du.png, id=137, 667.49374pt x 609.27625pt>
+ [34 <C:/Users/Darek/Desktop/PracaMagisterska-master/PracaMagisterska-master/Pr
+aca magisterska/img/htn-ver-3.png>] [35]
+<img/du.png, id=158, 481.8pt x 683.55376pt>
 File: img/du.png Graphic file (type png)
  <use img/du.png>
 Package pdftex.def Info: img/du.png used on input line 106.
-(pdftex.def)             Requested size: 333.74606pt x 304.63737pt.
- [32 <C:/Users/Darek/Desktop/PracaMagisterska-master/PracaMagisterska-master/Pr
-aca magisterska/img/du.png>] <img/tia.png, id=142, 852.18375pt x 868.24374pt>
+(pdftex.def)             Requested size: 240.8994pt x 341.77605pt.
+ [36 <C:/Users/Darek/Desktop/PracaMagisterska-master/PracaMagisterska-master/Pr
+aca magisterska/img/du.png>] <img/tia.png, id=163, 629.35126pt x 943.525pt>
 File: img/tia.png Graphic file (type png)
-
-<use img/tia.png>
+ <use img/tia.png>
 Package pdftex.def Info: img/tia.png used on input line 113.
-(pdftex.def)             Requested size: 426.09082pt x 434.1208pt.
- [33 <C:/Users/Darek/Desktop/PracaMagisterska-master/PracaMagisterska-master/Pr
-aca magisterska/img/tia.png>])
+(pdftex.def)             Requested size: 314.67485pt x 471.76134pt.
+
+[37 <C:/Users/Darek/Desktop/PracaMagisterska-master/PracaMagisterska-master/Pra
+ca magisterska/img/tia.png>])
 Overfull \hbox (10.49992pt too wide) in paragraph at lines 135--208
 \T1/lmr/bx/n/10 c_du a_aspirin not(a_ppi) a_dipyridamole:add a_ppi2 after d_ze_
 syndrome?positive,
  []
 
-[34]
+[38]
 ("C:\Users\Darek\Desktop\PracaMagisterska-master\PracaMagisterska-master\Praca 
 magisterska\rozdzial7.tex"
 Rozdzia\l  7.
-[35
+[39
 
 
 
-]) [36]
+]) [40]
 ("C:\Users\Darek\Desktop\PracaMagisterska-master\PracaMagisterska-master\Praca 
 magisterska\praca_magisterska.bbl")
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-[37
+[41
 
 
 
@@ -1379,10 +1415,10 @@ magisterska\rozdzial6.aux")
 ("C:\Users\Darek\Desktop\PracaMagisterska-master\PracaMagisterska-master\Praca 
 magisterska\rozdzial7.aux")) ) 
 Here is how much of TeX's memory you used:
- 17621 strings out of 493921
- 323602 string characters out of 3144877
- 355328 words of memory out of 3000000
- 20476 multiletter control sequences out of 15000+200000
+ 17645 strings out of 493921
+ 324398 string characters out of 3144877
+ 354372 words of memory out of 3000000
+ 20496 multiletter control sequences out of 15000+200000
  45597 words of font info for 42 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  48i,15n,54p,2219b,539s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1395,9 +1431,9 @@ m Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><D:/Program Files (x8
 e1/public/lm/lmr12.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm
 /lmri10.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmsy10.pfb
 ><D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmtt10.pfb>
-Output written on praca_magisterska.pdf (39 pages, 984127 bytes).
+Output written on praca_magisterska.pdf (43 pages, 1141731 bytes).
 PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
+ 210 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 78 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 98 words of extra memory for PDF output out of 10000 (max. 10000000)
 
