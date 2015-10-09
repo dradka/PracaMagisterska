@@ -24,9 +24,9 @@
 \contentsline {chapter}{\numberline {6}Dzia\IeC {\l }anie systemu}{28}
 \contentsline {section}{\numberline {6.1}Przypadek 1 - atak astmy i wrz\IeC {\'o}d trawienny}{28}
 \contentsline {section}{\numberline {6.2}Przypadek 2 - migotanie przedsionk\IeC {\'o}w, przewlek\IeC {\l }a choroba nerek i nadci\IeC {\'s}nienie}{32}
-\contentsline {section}{\numberline {6.3}Przypadek 3 - wrz\IeC {\'o}d dwunastnicy i przemijaj\IeC {\k a}cy atak niedokrwienny}{36}
-\contentsline {chapter}{\numberline {7}Podsumowanie}{39}
-\contentsline {section}{\numberline {7.1}Osi\IeC {\k a}gni\IeC {\k e}te cele}{39}
-\contentsline {section}{\numberline {7.2}Problemy przy realizacji pracy}{39}
-\contentsline {section}{\numberline {7.3}Kierunki dalszego rozwoju}{39}
-\contentsline {chapter}{Bibliografia}{41}
+\contentsline {section}{\numberline {6.3}Przypadek 3 - wrz\IeC {\'o}d dwunastnicy i przemijaj\IeC {\k a}cy atak niedokrwienny}{39}
+\contentsline {chapter}{\numberline {7}Podsumowanie}{44}
+\contentsline {section}{\numberline {7.1}Osi\IeC {\k a}gni\IeC {\k e}te cele}{44}
+\contentsline {section}{\numberline {7.2}Problemy przy realizacji pracy}{44}
+\contentsline {section}{\numberline {7.3}Kierunki dalszego rozwoju}{44}
+\contentsline {chapter}{Bibliografia}{46}

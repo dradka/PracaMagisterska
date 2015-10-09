@@ -44,10 +44,18 @@ Konflikty:\\*
 c\_pe a\_oral\_cortico:replace a\_oral\_cortico with a\_inh\_cortico2\\*
 \textbf{c\_pe a\_nsaid:add ppi after a\_nsaid}\\*
 a\_et a\_inh\_cortico:replace a\_inh\_cortico with a\_oral\_cortico2
+
+Graf wynikowy dla ataku astmy przedstawiono na rys. \ref{fig:rozw_ae}. Graf wynikowy dla wrzodu trawiennego jest identyczny jak ten z rys. \ref{fig:pu}.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{img/rozwiazanie1asthma.png}
+\caption{Graf wynikowy dla ataku astmy}
+\label{fig:rozw_ae}
+\end{figure}
 \newpage
 \section{Przypadek 2 - migotanie przedsionków, przewlekła choroba nerek i nadciśnienie}
 Wytyczne dla migotania przedsionków (ang. \textit{atrial fibrillation}) przedstawiono na rys. \ref{fig:afib}.\\*
-Wytyczne dla przewlekłej choroby nerek (ang. \textit{chronic kidney disease}) przedstawiono na rys. \ref{fig:htn}.\\*
+Wytyczne dla przewlekłej choroby nerek (ang. \textit{chronic kidney disease}) przedstawiono na rys. \ref{fig:ckd}.\\*
 Wytyczne dla nadciśnienia (ang. \textit{hypertension}) przedstawiono na rys. \ref{fig:htn}.
 \begin{figure}[H]
 \centering
@@ -97,6 +105,28 @@ Konflikty:\\*
 \textbf{c\_afib c\_ckd:replace a\_antiplatelets with warfarin,replace a\_rct\_a with BB}\\*
 \textbf{c\_afib c\_ckd \&CHA2DS2-VASc>2:replace a\_mt\_asa with warfarin2}\\*
 c\_afib c\_ckd \&CHA2DS2-VASc<=1:replace a\_oa\_w with aspirin1,replace a\_ltoa\_w with aspirin2
+
+Graf wynikowy dla migotania przedsionków przedstawiono na rys. \ref{fig:rozw_afib}, dla przewlekłej choroby nerek na rys. \ref{fig:rozw_ckd}, natomiast dla nadciśnienia na rys. \ref{fig:rozw_htn}.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{img/rozwiazanie1afib-ver-4.png}
+\caption{Graf wynikowy dla migotania przedsionków}
+\label{fig:rozw_afib}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.4]{img/rozwiazanie1ckd-simplified-ver-5.png}
+\caption{Graf wynikowy dla przewlekłej choroby nerek}
+\label{fig:rozw_ckd}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{img/rozwiazanie1htn-ver-3.png}
+\caption{Graf wynikowy dla nadciśnienia}
+\label{fig:rozw_htn}
+\end{figure}
+
+
 \newpage
 \section{Przypadek 3 - wrzód dwunastnicy i przemijający atak niedokrwienny}
 Wytyczne dla wrzodu dwunastnicy (ang. \textit{duodenal ulcer}) przedstawiono na rys. \ref{fig:du}.\\*
@@ -135,3 +165,17 @@ Wytyczne dla przemijającego ataku niedokrwiennego (ang. \textit{transient ische
 Konflikty:\\*
 c\_du a\_aspirin not(a\_ppi) not(a\_dipyridamole):replace a\_aspirin with cl\\*
 \textbf{c\_du a\_aspirin not(a\_ppi) a\_dipyridamole:add a\_ppi2 after d\_ze\_syndrome?positive, decrease\_dosage a\_aspirin 50}
+
+Graf wynikowy dla wrzodu dwunastnicy przedstawiono na rys. \ref{fig:rozw_du}, natomiast dla przemijającego ataku niedokrwiennego na rys. \ref{fig:rozw_tia}.
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{img/rozwiazanie1du.png}
+\caption{Graf wynikowy dla wrzodu dwunastnicy}
+\label{fig:rozw_du}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{img/rozwiazanie1tia.png}
+\caption{Graf wynikowy dla przemijającego ataku niedokrwiennego}
+\label{fig:rozw_tia}
+\end{figure}
