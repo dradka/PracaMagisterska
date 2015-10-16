@@ -1,118 +1,131 @@
 \chapter{Działanie systemu}
-Działanie systemu zostanie zaprezentowane w oparciu o kilka przykładów. Dla każdego przykładu przedstawione zostały grafy z zaznaczonymi ścieżkami, które zostały wybrane podczas etapu udzielania odpowiedzi. Odpowiedzi na pytania są także przedstawione w formie tekstowej. Następnie, dla każdego przykładu przedstawiono listę konfliktów, które mogą wystąpić oraz zmiany, jakie należy wprowadzić w przypadku ich wystąpienia. Węzły grafów posiadają etykiety, które zawierają na końcu w nawiasach identyfikatory swoich węzłów. Identyfikatory te są używane przy opisie konfliktów oraz zmian. Pogrubioną czcionką zaznaczono znalezione konflikty.
-% SW: W obecnej formie ta sekcja jest bardzo skrótowa. Powinien Pan w "rozbiegówce" wyjaśnić, że pokaże Pan działanie systemu na kilku przykładach. Większość to rzeczywiste wytyczne (uproszczone na potrzeby testowania. Wykorzystywane są też przykłady sztuczne demonstrujące zachowanie algorytmu w granicznych wypadkach (tutaj chodzi mi o przykład, gdzie w ramach usuwania jednego konfliktu wprowadzanych jest kilka zmian). Jeśli natomiast chodzi o przykłady rzeczywiste, to dodałbym także przykład z dawkami leków -- brakuje go do pełnej demonstracji Pana dokonań.
+W tym rozdziale zaprezentowane działanie stworzonego systemu z wykorzystaniem wybranych przykładów wytycznych klinicznych (wszystkie wytyczne zostały skonsultowane z lekarzami, przy czym część została uproszczona). Dla każdego przykładu przedstawione zostały grafy reprezentujące zastosowane wytyczne. Na grafach tych zaznaczono ścieżki, które zostały wybrane podczas etapu zbierania danych pacjenta i udzielania odpowiedzi na pytania związane z węzłami decyzyjnymi. Odpowiedzi na pytania są także przedstawione w formie tekstowej. Następnie, dla każdego przykładu przedstawiono listę możliwych konfliktów oraz zmiany, jakie należy wprowadzić w przypadku ich wystąpienia (do opisu zmian wykorzystano składnię wprowadzoną w rozdziale \ref{sect:revisions}. W celu zachowania większej zwięzłości prezentacji w opisach konfliktów i wymaganych zmian zastosowano identyfikatory węzłów -- są one przedstawione na grafach (w nawiasach po etykietach poszczególnych węzłów). Ponadto dla każdego przykładu pogrubioną czcionką zaznaczono znalezione konflikty (nie wszystkie możliwe konflikty musiały wystąpić).
 
-% SW: Również na wstępie powinien Pan wyjaśnić, że opisując poszczególne przykłady pokaże Pan rozważane wytyczne w formie grafów z zaznaczonymi ścieżkami odpowiadającymi dostępnym danym pacjenta, dostępną wiedzę na temat konfliktów i sposobów ich rozwiązania, a także wynikowe grafy (a przynajmniej ich zmodyfikowane fragmenty). Przedstawiając konflikty powinien zaznaczyć Pan te, które zostały wykryte i usunięte dla danego pacjenta. Wreszcie konflikty i sposoby ich usunięcia powinien Pan przedstawić korzystając ze składni, którą Pan zaproponował (jest to bardzo eleganckie rozwiązanie i warto się nim pochwalić).
+\section{Przykład 1 - atak astmy i wrzód trawienny}
+Wytyczne dla ataku astmy (ang. \textit{asthma exacerbation}) przedstawiono na rys. \ref{fig:ag_ae}, natomiast wytyczne dla wrzodu trawiennego (ang. \textit{peptic ulcer}) przedstawiono na rys. \ref{fig:pu}.
 
-\section{Przypadek 1 - atak astmy i wrzód trawienny}
-Wytyczne dla ataku astmy (ang. \textit{asthma exacerbation}) przedstawiono na rys. \ref{fig:ag_ae}.\\*
-Wytyczne dla wrzodu trawiennego (ang. \textit{peptic ulcer}) przedstawiono na rys. \ref{fig:pu}.
-
-% SW: Każdy graf, zestaw danych pacjenta oraz lista konfliktów powinien zostac potraktowany jako rysunek z numerem i tytułem (wprowadziłem odpowiednią zmianę poniżej), a w tekście powinno się do niego znaleźć odwołanie).
-
-% SW: Warto byłoby ujednolicić wszystkie diagramy, aby w wierzchołku kontekstowym pojawiał sie zawsze akronim lub nazwa choroby. Obecnie mamy albo choroby, albo zdania "Patient diagnosed with ...".  
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{img/asthma.png}
+\includegraphics[scale=0.45]{img/asthma.png}
 \caption{Wytyczne dla ataku astmy}
 \label{fig:ag_ae}
 \end{figure}
 
-\newpage
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{img/peptic-ulcer.png}
+\includegraphics[scale=0.45]{img/peptic-ulcer.png}
 \caption{Wytyczne dla wrzodu trawiennego}
 \label{fig:pu}
 \end{figure}
-\newpage
-\noindent Odpowiedzi na pytania:
+
+Dane opisujące stan pacjenta (odpowiedzi na pytania z wytycznych) są następujące:
 \begin{enumerate}
 \item{Atak astmy:
 	\begin{itemize}
-	\item{Respiratory arrest?: no}
-	\item{Response to treatment?: good}
+	\item{Respiratory arrest?: no (d\_arrest?no)}
+	\item{Response to treatment?: good (d\_response?good)}
 	\end{itemize}
 }
 \item{Wrzód trawienny:
 	\begin{itemize}
-	\item{Complicated ulcer symptoms?: yes}
+	\item{Complicated ulcer symptoms?: yes (d\_symptoms?yes)}
 	\end{itemize}
 }
 \end{enumerate}
-Konflikty:\\*
-c\_pe a\_oral\_cortico:replace a\_oral\_cortico with a\_inh\_cortico2\\*
-\textbf{c\_pe a\_nsaid:add ppi after a\_nsaid}\\*
-a\_et a\_inh\_cortico:replace a\_inh\_cortico with a\_oral\_cortico2
 
-Graf wynikowy dla ataku astmy przedstawiono na rys. \ref{fig:rozw_ae}. Graf wynikowy dla wrzodu trawiennego jest identyczny jak ten z rys. \ref{fig:pu}.
+Dla rozważanych wytycznych możliwe są następujące konflikty:
+\begin{enumerate}
+\item c\_pe a\_oral\_cortico: replace a\_oral\_cortico with a\_inh\_cortico2
+\item \textbf{c\_pe a\_nsaid: add a\_ppi after a\_nsaid}
+\item a\_et a\_inh\_cortico: replace a\_inh\_cortico with a\_oral\_cortico2
+\end{enumerate}
+
+% SW: W grafach wynikowych warto byłoby zaznaczyć zmodyfikowane węzły (np. innym kolorem tekstu) oraz wspomnieć o tym w opisie
+Graf wynikowy dla ataku astmy przedstawiono na rys. \ref{fig:rozw_ae}, natomiast graf wynikowy dla wrzodu trawiennego jest identyczny jak ten z rys. \ref{fig:pu}.
+% SW: w tym grafie należałoby zmienić opis węzła PPI -> PPI (a_ppi), aby zachować taką samą konwencję, jak w przypadku pozostałych
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{img/rozwiazanie1asthma.png}
+\includegraphics[scale=0.45]{img/rozwiazanie1asthma.png}
 \caption{Graf wynikowy dla ataku astmy}
 \label{fig:rozw_ae}
 \end{figure}
 \newpage
-\section{Przypadek 2 - migotanie przedsionków, przewlekła choroba nerek i nadciśnienie}
-Wytyczne dla migotania przedsionków (ang. \textit{atrial fibrillation}) przedstawiono na rys. \ref{fig:afib}.\\*
-Wytyczne dla przewlekłej choroby nerek (ang. \textit{chronic kidney disease}) przedstawiono na rys. \ref{fig:ckd}.\\*
-Wytyczne dla nadciśnienia (ang. \textit{hypertension}) przedstawiono na rys. \ref{fig:htn}.
+\section{Przykład 2 - migotanie przedsionków, przewlekła choroba nerek i nadciśnienie}
+Wytyczne dla migotania przedsionków (ang. \textit{atrial fibrillation}) przedstawiono na rys. \ref{fig:afib}, dla dla przewlekłej choroby nerek (ang. \textit{chronic kidney disease}) na rys. \ref{fig:ckd}, a dla dla nadciśnienia (ang. \textit{hypertension}) na rys. \ref{fig:htn}.
+% SW: tutaj zmiemiłbym identyfikator węzła decyzyjnego: d_paroxys_afib -> d_afib (większa spójność z innymi grafami). Podobna zmiana powinna zostać też wprowadzona do tekstu.
+
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{img/afib-ver-4.png}
+\includegraphics[scale=0.45]{img/afib-ver-4.png}
 \caption{Wytyczne dla migotania przedsionków}
 \label{fig:afib}
 \end{figure}
-\newpage
+
+
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{img/ckd-simplified-ver-5.png}
 \caption{Wytyczne dla przewlekłej choroby nerek}
 \label{fig:ckd}
 \end{figure}
-\newpage
+
+% SW: tutaj zmieniłbym identyfikatory niektórych wierzchołków w grafie na bardziej spójne z tym, co widzieliśmy w poprzednich grafach:
+% d_age_under_55 -> d_age
+% d_bp_controlled_1 -> d_bp_1
+% d_bp_controlled_2 -> d_bp_2
+% d_bp_controlled_3 -> d_bp_3
+
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{img/htn-ver-3.png}
+\includegraphics[scale=0.45]{img/htn-ver-3.png}
 \caption{Wytyczne dla nadciśnienia}
 \label{fig:htn}
 \end{figure}
-\newpage
-\noindent Odpowiedzi na pytania:
+
+Dane opisujące stan pacjenta (odpowiedzi na pytania z wytycznych) są następujące:
 \begin{enumerate}
 \item{Migotanie przedsionków:
 	\begin{itemize}
-	\item{AFib type?: paroxysmal}
+	\item{AFib type?: paroxysmal (d\_paroxys\_afib?paroxysmal)}
 	\end{itemize}
 }
 \item{Przewlekła choroba nerek:
 	\begin{itemize}
-	\item{GFR level?: >=40}
+	\item{GFR level?: >=40 (d\_gfr?>=40)}
 	\end{itemize}
 }
 \item{Nadciśnienie:
 	\begin{itemize}
-	\item{Age?: >=55}
-	\item{BP Test \#1?: controlled}
+	\item{Age?: >=55 (d\_age\_under\_55?>=55)}
+	\item{BP Test \#1?: controlled (d\_bp\_controlled\_1?controlled)}
 	\end{itemize}
 }
-% SW: Tutaj warto zaznaczyć, że te dane (to pytanie) nie pojawiają się jawnie w żadnych rozważanych wytycznych, ale są uwzględnione podczas sprawdzania konfliktów, dlatego użytkownik jest proszony o podanie odpowiedniej wartości.
-\item{CHA2DS2-VASc = 5 (Parametr ten nie pojawia się jawnie w wytycznych, użytkownik jest proszony o podanie tej wartości)}
+\item Dodatkowe dane, które nie pojawiły się jawnie w wytycznych i które zostały uzupełnione podczas fazy poszukiwania konfliktów:
+	\begin{itemize}
+	\item{CHA2DS2-VASc = 5 (\&CHA2DS2-VASc?5)}
+	\end{itemize}
 \end{enumerate}
-Konflikty:\\*
-\textbf{c\_htn c\_ckd:remove a\_step1\_acei,remove a\_step1\_ccb}\\*
-\textbf{c\_afib c\_ckd c\_htn:remove a\_step3\_diuretric}\\*
-\textbf{c\_afib c\_ckd:replace a\_antiplatelets with warfarin,replace a\_rct\_a with BB}\\*
-\textbf{c\_afib c\_ckd \&CHA2DS2-VASc>2:replace a\_mt\_asa with warfarin2}\\*
-c\_afib c\_ckd \&CHA2DS2-VASc<=1:replace a\_oa\_w with aspirin1,replace a\_ltoa\_w with aspirin2
+
+Dla rozważanych wytycznych możliwe są następujące konflikty:
+\begin{enumerate}
+\item \textbf{c\_htn c\_ckd: remove a\_step1\_acei, remove a\_step1\_ccb}
+\item \textbf{c\_afib c\_ckd c\_htn: remove a\_step3\_diuretric}
+\item \textbf{c\_afib c\_ckd: replace a\_antiplatelets with a\_warfarin, replace a\_rct\_a with a\_bb}
+\item \textbf{c\_afib c\_ckd \&CHA2DS2-VASc>2: replace a\_mt\_asa with a\_warfarin\_2}
+\item c\_afib c\_ckd \&CHA2DS2-VASc<=1: replace a\_oa\_w with a\_aspirin\_1, replace a\_ltoa\_w with a\_aspirin\_2
+\end{enumerate}
 
 Graf wynikowy dla migotania przedsionków przedstawiono na rys. \ref{fig:rozw_afib}, dla przewlekłej choroby nerek na rys. \ref{fig:rozw_ckd}, natomiast dla nadciśnienia na rys. \ref{fig:rozw_htn}.
+
+% SW: W tym grafie powinien zmienić Pan opis węzła BB -> BB (a_bb)
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{img/rozwiazanie1afib-ver-4.png}
+\includegraphics[scale=0.45]{img/rozwiazanie1afib-ver-4.png}
 \caption{Graf wynikowy dla migotania przedsionków}
 \label{fig:rozw_afib}
 \end{figure}
+
+% SW: w tym grafie zmieniamy Warfarin -> Warfarin (a_warfarin) oraz Maintenance therapy: warfarin -> Maintenance therapy: warfarin (a_warfarin_2)
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{img/rozwiazanie1ckd-simplified-ver-5.png}
@@ -121,52 +134,56 @@ Graf wynikowy dla migotania przedsionków przedstawiono na rys. \ref{fig:rozw_af
 \end{figure}
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{img/rozwiazanie1htn-ver-3.png}
+\includegraphics[scale=0.45]{img/rozwiazanie1htn-ver-3.png}
 \caption{Graf wynikowy dla nadciśnienia}
 \label{fig:rozw_htn}
 \end{figure}
 
 
 \newpage
-\section{Przypadek 3 - wrzód dwunastnicy i przemijający atak niedokrwienny}
-Wytyczne dla wrzodu dwunastnicy (ang. \textit{duodenal ulcer}) przedstawiono na rys. \ref{fig:du}.\\*
-Wytyczne dla przemijającego ataku niedokrwiennego (ang. \textit{transient ischemic attack}) przedstawiono na rys. \ref{fig:tia}.
+\section{Przykład 3 - wrzód dwunastnicy i przemijający atak niedokrwienny}
+Wytyczne dla wrzodu dwunastnicy (ang. \textit{duodenal ulcer}) przedstawiono na rys. \ref{fig:du}, natomiast dla przemijającego ataku niedokrwiennego (ang. \textit{transient ischemic attack}) na rys. \ref{fig:tia}.
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{img/du.png}
+\includegraphics[scale=0.45]{img/du.png}
 \caption{Wytyczne dla wrzodu dwunastnicy}
 \label{fig:du}
 \end{figure}
-\newpage
+
+
 \begin{figure}[H]
 \centering
-\includegraphics[scale=0.5]{img/tia.png}
+\includegraphics[scale=0.45]{img/tia.png}
 \caption{Wytyczne dla przemijającego ataku niedokrwiennego}
 \label{fig:tia}
 \end{figure}
-\newpage
-\noindent Odpowiedzi na pytania:
+
+Dane opisujące stan pacjenta (odpowiedzi na pytania z wytycznych) są następujące:
 \begin{enumerate}
 \item{Wrzód dwunastnicy:
 	\begin{itemize}
-	\item{H.pylori?: negative}
-	\item{Z-E syndrome?: positive}
+	\item{H.pylori?: negative (d\_hyplori?negative)}
+	\item{Z-E syndrome?: positive (d\_ze\_syndrome?positive)}
 	\end{itemize}
 }
 \item{Przemijający atak niedokrwienny:
 	\begin{itemize}
-	\item{Hypoglycemia?: negative}
-	\item{Face-arm-speech test (FAST)?: positive}
-	\item{Neurological symptoms?: resolved}
-	\item{Risk of stroke?: elevated}
+	\item{Hypoglycemia?: negative (d\_hypoglycemia?negative)}
+	\item{Face-arm-speech test (FAST)?: positive (d\_fast?positive)}
+	\item{Neurological symptoms?: resolved (d\_neuro\_symptoms?resolved)}
+	\item{Risk of stroke?: elevated (d\_stroke\_riskj?elevated)}
 	\end{itemize}
 }
 \end{enumerate}
-Konflikty:\\*
-c\_du a\_aspirin not(a\_ppi) not(a\_dipyridamole):replace a\_aspirin with cl\\*
-\textbf{c\_du a\_aspirin not(a\_ppi) a\_dipyridamole:add a\_ppi2 after d\_ze\_syndrome?positive, decrease\_dosage a\_aspirin 50}
+Dla rozważanych wytycznych możliwe są następujące konflikty:
+\begin{enumerate}
+\item c\_du a\_aspirin not(a\_ppi) not(a\_dipyridamole): replace a\_aspirin with a\_cl
+\item \textbf{c\_du a\_aspirin not(a\_ppi) a\_dipyridamole: add a\_ppi\_2 after d\_ze\_syndrome?positive, decrease\_dosage a\_aspirin 50}
+\end{enumerate}
 
 Graf wynikowy dla wrzodu dwunastnicy przedstawiono na rys. \ref{fig:rozw_du}, natomiast dla przemijającego ataku niedokrwiennego na rys. \ref{fig:rozw_tia}.
+
+% SW: W tym grafie proszę zmienić Proton-pump inhibitors (PPI) -> Proton-pump inhibitors (a_ppi_2)
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{img/rozwiazanie1du.png}
