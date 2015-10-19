@@ -1,31 +1,38 @@
-\chapter{Programowanie logiczne z ograniczeniami (CLP)}
+\chapter{Programowanie logiczne z ograniczeniami}
 
-% SW: Powiedziałbym, że CLP pozwala na użycie programowania logicznego do rozwwiązywania problemów z ograniczeniami (constraint satisfaction problems, CSP). 
-Programowanie logiczne z ograniczeniami\cite{CLP} pozwala na użycie programowania logicznego do rozwiązywania problemów z ograniczeniami. Przykładowym ograniczeniem może być wyrażenie postaci X+Y>5. 
-% SW: Tutaj raczej należałoby powiedzieć, że program CLP składa się z następujących elementów
+
+Programowanie logiczne z ograniczeniami (ang. \textit{constraint logic programming}, CLP)\cite{CLP} wykorzystuje programowania logicznego (ang. \textit{logic programming}, LP) do rozwiązywania problemów spełaniania ograniczeń (ang. \textit{constraint satisfaction problem}, CSP). 
+
 Program CLP składa się z następujących elementów:
 \begin{itemize}
-% SW: Zmienne nie muszą być całkowitoliczbowe -- musza mieć jednak skończone dziedziny.
-\item{Skończonego zbioru zmiennych z wartościami ze skończonych dziedzin}
-\item{Zbioru ograniczeń między zmiennymi}
-\item{Rozwiązań problemu polegających na przypisaniu wartości do zmiennych, które spełniają ograniczenia}
+\item{zbioru zmiennych o wartościach ze skończonych dziedzin,}
+\item{zbioru ograniczeń narzuconych na zmienne (np. X + Y > 5).}
 \end{itemize}
-Przykładowym zastosowaniem programowania logicznego z ograniczeniami jest zagadka SEND + MORE  = MONEY.\cite{Eclipse} Zagadka ta polega na przypisaniu cyfr z zakresu od 0 do 9 do zmiennych odpowiadających literom zawartym w równaniu tak, aby równanie było spełnione. Każda litera ma swoją unikalną wartość cyfrową. Ponadto litery S i M mają wartości różne od 0.
 
-% SW: Każdy z takich przykładów należałoby potraktować jako osobny rysunek i zamieścić do nich odwołanie w tekście.
+Rozwiązaniem programu CLP jest takie przyporządkowanie wartości do zmiennych, aby spełnione zostały wszystkie zdefiniowane ograniczenia.
 
+Poniżej opisano zastosowanie CLP do rozwiązania zagadki logicznej SEND + MORE  = MONEY \cite{Eclipse} pokazanej na rys. \ref{fig:sendmoremoney}. Rozwiązaniem tej zagadki jest takie przypisaniu cyfr z zakresu od 0 do 9 do zmiennych odpowiadających literom zawartym w równaniu, aby było ono spełnione. Każda zmienna (litera) powinna mieć unikalną wartość. Ponadto wartości zmiennych S i M muszą być różne od 0.
+
+\begin{figure}
+\begin{center}
 \begin{verbatim}
     SEND
   + MORE
  -------
    MONEY
 \end{verbatim}
+\end{center}
+\caption{Zagadka SEND + MORE = MONEY}
+\label{fig:sendmoremoney}
+\end{figure}
 % SW: Tutaj warto wyjaśnić, że mówimy o środowisku do uruchamiania programów CLP, a nie o popularnym środowisku programistycznym. Poza tym warto dodać, że nieco bardziej szczegółowy opis środowiska znajduje się w punkcie 4.1.
-Rozwiązaniem tego problemu jest następujący program napisany w ECLiPSe (jest to kompilator programów CLP, a nie popularne środowisko programistyczne Eclipse, bardziej szczegółowy opis tego programu znajduje się w punkcie 4.1):
-\newpage
+
+Do rozwiązania tej zagadki służy następujący program pokazany na rys. \ref{fig:eclipse_program} i przygotowany w środowisku w ECLiPSe (chodzi tutaj o specjalizowane narzędzie dla CLP, a nie popularne środowisko programistyczne dla języka Java -- bardziej szczegółowy opis tego środowiska znajduje się w rozdziale \ref{sec:eclipse}):
+
+\begin{figure}
 \begin{verbatim}
 :-lib(ic).
-sendmore1(Digits):-
+sendmore(Digits):-
 Digits = [S,E,N,D,M,O,R,Y],
 Digits :: [0..9],
 alldifferent(Digits),
@@ -36,11 +43,13 @@ M #\= 0,
 #= 10000*M + 1000*O + 100*N + 10*E + Y,
 labeling(Digits).
 \end{verbatim}
-Po skompilowaniu tego programu wystarczy wywołać funkcję sendmore1(Digits), aby otrzymać rozwiązanie zagadki. Rozwiązaniem jest następujące przypisanie cyfr do zmiennych: S=9, E=5, N=6, D=7, M=1, O=0, R=8, Y=2. 
+\caption{Program w środowisku ECLiPSe rozwiązujący zagadkę}
+\label{fig:eclipse_program}
+\end{figure}
 
-Można zauważyć na podstawie przykładu, że komendy w ECLiPSe składają się ze zdań zakończonych kropką, poszczególne fragmenty zdań są oddzielone od siebie przecinkami. Znak równości między zmiennymi lub wartościami liczbowymi to „\#=”, znak nierówności to „\#\textbackslash=”. Można stosować także operatory and i or i przypisywać ich wartość do zmiennych za pomocą znaku równości. 
+Można zauważyć, że poszczególne klauzule programu w ECLiPSe składają się ze zdań zakończonych kropką, poszczególne fragmenty zdań są oddzielone od siebie przecinkami. Znak równości między zmiennymi lub wartościami liczbowymi to „\#=”, znak nierówności to „\#\textbackslash=”. Można stosować także operatory and i or i przypisywać ich wartość do zmiennych za pomocą znaku równości. 
 
-CLP może być wykorzystane do rozwiązywania innych zadań.\cite{niederlinski} Do przykładowych zadań należy popularne zadanie z farmerem, wilkiem, gęsią i kapustą. Polega ono na tym, że farmer posiada łódkę, na której może się zmieścić on i jeszcze jeden element. Zadaniem farmera jest przewieźć wszystkie elementy z jednej strony rzeki na drugą. Problem stanowi fakt, że farmer nie może zostawić wilka i gęsi samych, bo wilk zje gęś, a także nie może zostawić gęsi z kapustą, ponieważ gęś zje kapustę. Innym przykładem jest zadanie o nazwie osiem królowych. Polega ono na tym, że na szachownicy o wymiarach 8x8 należy umieścić 8 królowych w taki sposób, aby żadna z nich nie mogła zbić innej królowej.
+Po skompilowaniu tego programu wystarczy wywołać funkcję \texttt{sendmore(Digits)}, aby otrzymać rozwiązanie zagadki. Rozwiązaniem jest następujące przypisanie cyfr do zmiennych: S=9, E=5, N=6, D=7, M=1, O=0, R=8, Y=2. 
 
-Programowanie logiczne z ograniczeniami może być również użyte do rozwiązywania trudniejszych problemów. Do problemów tych należą m.in. harmonogramowanie pracy lakierni samochodowej czy projektowanie inteligentnych systemów okablowania dla dużych budynków.
-% SW: Warto podać rozwiązanie tej zagadki i przypisanie cyfr do poszczególnych zmiennych. Poza tym warto też krótko wyjaśnić, że CLP może być stosownae do znacznie poważniejszych problemów i podać ich przykłady. Są one wymienione w książce Niederlińskiego (do pobrania za darmo ze strony ECLiPSe'a) na stronach 7 i 8.
+CLP może być wykorzystywane nie tylko do rozwiązywania popularnych zagadek logicznych (np. osiem królowych), ale jest także stosowane w poważnych, rzeczywistych problemach, m.in. m.in. harmonogramowaniu pracy lakierni samochodowej czy projektowaniu inteligentnych systemów okablowania dla dużych budynków \cite{niederlinski}.
+
