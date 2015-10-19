@@ -1,5 +1,5 @@
 \chapter{Działanie systemu}
-W tym rozdziale zaprezentowane działanie stworzonego systemu z wykorzystaniem wybranych przykładów wytycznych klinicznych (wszystkie wytyczne zostały skonsultowane z lekarzami, przy czym część została uproszczona na potrzeby wcześniejszych publikacji, np. \citep{SzWilk,SzWilk2}). Dla każdego przykładu przedstawione zostały grafy reprezentujące zastosowane wytyczne. Na grafach tych zaznaczono ścieżki, które zostały wybrane podczas etapu zbierania danych pacjenta i udzielania odpowiedzi na pytania związane z węzłami decyzyjnymi. Odpowiedzi na pytania są także przedstawione w formie tekstowej. Następnie, dla każdego przykładu przedstawiono listę możliwych konfliktów oraz zmiany, jakie należy wprowadzić w przypadku ich wystąpienia (do opisu zmian wykorzystano składnię wprowadzoną w rozdziale \ref{sect:revisions}. W celu zachowania większej zwięzłości prezentacji w opisach konfliktów i wymaganych zmian zastosowano identyfikatory węzłów -- są one przedstawione na grafach (w nawiasach po etykietach poszczególnych węzłów). Ponadto dla każdego przykładu pogrubioną czcionką zaznaczono znalezione konflikty (nie wszystkie możliwe konflikty musiały wystąpić).
+W tym rozdziale zaprezentowane zostało działanie stworzonego systemu z wykorzystaniem wybranych przykładów wytycznych klinicznych (wszystkie wytyczne zostały skonsultowane z lekarzami, przy czym część została uproszczona na potrzeby wcześniejszych publikacji, np. \citep{SzWilk,SzWilk2}). Dla każdego przykładu przedstawione zostały grafy reprezentujące zastosowane wytyczne. Na grafach tych zaznaczono ścieżki, które zostały wybrane podczas etapu zbierania danych pacjenta i udzielania odpowiedzi na pytania związane z węzłami decyzyjnymi. Odpowiedzi na pytania są także przedstawione w formie tekstowej. Następnie, dla każdego przykładu przedstawiono listę możliwych konfliktów oraz zmiany, jakie należy wprowadzić w przypadku ich wystąpienia (do opisu zmian wykorzystano składnię wprowadzoną w rozdziale \ref{sect:revisions}. W celu zachowania większej zwięzłości prezentacji w opisach konfliktów i wymaganych zmian zastosowano identyfikatory węzłów -- są one przedstawione na grafach (w nawiasach po etykietach poszczególnych węzłów). Ponadto dla każdego przykładu pogrubioną czcionką zaznaczono znalezione konflikty (nie wszystkie możliwe konflikty musiały wystąpić). Na końcu każdego przykładu podane zostały grafy wynikowe. Dodane węzły w grafach wynikowych zostały oznaczone niebieską czcionką.
 
 \section{Przykład 1 - atak astmy i wrzód trawienny}
 Wytyczne dla ataku astmy (ang. \textit{asthma exacerbation}) przedstawiono na rys. \ref{fig:ag_ae}, natomiast wytyczne dla wrzodu trawiennego (ang. \textit{peptic ulcer}) przedstawiono na rys. \ref{fig:pu}.
@@ -86,7 +86,7 @@ Dane opisujące stan pacjenta (odpowiedzi na pytania z wytycznych) są następuj
 \begin{enumerate}
 \item{Migotanie przedsionków:
 	\begin{itemize}
-	\item{AFib type?: paroxysmal (d\_paroxys\_afib?paroxysmal)}
+	\item{AFib type?: paroxysmal (d\_afib?paroxysmal)}
 	\end{itemize}
 }
 \item{Przewlekła choroba nerek:
@@ -96,8 +96,8 @@ Dane opisujące stan pacjenta (odpowiedzi na pytania z wytycznych) są następuj
 }
 \item{Nadciśnienie:
 	\begin{itemize}
-	\item{Age?: >=55 (d\_age\_under\_55?>=55)}
-	\item{BP Test \#1?: controlled (d\_bp\_controlled\_1?controlled)}
+	\item{Age?: >=55 (d\_age?>=55)}
+	\item{BP Test \#1?: controlled (d\_bp\_1?controlled)}
 	\end{itemize}
 }
 \item Dodatkowe dane, które nie pojawiły się jawnie w wytycznych i które zostały uzupełnione podczas fazy poszukiwania konfliktów:
@@ -171,14 +171,14 @@ Dane opisujące stan pacjenta (odpowiedzi na pytania z wytycznych) są następuj
 	\item{Hypoglycemia?: negative (d\_hypoglycemia?negative)}
 	\item{Face-arm-speech test (FAST)?: positive (d\_fast?positive)}
 	\item{Neurological symptoms?: resolved (d\_neuro\_symptoms?resolved)}
-	\item{Risk of stroke?: elevated (d\_stroke\_riskj?elevated)}
+	\item{Risk of stroke?: elevated (d\_stroke\_risk?elevated)}
 	\end{itemize}
 }
 \end{enumerate}
 Dla rozważanych wytycznych możliwe są następujące konflikty:
 \begin{enumerate}
 \item c\_du a\_aspirin not(a\_ppi) not(a\_dipyridamole): replace a\_aspirin with a\_cl
-\item \textbf{c\_du a\_aspirin not(a\_ppi) a\_dipyridamole: add a\_ppi\_2 after d\_ze\_syndrome?positive, decrease\_dosage a\_aspirin 50}
+\item \textbf{c\_du a\_aspirin not(a\_ppi) a\_dipyridamole: add a\_ppi\_2 after d\_ze\_synd\-rome?positive, decrease\_dosage a\_aspirin 50}
 \end{enumerate}
 
 Graf wynikowy dla wrzodu dwunastnicy przedstawiono na rys. \ref{fig:rozw_du}, natomiast dla przemijającego ataku niedokrwiennego na rys. \ref{fig:rozw_tia}.
