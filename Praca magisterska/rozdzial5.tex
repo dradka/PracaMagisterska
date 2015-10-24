@@ -22,7 +22,6 @@ Wszystkie węzły mają unikalne identyfikatory. Ponadto łuki (w dalszej częś
 
 Grafy przechowywane są w plikach w formacie DOT. Format ten nie pozwala na użycie dodatkowej informacji semantycznej o typach węzłów (można określić jedynie ich identyfikatory oraz etykiety). Aby odróżnić węzły równoległe od decyzyjnych, sprawdzane są ich etykiety (a dokładnie ich dostępność lub brak). Poza tym, aby odróżnić węzeł rozpoczynający ścieżki równoległe od węzła kończącego, sprawdzane są liczby krawędzi wchodzących i wychodzących. Węzeł rozpoczynający ścieżki równoległe charakteryzuje się tym, że nie ma etykiety oraz posiada więcej niż jedną krawędź wyjściową. Natomiast węzeł kończący ścieżki równoległe nie posiada etykiety, ma więcej niż jedną krawędź wejściową oraz liczba jego krawędzi wyjściowych jest większa od zera (liściem jest zawsze węzeł końcowy).
 
-% SW: na tym rysunku powinna pojawić się legenda identyfikująca poszczególne typu wierzchołków. Ponadto 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.7\textwidth]{img/asthma_sciezki_rownolegle.png}
@@ -30,7 +29,6 @@ Grafy przechowywane są w plikach w formacie DOT. Format ten nie pozwala na uży
 \label{fig:sciezki_rownolegle}
 \end{figure}
 
-% SW: czy elementami terapii są również węzły początkowy i końcowy, kontekstowy oraz węzły równoległe? Z poniższego opisu wynika, że nie. Natomiast przykład na końcu rozdziału mówi, że tak. Należy to uspójnić.
 W dalszych opisach wykorzystano pojęcia \textit{terapia} oraz \textit{element terapii}. \textit{Terapia} jest to pojedyncza ścieżka w grafie. \textit{Element terapii} natomiast to dla węzłów decyzji identyfikator węzła i etykieta wybranej krawędzi oddzielone znakiem zapytania, dla pozostałych węzłów \textit{elementem terapii} jest identyfikator węzła.
 
 \section{Wykorzystywane dane}
@@ -83,7 +81,7 @@ Metoda \texttt{goForward} dodaje aktualny węzeł do listy elementów terapii. N
 
 Wewnątrz pętli wykonywane są następujące akcje. Po pierwsze wykonywana jest kolejna, wewnętrzna pętla \texttt{while} (jej warunek jest taki sam, jak pierwszy z warunków w pętli zewnętrznej), aby dodać do listy elementów terapii wszystkie węzły, które mają tylko jedną krawędź wyjściową, czyli droga w grafie, po której należy się poruszać jest jednoznacznie określona. Po wykonaniu tej pętli \texttt{goForward} zatrzymuje się na węźle, który jest liściem (nie posiada żadnej krawędzi wyjściowej), albo ma więcej niż jedną krawędź wyjściową.
 
-Następnie następuje sprawdzenie, czy aktualny węzeł rozpoczyna ścieżki równoległe (jest to też drugi warunek w pętli zewnętrznej). Jeśli warunek ten jest spełniony, wywoływana jest metoda \texttt{parallel\-Path}. Metoda ta jest wywoływana również w dla trzeciego przypadku, czyli gdy uzyskany węzeł kończy ścieżki równoległe, a program nie przeszedł jeszcze przez wszystkie te ścieżki. Metoda \texttt{GoForwared.parallel\-Path} jest w postaci pętli \texttt{while}, która działa dopóki program nie przejdzie przez wszystkie ścieżki równoległe związane z węzłem rozpoczynającym ścieżki równoległe i uzyskany węzeł 
+Następnie następuje sprawdzenie, czy aktualny węzeł rozpoczyna ścieżki równoległe (jest to też drugi warunek w pętli zewnętrznej). Jeśli warunek ten jest spełniony, wywoływana jest metoda \texttt{parallel\-Path}. Metoda ta jest wywoływana również w dla trzeciego przypadku, czyli gdy uzyskany węzeł kończy ścieżki równoległe, a program nie przeszedł jeszcze przez wszystkie te ścieżki. Metoda \texttt{GoForwared.parallel\-Path} jest w postaci pętli \texttt{while}, która działa dopóki program nie przejdzie przez wszystkie ścieżki równoległe związane z aktualnym węzłem i uzyskany węzeł 
 % SW: tutaj dodałem informcje o liściu -- domyślam się, że jest to również warunek zakończenia
 % DR: tutaj nie może wystąpić sytuacja, w której węzeł jest liściem, ponieważ program jest w fazie równoległych ścieżek.
 nie jest węzłem decyzyjnym. Wszystkie przebyte po drodze węzły dodawane są do listy elementów terapii.  
@@ -152,8 +150,8 @@ Na końcu program do listy \texttt{therapies} dodaje rozwiązania. Polega to na 
 \label{sect:revisions}
 Ostatni krok polega na wyświetleniu grafów wynikowych prezentujących rozwiązania, a także utworzeniu listy znalezionych konfliktów wraz z wprowadzanymi zmianami. Program prezentuje wyniki za pomocą metody \texttt{Results.setResults}. Na początku metoda wywołuje inną metodę o nazwie \texttt{Results.setGraphs}. 
 % SW: ten opis (do końca akapitu) jest także zbyt skomplikowany -- należy tutaj wspomnieć, że modyfikujemy grafy wprowadzając niezbędne zmiany (zidentyfikowane w procesie poszukiwania rozwiązań).
-Zajmuje się ona modyfikowaniem grafów, wprowadzając niezbędne zmiany naprawiające znalezione konflikty.
-Dla każdej modyfikacji sprawdzany jest jej typ. Modyfikacje mogą być następujących typów:
+Zajmuje się ona modyfikowaniem grafów, wprowadzając niezbędne zmiany usuwające znalezione konflikty.
+Dla każdej modyfikacji sprawdzany jest jej typ, który może być jednym z następujących:
 \begin{itemize}
 \item \textit{replace <X> with <Y>}, gdzie węzeł \textit{X} zamienia się na węzeł \textit{Y},
 \item \textit{add <X> before/after <Y>}, gdzie węzeł \textit{X} jest dodawany przed lub po elemencie \textit{Y},
@@ -179,7 +177,7 @@ Na zakończenie metoda \texttt{setGraphs} dla każdego grafu wywołuje metodę \
 Po wywołaniu metody \texttt{setGraphs} program tworzy także tekstową reprezentację uzyskanych rozwiązań. Dla każdej z otrzymanych terapii obejmuje ona identyfikatory oraz etykiety elementów terapii (czyli odwiedzonych węzłów w grafach). Reprezentacja ta zawiera również opis napotkanych konfliktów oraz listę wprowadzonych zmian. Przy ustalaniu etykiet węzłów grafach wykorzystywane są informacje z pliku \texttt{nazwy.txt}.
 
 
-\section{Przykładowe działanie programu}
+\section{Przykład działania programu}
 W tym punkcie przedstawiono działanie programu na wybranym przykładzie klinicznym obejmującym wytyczne dla dwóch chorób: migotania przedsionków (ang. \textit{atrial fibrillation}, rys. \ref{fig:afib_przyklad}) oraz przewlekłej choroba nerek (ang. \textit{chronic kidney disease}, rys. \ref{fig:ckd_przyklad}). W przypadku węzłów odpowiadających akcjom i decyzjom podano ich etykiety oraz identyfikatory (w nawiasach okrągłych).
 
 % SW: Sądzę, że w tych przykładach powinniśmy pokazać identyfikatory wszystkich wierzchołków, w tym początkowych, końcowych, kontekstowych (tzn. wskazujących na choroby) oraz rozpoczynających i kończących ścieżki równoległe. W opisach tekstowych do wszystkich wierzchołków odwoływałbym się poprzez ich identyfikatory -- w ten będziemy mieli bardziej zwięzły zapis.

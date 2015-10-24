@@ -7,59 +7,97 @@
 % (3) implementacja wytycznych w formie systemów komputerowych (możliwość personalizacji wytycznych i wykorzystania dostępnych danych pacjenta)
 % (4) konflikty/interakcje wynikające ze stosowania wielu wytycznych jako jeden z głównych problemów ograniczających praktyczne wykorzystanie wytycznych oraz jedno z głównych wyzwań dla SWDK 
 % W tym rozdziale mógłby zamieścić Pan przykłady różnych reprezentacji wytycznych (np. w formie tekstu oraz w formie grafu)
-Wytyczne postępowania klinicznego\cite{Boyd, Latoszek-Berendsen} to dokument, którego zadaniem jest pomoc lekarzom i personelowi medycznemu w podejmowaniu decyzji związanych z określonymi obszarami opieki medycznymi, w szczególności z leczeniem pacjentów z różnych dolegliwości. Kolejnym celem wytycznych jest poprawa jakości opieki medycznej poprzez jej standaryzację i zwiększenie wydajności personelu medycznego. Dzięki temu można obniżyć koszty usług czy zlecanych badań. Wytyczne są tworzone przez ekspertów medycznych. Rozwój wytycznych wysokiej jakości wymaga specjalistycznego zespołu ludzi i wystarczającego budżetu. Wytyczne postępowania klinicznego mogą mieć różną reprezentację. Do przykładowych reprezentacji należą dokumenty tekstowe oraz reprezentacje formalne takie, jak tablice decyzyjne czy formaty grafowe. Implementacja wytycznych w formie systemów komputerowych daje możliwość personalizacji wytycznych, czyli uwzględnia osobistą charakterystykę pacjenta. Komputerowo interpretowane wytyczne, które posiadają dostęp do elektronicznego rekordu pacjenta, są w stanie dostarczyć porady dotyczące konkretnego pacjenta. Niestety, wytyczne dotyczą z reguły jedynie konkretnej dolegliwości. W związku z tym, wytyczne w przypadku pacjentów chorujących na kilka chorób, którymi często są osoby starsze, mogą doprowadzić do niewłaściwego wyboru terapii. Ważnym aspektem w tej kwestii jest znajdowanie konfliktów występujących między wytycznymi i ich odpowiedniego rozwiązania.
 
 
-%Wytyczne postępowania klinicznego\cite{Boyd, Latoszek-Berendsen} pozwalają polepszyć jakość opieki medycznej. Wytyczne są tworzone przez ekspertów medycznych. Rozwój wytycznych wysokiej jakości wymaga specjalistycznego zespołu ludzi i wystarczającego budżetu. Wytyczne powinny oferować spersonalizowane porady. Komputerowo interpretowane wytyczne, które posiadają dostęp do elektronicznego rekordu pacjenta, są w stanie dostarczyć porady dotyczące konkretnego pacjenta. Wytyczne wpływają pozytywnie na pracę personelu medycznego i zwiększają wydajność. Pacjenci mogą czerpać korzyści z wytycznych, które podsumowują zalety i wady możliwych opcji. Pacjenci mogą się dowiedzieć więcej o wyborach medycznych, które uwzględniają ich osobistą charakterystykę. Cały system medyczny może dzięki wytycznym zwiększyć wydajność, co może obniżyć koszty usług, przepisywanych leków czy zlecanych badań. Wytyczne w przypadku pacjentów chorujących na kilka chorób, którymi często są osoby starsze, mogą doprowadzić do niewłaściwego wyboru terapii. Ważnym aspektem w tej kwestii jest znajdowanie konfliktów występujących między wytycznymi i ich odpowiedniego rozwiązania.
+Wytyczne postępowania klinicznego to przygotowany w sposób systematyczny zestaw zaleceń odnośnie postępowania (diagnozowania, planowania terapii, realizacji procesu terapeutycznego) w specyficznych warunkach, np. dla określonego schorzenia czy też urazu \cite{Latoszek-Berendsen} (dla uproszczenia, w dalszej części tekstu będzie mowa o specyficznych chorobach).
 
-% SW: Proszę się zdecydowac na jeden termin -- interakcje albo konflikty -- i konsekwetnie stosować go w całym tekście. Może warto zdecydować się na termin "konflikt" -- interakcje mogą być również poztywne (jedno działanie korzystnie wzmacnia inne), jednak tymi się nie zajmujemy.
-\section{Wykrywanie i usuwanie konfliktów w wytycznych postępowania klinicznego}
+Pierwsze wytyczne kliniczne zaczęły pojawiać się ponad 30 lat temu. Ich celem było ograniczenie zmienności w postępowaniu, jego ujednolicenie oraz optymalizacja pod względem wykorzystywanych kosztów i innych zasobów. Początkowo wytyczne były przygotowywane dla personelu pomocniczego (np. dla pielęgniarek), dopiero potem do grona potencjalnych "użytkowników" włączono lekarzy (było to związane z obawami środowiska lekarskiego przed tzn. \textit{cookbook medicine}, czyli medycyną według przepisu) \cite{Latoszek-Berendsen}. Praktyczna akceptacja wytycznych jest wciąż ograniczona -- o przyczynach takiego stanu rzeczy będzie mowa w dalszej części rozdziału.
 
-% SW: Tutaj powinien też znaleźć sie opis naszego podejścia z pracy JBI (cytowanie podałem wcześniej), ponieważ właśnie je Pan rozszerza.
+Do reprezentowania wytycznych wykorzystywane są dwa modele:
+\begin{enumerate}
+\item model tekstowy, w którym wytyczne są prezentowane w postaci dokumentu tekstowego. Aby ułatwić jego przeglądanie lub przeszukiwanie, tekst jest wzbogacany o dodatkowe znaczniki (standard GEM \cite{Karras00}) nadające semantykę wybranym jego fragmentom,
+\item model sieci zadań (ang. \textit{task network model}), w którym wytyczne są reprezentowane jako graf skierowany. Wierzchołki w grafie odpowiadają podstawowym krokom w wytycznych -- zebraniu danych, podjęciu decyzji, czy też wykonaniu akcji klinicznej. Krawędzie (łuki) wskazują natomiast na zależności kolejnościowe między poszczególnymi krokami. Ten właśnie model stanowi podstawę wielu formalnych reprezentacji wytycznych (np. GLIF3, PROforma, GLARE, SAGE \cite{Peleg} -- przegląd w \cite{Peleg2013}).
+\end{enumerate}
+
+W ciągu ostatnich rośnie popularność reprezentacji wytycznych wykorzystujących sieci zadań ze względu na możliwość ich osadzenia w systemach komputerowych -- mówi się nawet o nowej klasie wytycznych, czyli o wytycznych interpretowanych komputerowo (ang. \textit{computer interpretable guidelines}, CIG). Dzięki temu można budować SWDK, które pozwalają na połączenie wytycznych z danymi dostępnymi w wersji elektronicznej automatyzując tym samym proces opracowywania sugestii diagnostycznych i terapeutycznych dla konkretnego pacjenta. Takie "skomputeryzowane" wytyczne są przedmiotem intensywnych badań, które można podzielić na następujące kategorie \cite{Peleg2013}:
+\begin{enumerate}
+\item modelowanie i reprezentacja wytycznych,
+\item pozyskiwanie i definiowanie wytycznych,
+\item integracja z systemami szpitalnymi (zwłaszcza z elektroniczną kartą pacjenta),
+\item walidacja i weryfikacja wytycznych,
+\item wykonywanie wytycznych,
+\item obsługa sytuacji wyjątkowych,
+\item utrzymanie i "pielęgnacja" wytycznych,
+\item współdzielenie wytycznych.
+\end{enumerate}
+
+Niniejsza praca magisterska dotyczy obsługi sytuacji wyjątkowych związanych z konfliktami, które mogą pojawić się podczas jednoczesnego wykonania wielu wytycznych dla jednego pacjenta. Odpowiada ona w ten sposób na wyzwanie związane z jednym z głównych ograniczeń wytycznych, tzn. skupieniem się na jednym specyficznym problemie. Ograniczenie to jest jedną z istotnych przyczyn słabego praktycznego przyjęcia i wykorzystania wytycznych \cite{Peleg2013} i jest też jednym z głównych wyzwań dla SWDK \cite{Sittig08}.
+
+\section{Wykrywanie i usuwanie konfliktów w wytycznych}
+
 \subsection{Programowanie logiczne z ograniczeniami}
-Wytyczne postępowania klinicznego są w tej technice prezentowane w postaci grafu akcji.\cite{SzWilk2} Graf akcji jest grafem skierowanym, na który składają się trzy typy węzłów. Pierwszy typ to węzeł kontekstu. Jest to węzeł początkowy opisujący określoną chorobę. Kolejnym typem jest węzeł akcji, który opisuje akcję medyczną, którą należy wykonać. Ostatnim typem jest węzeł decyzji, który zawiera pytanie, na które należy odpowiedzieć. Graf akcji jest w tym podejściu transformowany następnie do modelu logicznego. Model ten składa się z wyrażeń logicznych opisujących poszczególne ścieżki w grafie. Akcje, których nie ma na ścieżce   są zapisywane w wyrażeniu w postaci negacji. W tym podejściu stosowane są także tzw. operatory interakcji i rewizji. Operator interakcji reprezentuje niepożądany konflikt (zazwyczaj lek-lek lub lek-choroba), który jest w postaci zdania zbudowanego z elementów wyrażeń logicznych modelu logicznego. Operator rewizji opisuje natomiast zmiany, jakie należy wprowadzić do modeli logicznych, aby konflikt usunąć. Modele logiczne reprezentujące wytyczne są zamieniane na programy CLP, które są automatycznie wykonywane. Uzyskane rozwiązanie wskazuje na ścieżki, jakie należy przejść podczas leczenia pacjenta.
+
+W pracy \cite{SzWilk2} przedstawiono podejście wykorzystujące programowanie logiczne z ograniczeniami (ang. \textit{constraint logic programming}, CLP -- szczegółowy opis w rozdziale \ref{sec:clp}) do wykrywania i usuwania konfliktów dla pary wytycznych. Podejście to zakłada, że wytyczne prezentowane są w postaci grafu akcji (ang. \textit{actionable graph}). Graf akcji jest uproszczoną siecią zadań -- jest grafem skierowanym, w którym występują trzy typy węzłów:
+\begin{itemize}
+\item \textit{węzeł kontekstu} wskazujący na chorobę, której dotyczą wytyczne,
+\item \textit{węzeł akcji} opisujący akcję kliniczną, jaką należy wykonać,
+\item \textit{węzeł decyzyjny} opisujący decyzję i możliwe opcje.
+\end{itemize}
+
+W grafie akcji zrezygnowano z jawnego węzła odpowiadającego pozyskaniu danych i założono, że dane są pozyskiwane w węzłach decyzyjnych (np. poprzez zadanie odpowiedniego pytania lekarzowi). Przykład grafu akcji (rozszerzonego o możliwość zawierania ścieżek równoległych) przedstawiono na rys. \ref{fig:sciezki_rownolegle}.
+
+Grafy akcji są automatycznie tłumaczone na modele logiczne i automatycznie przetwarzane. Podejście to wykorzystuje dodatkową wiedzę dziedzinową (nie pojawiającą się jawnie w wytycznych) reprezentowaną w formie operatorów interakcji (ang. \textit{interaction operators}) oraz modyfikacji (ang. \textit{revision operators}). Operator interakcji reprezentuje możliwy konflikt (zazwyczaj lek-lek lub lek-choroba), natomiast operator modyfikacji opisuje natomiast zmiany, jakie należy wprowadzić do modeli logicznych, aby konflikt usunąć. Oba operatory przedstawione są w formie wyrażeń logicznych.
+
+Schemat działania podejścia przedstawiono na rys. \ref{fig:algorytm-clp}. Obejmuje on dwie fazy:
+\begin{enumerate}
+\item wyszukiwanie bezpośrednich konfliktów między wytycznymi (tzn. konfliktów, gdzie jeden wytyczne zalecają akcję \textit{A}, a drugie zabraniają tej akcji -- konflikty takie objawiają się jako niespójne wartości zmiennych współdzielonych przez modele logiczne) i ich usunięcie za pomocą operatorów modyfikacji,
+\item wyszukanie pośrednich konfliktów (opisanych za pomocą operatorów interakcji) i ich usuniecie za pomocą operatorów modyfikacji.
+\end{enumerate}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.6]{img/algorytm-clp.png}
+\end{center}
+\caption{Schemat działania podejścia wykorzystującego CLP \cite{SzWilk2}}
+\label{fig:algorytm-clp}
+\end{figure}
+
+Podczas obu faz działania na podstawie modeli logicznych tworzone są programy CLP, które są następnie wykonywane/rozwiązywane. Uzyskane rozwiązanie wskazuje na terapię rozumianą jako ścieżki w grafach akcji, jakie należy przejść podczas leczenia pacjenta. Rozwiązanie uzyskane w ostatniej fazie jest ostateczną terapią prezentowaną lekarzowi.
+
+Opisane podejście posiada kilka wad -- jest ograniczone tylko do dwóch wytycznych, nie pozwala na uwzględnianie dawek leków oraz pozwala tylko na proste zmiany (jedna operacja) wprowadzane przez operatory modyfikacji. Rozszerzenia zaproponowane w ramach tej pracy magisterskiej usuwają te wady.
+
 
 
 \subsection{Logika pierwszego rzędu}
 
-% SW: grafy akcji stosowane są także w naszym podejściu z CLP jako pośrednia reprezentacja wytycznych, uniezleżniająca nas od specyficznego języka reprezentacji. Również w podejściu z CLP korzystaliśmy z operatorów interakcji (opisujących konflikty) oraz rewizji (naprawiających/usuwających konflikty).
-% SW: Podejście wykorzystujące FOL miało podobne cele, jak te realizowane w Pańskiej pracy -- możliwość stosowania wielu wytycznych oraz operatorów oraz uwzględnianie dawek leków. Dodatkowo FOL, dzięki predykatom, oferuje większą czytelność uzyskiwanych rozwiązań. Minusem są bardziej złożone modele reprezentujące wytyczne oraz konieczność stosowania bardziej złożonych narzędzi (m.in. systemów do dowodzenia twierdzeń). Pańska praca ma na celu sprawdzenie, co możemy jeszcze "wycisnąć" z CLP bez konieczności sięgania po FOL.
+W pracy \cite{SzWilk} przedstawiono rozwinięcie opisanego powyżej podejścia, w którym CLP zastąpiono przez logikę pierwszego rzędu (ang. \textit{first-order logic}, FOL). Dzięki temu uzyskano znacznie bogatszą semantykę uwzględniającą zależności kolejnościowe między krokami, dawki leków, czy też złożone operacje modyfikacji wytycznych. Zmodyfikowano również algorytm wykrywania i usuwania konfliktów, aby uwzględniał wiele wytycznych. Podobnie jak poprzednio, wytyczne są podane w formie grafów akcji, a wiedza dziedzinowa w formie operatorów interakcji i rewizji.
 
-% SW: W poniższym opisie powinien się Pan skupić na tych elementach pojdeścia, o których wspomniałem powyżej (stosowaniu wielu wytycznych i wykrywania/naprawiania wielku konfliktów). Jak już wspomniałem, wiele elementów zostnie już opisanych przy okazji przedstawienia naszego podejścia z CLP.
-
-Wytyczne postępowania klinicznego są w tym podejściu opisane, podobnie jak w poprzednim podejściu, za pomocą grafu akcji z węzłami kontekstu, decyzji i akcji.\cite{SzWilk} Słownictwo podejścia logiki pierwszego rzędu składa się ze stałych (pisanych dużymi literami), zmiennych (pisanych małymi literami) oraz predykatów. Do predykatów należą m.in. action(x) - x jest węzłem akcji, decision(x) – x jest węzłem decyzji, disease(d) – d jest chorobą.
-
-W tym podejściu także stosowane są operatory interakcji i rewizji. Operator interakcji opisuje konflikt. Operator rewizji składa się z dwóch części. Pierwsza część jest podobna do operatora interakcji, również zbudowana jest ze zdania opisującego konflikt, który może wystąpić. Druga część składa się z par formuł, które opisują pojedyncze zmiany. Pary formuł mogą być w trzech postaciach:
-\begin{itemize}
-\item{(x, $\emptyset$) – oznacza, że formuła x jest usuwana}
-\item{($\emptyset$, x) – oznacza, że formuła x jest dodawana}
-\item{(x, y) – oznacza, że formuła x jest zamieniana na formułę y}
-\end{itemize}
+Minusem tego podejścia są bardziej złożone modele reprezentujące wytyczne (konieczne jest definiowanie reguł kontrolujących procesem wnioskowania) oraz konieczność stosowania bardziej złożonych narzędzi (m.in. systemów do dowodzenia twierdzeń). Z uwagi na te komplikacje, w pracy magisterskiej skupiono się na wcześniejszym podejściu z CLP.
 
 
-% SW: To podejście wykorzystuje paraydmat "mieszanej inicjatywy" (mixed initiative), w której użytkownik współpracuje z systemem komputerowym, aby rozwiązać problem -- nie jest to więc podejście automatyczne.
+
 \subsection{Podejście wykorzystujące paradygmat mieszanej inicjatywy}
-Podejście to polega na tym, że użytkownik współpracuje z systemem komputerowym, aby rozwiązać problem.\cite{Piovesan} Oznacza to, że nie jest to podejście automatyczne. Ten sposób wykrywania i usuwania konfliktów oferuje techniki unikania i naprawiania konfliktów. Do technik unikania konfliktów tych należą: wybieranie bezpiecznej alternatywy oraz czasowe unikanie konfliktu. Wybieranie bezpiecznej alternatywy polega na wyborze alternatywnej ścieżki w wytycznych, która unika interakcji. Tymczasowe unikanie polega natomiast na stosowaniu leków w takich momentach czasu, w których nie występuje interakcja pomiędzy nimi. Do technik naprawiania konfliktów należą: modyfikacja dawek leków, monitorowanie efektów oraz osłabianie interakcji poprzez rozszerzenie zaleceń o dodatkowe akcje. 
 
-Wytyczne w tej metodzie wykrywania i usuwania konfliktów są reprezentowane w postaci hierarchicznego grafu składającego się z węzłów będących akcjami i krawędzi modelujących relacje między akcjami. Podejście rozróżnia akcje atomowe i akcje złożone (plany). Ontologie wykorzystywane w tym podejściu są mocno zintegrowane z obecnymi ontologiami medycznymi, takimi jak SNOMED CT dla pojęć medycznych i ATC dla klasyfikacji leków.
+Paradygmat mieszanej inicjatywy (ang. \textit{mixed initiative paradigm}) polega na tym, że podczas rozwiązywania problemu użytkownik współpracuje z systemem komputerowym, a zatem nie ma tutaj działania w pełni automatycznego. Paradygmat ten został wykorzystany w pracy \cite{Piovesan} do wykrywania i usuwania konfliktów między wytycznymi. Podobnie jak we wcześniej opisywanych podejściach, również tutaj wytyczne reprezentowane są w postaci grafu (formalizm GLARE) składającego się z węzłów będących akcjami (dopuszcza sie zarówno akcje atomowe, jak i złożone, czyli plany) i krawędzi modelujących relacje między akcjami. Natomiast wiedza dziedzinowa o możliwych interakcjach reprezentowana jest w formie ontologii (wraz z towarzyszącą bazą wiedzy), która wykorzystuje istniejące terminologie i klasyfikacje medyczne, np. SNOMED CT dla pojęć medycznych i ACT dla leków.
+  
+Opisywane podejście stosuje dwie grupy metod do unikania i rozwiązywania zidentyfikowanych konfliktów:
+\begin{enumerate}
+	\item unikanie konfliktów
+	\begin{itemize}
+		\item wybieranie bezpiecznej alternatywy, tzn. takiej ścieżki w grafie, w której konflikt nie występuje,
+		\item czasowe unikanie konfliktu, np. poprzez odpowiednie planowanie działań,
+	\end{itemize}
+	\item naprawienie konfliktów
+	\begin{itemize}
+		\item modyfikacja dawek leków,
+		\item monitorowanie efektów (tutaj dopuszcza się mniej poważne konflikty i na bieżąco monitoruje ich następstwa),
+		\item osłabianie interakcji poprzez rozszerzanie zaleceń o dodatkowe akcje.
+	\end{itemize}
+\end{enumerate}
 
-% SW: W opisie pominąłbym opis reprezentacji i ontologii. Wystarczy informacja, że wytyczne przedstawione są w formie grafu, wiedza dziedzinowa o możliwych interakcjach -- w formie ontologii. Skupiłbym się natomiast na głównych cechach tego podejścia. Przede wszystkim oferuje ono dwie grupy technik do unikania i naprawiania konfliktów:
-% 1. unikanie konfliktów
-% 	a) wybieranie bezpiecznej alternatywy, tzn. takiej ścieżki w grafie, w której konflikt nie występuje
-%   b) czasowe unikanie konfliktu, np. poprzez odpowiednie planowanie działań
-% 2. naprawienie konfliktów
-%   a) modyfikacja dawek leków
-%   b) monitorowanie efektów (tutaj dopuszcza się mniej poważne konflikty i na bieżąco monitoruje ich efekty)
-%	c) osłabianie interakcji poprzez rozszerzanie zaleceń o dodatkowe akcje.
+Do przetwarzania wytycznych wykorzystywane jest wsteczne przeszukiwanie grafów reprezentujących wytyczne (np. w celu szukania bezpiecznych ścieżek), planowanie bazujące na celach (np. w celu monitorowania efektów konfliktowych akcji) oraz wnioskowanie temporalne (w celu unikania konfliktów lub planowania razem wzmacniających się akcji). Podejście to uwzględnia również pozytywne interakcje i pozwala albo na takie planowanie akcji, aby dochodziło do pożądanego wzmacniania ich efektów oraz wykrywa dublujące się akcje (np. podane tego samego leku pojawiające się w kilku zaleceniach).
 
-% Podjście to uwzględnia również pozytywne interakcje i pozwala albo na takie planowanie akcji, aby dochodziło do pożądanego wzmacniania ich efektów oraz wykrywa dublujące się akcje (np. podane tego samego leku pojawiające się w kilku zaleceniach).
-
-% Jeśli chodzi o techniki przetwarzania wytycznych, to stosowane jest wsteczne przeszukiwanie grafu wytycznych (np. w celu szukania bezpiecznych ścieżek) oraz planowanie bazujące na celach (np. w celu monitorowania efektów) oraz wnioskowanie temporalne (w celu unikania konfliktów lub planowania razem wzmacniających się akcji). 
-
-% Tutaj należy podkreślić, że podejście nie jest automatyczne -- lekarz wskazać na odpowiedni sposób postępowania, a system stara się go zrealizować. Poza tym podejście to wymaga rozbudowanej wiedzy dziedzinowej  podanej w formie ontologii.
+Jak już wspomniano, podejście to nie jest automatyczne -- lekarz wskazać na odpowiedni sposób postępowania, a system stara się go zrealizować. Poza tym podejście to wymaga rozbudowanej i szczegółowej wiedzy dziedzinowej  podanej w formie ontologii.
 
 
-%Akcje złożone, pracy i farmaceutyczne są reprezentowane na dwóch poziomach: za pomocą prototypu akcji (o nazwie Action), który jest charakteryzowany przez efekty (krawędź hasEffect) i przepisane leki (krawędź substance), i akcji specyficznej dla CIG (komputerowo interpretowanych wytycznych) o nazwie CIGaction, która dziedziczy wszystkie własności z prototypu, ale dodatkowo zawiera intencję akcji (krawędź aimsTo). Ponadto wyróżniamy modyfikację (o nazwie Variation) modelowaną za pomocą zmian (krawędź hasModality, pojęcie Modality) atrybutu (krawędź focusOn, pojęcie Attribute). Zmiany należą do zbioru: „Increase” (zwiększ), „Decrease” (zmniejsz), „Stability” (bez zmian). Ponadto, możliwe jest określenie interakcji między dwiema lub więcej modyfikacjami (pojęcie VariationInteraction). Interakcja jest scharakteryzowana przez typ (krawędź hasType), którego wartości należą do zbioru: „Concordance” (zgodność), „Discordance” (niezgodność), „Independence” (niezależność). Interakcja między intencjami (pojęcie IntentionInteraction) jest specyficznym rodzajem interakcji między modyfikacjami (pojęcie VariationInteraction), która uwzględnia przynajmniej jedną intencję. Interakcje pomiędzy lekami (pojęcie DrugInteraction) są związane ze zmianami (krawędź hasModality), które powoduje interakcja w modyfikacji określonej krawędzią „changes”. Często interakcja między dwoma lekami jest spowodowana interakcją pomiędzy dwoma ich efektami. Do zamodelowania takiej informacji wykorzystana zostaje własność „causedBy” odnosząca się do pojęcia „VariationInteraction”. Ponadto, dla akcji, modyfikacji i intencji można dołączyć informację o czasie (krawędź happens, pojęcie TemporalEntity).
-
-%W podejściu Piovesana wykorzystywane są także opcje, które pozwalają zarządzać interakcjami. Do opcji tych należą m. in. bezpieczna alternatywa oraz tymczasowe unikanie. Bezpieczna alternatywa polega na wyborze alternatywnej ścieżki w wytycznych, która unika interakcji. Tymczasowe unikanie polega natomiast na stosowaniu leków w takich momentach czasu, w których nie występuje interakcja pomiędzy nimi.
 
