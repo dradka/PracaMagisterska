@@ -1,5 +1,5 @@
 \chapter{Scenariusze kliniczne}
-W tym rozdziale zaprezentowano działanie systemu z wykorzystaniem wybranych przykładowych scenariuszy klinicznych. Wytyczne wykorzystane w tych scenariuszach zostały wcześniej skonsultowane z lekarzami, przy czym część została uproszczona na potrzeby wcześniejszych publikacji, np. \citep{SzWilk,SzWilk2}. Dla każdego scenariusza przedstawione zostały grafy reprezentujące zastosowane wytyczne. Na grafach tych zaznaczono ścieżki, które zostały wybrane podczas etapu zbierania danych pacjenta i udzielania odpowiedzi na pytania związane z węzłami decyzyjnymi. Odpowiedzi na pytania są także przedstawione w formie tekstowej. Następnie, dla każdego scenariusza przedstawiono listę możliwych konfliktów oraz zmiany, jakie należy wprowadzić w przypadku ich wystąpienia (do opisu zmian wykorzystano składnię wprowadzoną w rozdziale \ref{sect:revisions}. W celu zachowania większej zwięzłości prezentacji w opisach konfliktów i wymaganych zmian zastosowano identyfikatory węzłów -- są one przedstawione na grafach (w nawiasach po etykietach poszczególnych węzłów). Ponadto pogrubioną czcionką zaznaczono znalezione konflikty (nie wszystkie możliwe konflikty musiały wystąpić). Na końcu każdego scenariusza podane zostały grafy wynikowe. Dodane węzły w grafach wynikowych zostały oznaczone niebieską czcionką.
+W tym rozdziale zaprezentowano działanie systemu z wykorzystaniem wybranych przykładowych scenariuszy klinicznych. Wytyczne wykorzystane w tych scenariuszach zostały wcześniej skonsultowane z lekarzami, przy czym część została uproszczona na potrzeby wcześniejszych publikacji, np. \citep{SzWilk,SzWilk2}. Dla każdego scenariusza przedstawione zostały grafy reprezentujące zastosowane wytyczne. Na grafach tych zaznaczono ścieżki, które zostały wybrane podczas etapu zbierania danych pacjenta i udzielania odpowiedzi na pytania związane z węzłami decyzyjnymi. Odpowiedzi na pytania są także przedstawione w formie tekstowej. Następnie, dla każdego scenariusza przedstawiono listę możliwych konfliktów oraz zmiany, jakie należy wprowadzić w przypadku ich wystąpienia (do opisu zmian wykorzystano składnię wprowadzoną w rozdziale \ref{sect:revisions}). W celu zachowania większej zwięzłości prezentacji w opisach konfliktów i wymaganych zmian zastosowano identyfikatory węzłów -- są one przedstawione na grafach (w nawiasach po etykietach poszczególnych węzłów). Ponadto pogrubioną czcionką zaznaczono znalezione konflikty (nie wszystkie możliwe konflikty musiały wystąpić). Na końcu każdego scenariusza podane zostały grafy wynikowe. Dodane węzły w grafach wynikowych zostały oznaczone niebieską czcionką.
 
 \section{Scenariusz 1 - atak astmy i wrzód trawienny}
 Wytyczne dla ataku astmy (ang. \textit{asthma exacerbation}) przedstawiono na rys. \ref{fig:ag_ae}, natomiast wytyczne dla wrzodu trawiennego (ang. \textit{peptic ulcer}) przedstawiono na rys. \ref{fig:pu}.
@@ -17,7 +17,6 @@ Wytyczne dla ataku astmy (ang. \textit{asthma exacerbation}) przedstawiono na ry
 \caption{Wytyczne dla wrzodu trawiennego}
 \label{fig:pu}
 \end{figure}
-
 Dane opisujące stan pacjenta (odpowiedzi na pytania z wytycznych) są następujące:
 \begin{enumerate}
 \item{Atak astmy:
@@ -32,7 +31,6 @@ Dane opisujące stan pacjenta (odpowiedzi na pytania z wytycznych) są następuj
 	\end{itemize}
 }
 \end{enumerate}
-
 Dla rozważanych wytycznych możliwe są następujące konflikty:
 \begin{enumerate}
 \item c\_pe a\_oral\_cortico: replace a\_oral\_cortico with a\_inh\_cortico2
@@ -40,9 +38,7 @@ Dla rozważanych wytycznych możliwe są następujące konflikty:
 \item a\_et a\_inh\_cortico: replace a\_inh\_cortico with a\_oral\_cortico2
 \end{enumerate}
 
-% SW: W grafach wynikowych warto byłoby zaznaczyć zmodyfikowane węzły (np. innym kolorem tekstu) oraz wspomnieć o tym w opisie
 Graf wynikowy dla ataku astmy przedstawiono na rys. \ref{fig:rozw_ae}, natomiast graf wynikowy dla wrzodu trawiennego jest identyczny jak ten z rys. \ref{fig:pu}.
-% SW: w tym grafie należałoby zmienić opis węzła PPI -> PPI (a_ppi), aby zachować taką samą konwencję, jak w przypadku pozostałych
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.45]{img/rozwiazanie1asthma.png}
@@ -52,7 +48,6 @@ Graf wynikowy dla ataku astmy przedstawiono na rys. \ref{fig:rozw_ae}, natomiast
 \newpage
 \section{Scenariusz 2 - migotanie przedsionków, przewlekła choroba nerek i nadciśnienie}
 Wytyczne dla migotania przedsionków (ang. \textit{atrial fibrillation}) przedstawiono na rys. \ref{fig:afib}, dla dla przewlekłej choroby nerek (ang. \textit{chronic kidney disease}) na rys. \ref{fig:ckd}, a dla dla nadciśnienia (ang. \textit{hypertension}) na rys. \ref{fig:htn}.
-% SW: tutaj zmiemiłbym identyfikator węzła decyzyjnego: d_paroxys_afib -> d_afib (większa spójność z innymi grafami). Podobna zmiana powinna zostać też wprowadzona do tekstu.
 
 \begin{figure}[H]
 \centering
@@ -69,19 +64,12 @@ Wytyczne dla migotania przedsionków (ang. \textit{atrial fibrillation}) przedst
 \label{fig:ckd}
 \end{figure}
 
-% SW: tutaj zmieniłbym identyfikatory niektórych wierzchołków w grafie na bardziej spójne z tym, co widzieliśmy w poprzednich grafach:
-% d_age_under_55 -> d_age
-% d_bp_controlled_1 -> d_bp_1
-% d_bp_controlled_2 -> d_bp_2
-% d_bp_controlled_3 -> d_bp_3
-
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.45]{img/htn-ver-3.png}
 \caption{Wytyczne dla nadciśnienia}
 \label{fig:htn}
 \end{figure}
-
 Dane opisujące stan pacjenta (odpowiedzi na pytania z wytycznych) są następujące:
 \begin{enumerate}
 \item{Migotanie przedsionków:
@@ -94,6 +82,7 @@ Dane opisujące stan pacjenta (odpowiedzi na pytania z wytycznych) są następuj
 	\item{GFR level?: >=40 (d\_gfr?>=40)}
 	\end{itemize}
 }
+\newpage
 \item{Nadciśnienie:
 	\begin{itemize}
 	\item{Age?: >=55 (d\_age?>=55)}
@@ -102,10 +91,9 @@ Dane opisujące stan pacjenta (odpowiedzi na pytania z wytycznych) są następuj
 }
 \item Dodatkowe dane, które nie pojawiły się jawnie w wytycznych i które zostały uzupełnione podczas fazy poszukiwania konfliktów:
 	\begin{itemize}
-	\item{CHA2DS2-VASc = 5 (\&CHA2DS2-VASc?5)}
+	\item{CHA2DS2-VASc = 5}
 	\end{itemize}
 \end{enumerate}
-
 Dla rozważanych wytycznych możliwe są następujące konflikty:
 \begin{enumerate}
 \item \textbf{c\_htn c\_ckd: remove a\_step1\_acei, remove a\_step1\_ccb}
@@ -117,7 +105,6 @@ Dla rozważanych wytycznych możliwe są następujące konflikty:
 
 Graf wynikowy dla migotania przedsionków przedstawiono na rys. \ref{fig:rozw_afib}, dla przewlekłej choroby nerek na rys. \ref{fig:rozw_ckd}, natomiast dla nadciśnienia na rys. \ref{fig:rozw_htn}.
 
-% SW: W tym grafie powinien zmienić Pan opis węzła BB -> BB (a_bb)
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.45]{img/rozwiazanie1afib-ver-4.png}
@@ -125,7 +112,6 @@ Graf wynikowy dla migotania przedsionków przedstawiono na rys. \ref{fig:rozw_af
 \label{fig:rozw_afib}
 \end{figure}
 
-% SW: w tym grafie zmieniamy Warfarin -> Warfarin (a_warfarin) oraz Maintenance therapy: warfarin -> Maintenance therapy: warfarin (a_warfarin_2)
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.4]{img/rozwiazanie1ckd-simplified-ver-5.png}
@@ -157,7 +143,6 @@ Wytyczne dla wrzodu dwunastnicy (ang. \textit{duodenal ulcer}) przedstawiono na 
 \caption{Wytyczne dla przemijającego ataku niedokrwiennego}
 \label{fig:tia}
 \end{figure}
-
 Dane opisujące stan pacjenta (odpowiedzi na pytania z wytycznych) są następujące:
 \begin{enumerate}
 \item{Wrzód dwunastnicy:
@@ -175,6 +160,7 @@ Dane opisujące stan pacjenta (odpowiedzi na pytania z wytycznych) są następuj
 	\end{itemize}
 }
 \end{enumerate}
+\newpage
 Dla rozważanych wytycznych możliwe są następujące konflikty:
 \begin{enumerate}
 \item c\_du a\_aspirin not(a\_ppi) not(a\_dipyridamole): replace a\_aspirin with a\_cl
@@ -183,7 +169,6 @@ Dla rozważanych wytycznych możliwe są następujące konflikty:
 
 Graf wynikowy dla wrzodu dwunastnicy przedstawiono na rys. \ref{fig:rozw_du}, natomiast dla przemijającego ataku niedokrwiennego na rys. \ref{fig:rozw_tia}.
 
-% SW: W tym grafie proszę zmienić Proton-pump inhibitors (PPI) -> Proton-pump inhibitors (a_ppi_2)
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.5]{img/rozwiazanie1du.png}

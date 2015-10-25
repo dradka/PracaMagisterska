@@ -2,8 +2,8 @@
 
 \label{sec:clp}
 
-Programowanie logiczne z ograniczeniami \cite{CLP} wykorzystuje programowania logicznego (ang. \textit{logic programming}, LP) do rozwiązywania problemów spełaniania ograniczeń (ang. \textit{constraint satisfaction problem}, CSP). 
-
+Programowanie logiczne z ograniczeniami \cite{CLP} wykorzystuje programowanie logiczne (ang. \textit{logic programming}, LP) do rozwiązywania problemów spełaniania ograniczeń (ang. \textit{constraint satisfaction problem}, CSP). 
+\\*
 Program CLP składa się z następujących elementów:
 \begin{itemize}
 \item{zbioru zmiennych o wartościach ze skończonych dziedzin,}
@@ -14,7 +14,7 @@ Rozwiązaniem programu CLP jest takie przyporządkowanie wartości do zmiennych,
 
 Poniżej opisano zastosowanie CLP do rozwiązania zagadki logicznej SEND + MORE  = MONEY \cite{Eclipse} pokazanej na rys. \ref{fig:sendmoremoney}. Rozwiązaniem tej zagadki jest takie przypisaniu cyfr z zakresu od 0 do 9 do zmiennych odpowiadających literom zawartym w równaniu, aby było ono spełnione. Każda zmienna (litera) powinna mieć unikalną wartość. Ponadto wartości zmiennych S i M muszą być różne od 0.
 
-\begin{figure}
+\begin{figure}[H]
 \begin{center}
 \begin{verbatim}
     SEND
@@ -26,11 +26,10 @@ Poniżej opisano zastosowanie CLP do rozwiązania zagadki logicznej SEND + MORE 
 \caption{Zagadka SEND + MORE = MONEY}
 \label{fig:sendmoremoney}
 \end{figure}
-% SW: Tutaj warto wyjaśnić, że mówimy o środowisku do uruchamiania programów CLP, a nie o popularnym środowisku programistycznym. Poza tym warto dodać, że nieco bardziej szczegółowy opis środowiska znajduje się w punkcie 4.1.
 
 Do rozwiązania tej zagadki służy następujący program pokazany na rys. \ref{fig:eclipse_program} i przygotowany w środowisku w ECLiPSe (chodzi tutaj o specjalizowane narzędzie dla CLP, a nie popularne środowisko programistyczne dla języka Java -- bardziej szczegółowy opis tego środowiska znajduje się w rozdziale \ref{sec:eclipse}):
 
-\begin{figure}
+\begin{figure}[H]
 \begin{verbatim}
 :-lib(ic).
 sendmore(Digits):-

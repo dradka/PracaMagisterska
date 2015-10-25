@@ -15,6 +15,11 @@
 \newblock \url{http://www.graphviz.org}.
 \newblock [Przeglądano 2015-09-29].
 
+\bibitem{Isabel}
+{Isabel: the Diagnosis Checklisst}.
+\newblock \url{http://www.isabelhealthcare.com/}.
+\newblock [Przeglądano 2015-09-29].
+
 \bibitem{JPGD}
 {JPGD - Java-based Parser for Graphviz Documents}.
 \newblock \url{http://www.alexander-merz.com/graphviz}.
@@ -31,11 +36,11 @@
   Guidelines}.
 \newblock {\em Methods Inf Med.}, 49(6):550--570, 2010.
 
-\bibitem{Boyd}
-{C. M. Boyd, J. Darer, C. Boult, L. P. Fried, L. Boult, A. W. Wu}.
-\newblock {Clinical Practice Guidelines and Quality of Care for Older Patients
-  With Multiple Comorbid Diseases}.
-\newblock {\em JAMA}, 294(6):716--724, 2005.
+\bibitem{Boyd05}
+C.M. Boyd, J.~Darer, C.~Boult, L.P. Fried, L.~Boult, and A.W. Wu.
+\newblock Clinical practice guidelines and quality of care for older patients
+  with multiple comorbid diseases: implications for pay for performance.
+\newblock {\em JAMA}, 294:716--724, 2005.
 
 \bibitem{Eclipse}
 {K. Janczura, T. Gabiga}.
@@ -48,6 +53,13 @@
   Guidelines for comorbid patients}.
 \newblock W: Proceedings of International Joint Workshop KR4HC 2015 - ProHealth
   2015 (in conjunction with AIME 2015). 2015, 73-86.
+
+\bibitem{Musen06}
+M.~Musen, Y.~Shahar, and E.H. Shortliffe.
+\newblock Clinical decision support systems.
+\newblock In E.H. Shortliffe and J.Cimino, editors, {\em Biomedical
+  Informatics. Computer Applications in Health Care and Biomedicine}, pages
+  698--736. Springer, 2006.
 
 \bibitem{niederlinski}
 A.~Niederliński.
@@ -69,5 +81,11 @@ A.~Niederliński.
 \newblock {Mitigation of Adverse Interactions in Pairs of Clinical Practice
   Guidelines Using Constraint Logic Programming}.
 \newblock {\em Journal of Biomedical Informatics}, 46(2):341--353, 2013.
+
+\bibitem{Sittig08}
+D.F. Sittig, A.~Wright, J.A. Osheroff, B.~Middleton, J.M. Teich, J.S. Ash,
+  E.~Campbell, and D.W. Bates.
+\newblock Grand challenges in clinical decision support.
+\newblock {\em J. Biomed. Inform.}, 41:387--92, 2008.
 
 \end{thebibliography}

@@ -8,6 +8,10 @@ A level-1 auxiliary file: rozdzial6.aux
 A level-1 auxiliary file: rozdzial7.aux
 The style file: plain.bst
 Database file #1: bibliografia.bib
+Warning--I didn't find a database entry for "Karras00"
+Warning--I didn't find a database entry for "Peleg"
+Warning--I didn't find a database entry for "Peleg2013"
+Warning--to sort, need author or key in Isabel
 Warning--to sort, need author or key in CLP
 Warning--to sort, need author or key in EclipseSite
 Warning--to sort, need author or key in Choco3
@@ -19,4 +23,4 @@ Warning--empty journal in Piovesan
 Warning--empty year in Piovesan
 Warning--empty journal in SzWilk
 Warning--empty year in SzWilk
-(There were 11 warnings)
+(There were 15 warnings)

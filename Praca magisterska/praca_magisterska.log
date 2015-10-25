@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.1)  19 OCT 2015 17:06
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.1)  25 OCT 2015 18:05
 entering extended mode
 **praca_magisterska.tex
 
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\praca_magisterska.tex"
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\praca_magisterska.tex"
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -1069,22 +1069,22 @@ Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \titlewidthlast=\dimen194
 \titlewidthfirst=\dimen195
 )
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\praca_magisterska.aux"
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\rozdzial1.aux")
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\rozdzial2.aux")
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\rozdzial3.aux")
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\rozdzial4.aux")
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\rozdzial5.aux")
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\rozdzial6.aux")
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\rozdzial7.aux"))
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\praca_magisterska.aux"
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\rozdzial1.aux")
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\rozdzial2.aux")
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\rozdzial3.aux")
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\rozdzial4.aux")
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\rozdzial5.aux")
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\rozdzial6.aux")
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\rozdzial7.aux"))
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 135.
 LaTeX Font Info:    ... okay on input line 135.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 135.
@@ -1185,325 +1185,324 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 {C:/Users/Darek/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Da
-rek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-master (1)/PracaMagist
-erska-master/Praca magisterska/img/put_logo.png>]
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\praca_magisterska.toc")
+rek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-master/Praca magisters
+ka/img/put_logo.png>]
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\praca_magisterska.toc")
 \tf@toc=\write4
  [1
 
 
 ]
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\rozdzial1.tex"
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\rozdzial1.tex"
 Rozdzia\l  1.
 [1
 
 
 
-]) [2]
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\rozdzial2.tex"
+]) [2] [3]
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\rozdzial2.tex"
 Rozdzia\l  2.
-[3
+[4
 
 
 
 ]
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 34.
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 32.
  ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\ts1lmr.fd"
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [4]) [5]
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\rozdzial3.tex"
+) [5]
+<img/algorytm-clp.png, id=36, 435.87843pt x 441.90094pt>
+File: img/algorytm-clp.png Graphic file (type png)
+
+<use img/algorytm-clp.png>
+Package pdftex.def Info: img/algorytm-clp.png used on input line 49.
+(pdftex.def)             Requested size: 261.52907pt x 265.14261pt.
+ [6 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-master
+/Praca magisterska/img/algorytm-clp.png>] [7])
+[8]
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\rozdzial3.tex"
 Rozdzia\l  3.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 17.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 19.
 ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\t1lmtt.fd"
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [6
+) [9
 
 
 
-]) [7]
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\rozdzial4.tex"
+]) [10]
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\rozdzial4.tex"
 Rozdzia\l  4.
-<img/okno.png, id=43, 452.4403pt x 438.8897pt>
+<img/okno.png, id=53, 453.94594pt x 435.12563pt>
 File: img/okno.png Graphic file (type png)
  <use img/okno.png>
-Package pdftex.def Info: img/okno.png used on input line 13.
-(pdftex.def)             Requested size: 298.75264pt x 289.80203pt.
- [8
+Package pdftex.def Info: img/okno.png used on input line 12.
+(pdftex.def)             Requested size: 298.75264pt x 286.36714pt.
+ [11
 
 
 
- <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-master (1
-)/PracaMagisterska-master/Praca magisterska/img/okno.png>] [9]
-<img/graf.png, id=50, 302.12875pt x 155.58125pt>
+ <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-master/Pr
+aca magisterska/img/okno.png>] [12] [13]
+<img/graf.png, id=64, 302.12875pt x 155.58125pt>
 File: img/graf.png Graphic file (type png)
  <use img/graf.png>
-Package pdftex.def Info: img/graf.png used on input line 69.
+Package pdftex.def Info: img/graf.png used on input line 73.
 (pdftex.def)             Requested size: 128.0387pt x 65.93242pt.
- [10]
-[11 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-master
- (1)/PracaMagisterska-master/Praca magisterska/img/graf.png>]) [12]
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\rozdzial5.tex"
+ [14 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-maste
+r/Praca magisterska/img/graf.png>]) [15]
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\rozdzial5.tex"
 Rozdzia\l  5.
-[13
+[16
 
 
 
-] <img/asthma_sciezki_rownolegle.png, id=66, 393.72093pt x 532.23843pt>
+] <img/asthma_sciezki_rownolegle.png, id=75, 393.72093pt x 532.23843pt>
 File: img/asthma_sciezki_rownolegle.png Graphic file (type png)
 
 <use img/asthma_sciezki_rownolegle.png>
 Package pdftex.def Info: img/asthma_sciezki_rownolegle.png used on input line 2
-8.
+7.
 (pdftex.def)             Requested size: 298.75264pt x 403.8557pt.
- [14 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-maste
-r (1)/PracaMagisterska-master/Praca magisterska/img/asthma_sciezki_rownolegle.p
-ng>]
-<img/wybor_chorob.png, id=71, 1026.83624pt x 547.2947pt>
+ [17 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-maste
+r/Praca magisterska/img/asthma_sciezki_rownolegle.png>] <img/wybor_chorob.png, 
+id=81, 1028.34187pt x 546.54187pt>
 File: img/wybor_chorob.png Graphic file (type png)
 
 <use img/wybor_chorob.png>
-Package pdftex.def Info: img/wybor_chorob.png used on input line 73.
-(pdftex.def)             Requested size: 426.79135pt x 227.4738pt.
- [15] [16 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-
-master (1)/PracaMagisterska-master/Praca magisterska/img/wybor_chorob.png>] [17
-]
-Overfull \hbox (2.99832pt too wide) in paragraph at lines 104--105
+Package pdftex.def Info: img/wybor_chorob.png used on input line 70.
+(pdftex.def)             Requested size: 426.79135pt x 226.83566pt.
+ [18] [19 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-
+master/Praca magisterska/img/wybor_chorob.png>]
+[20]
+Overfull \hbox (2.99832pt too wide) in paragraph at lines 97--98
 \T1/lmr/m/n/10 W¦-zeª ten jest punk-tem star-to-wym dla ko-lej-nego wy-wo-ªa-ni
 a me-tody \T1/lmtt/m/n/10 goForward\T1/lmr/m/n/10 . Me-toda \T1/lmtt/m/n/10 goF
 orward
  []
 
-<img/wyswietlanie_grafow.png, id=82, 1027.58907pt x 545.78906pt>
+<img/wyswietlanie_grafow.png, id=91, 1028.34187pt x 546.54187pt>
 File: img/wyswietlanie_grafow.png Graphic file (type png)
 
 <use img/wyswietlanie_grafow.png>
-Package pdftex.def Info: img/wyswietlanie_grafow.png used on input line 109.
-(pdftex.def)             Requested size: 426.79135pt x 226.68144pt.
- [18] [19 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-
-master (1)/PracaMagisterska-master/Praca magisterska/img/wyswietlanie_grafow.pn
-g>] [20]
-Overfull \hbox (3.0353pt too wide) in paragraph at lines 131--132
+Package pdftex.def Info: img/wyswietlanie_grafow.png used on input line 102.
+(pdftex.def)             Requested size: 426.79135pt x 226.83566pt.
+ [21] [22 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-
+master/Praca magisterska/img/wyswietlanie_grafow.png>] [23]
+Overfull \hbox (3.0353pt too wide) in paragraph at lines 120--121
 []\T1/lmr/m/n/10 Je±li ele-ment kon-fliktu jest za-ne-go-wany (jego opis za-czy
 na si¦ od not), do li-sty \T1/lmtt/m/n/10 constraints-
  []
 
-[21] [22] <img/afib-ver-4_przyklad.png, id=99, 408.52625pt x 685.56125pt>
+[24] [25] <img/afib-ver-4_przyklad.png, id=109, 408.52625pt x 685.56125pt>
 File: img/afib-ver-4_przyklad.png Graphic file (type png)
 
 <use img/afib-ver-4_przyklad.png>
-Package pdftex.def Info: img/afib-ver-4_przyklad.png used on input line 188.
+Package pdftex.def Info: img/afib-ver-4_przyklad.png used on input line 164.
 (pdftex.def)             Requested size: 204.26262pt x 342.77979pt.
 
-<img/ckd-simplified-ver-5_przyklad.png, id=100, 1016.79875pt x 1040.88875pt>
+<img/ckd-simplified-ver-5_przyklad.png, id=110, 1016.79875pt x 1040.88875pt>
 File: img/ckd-simplified-ver-5_przyklad.png Graphic file (type png)
 
 <use img/ckd-simplified-ver-5_przyklad.png>
 Package pdftex.def Info: img/ckd-simplified-ver-5_przyklad.png used on input li
-ne 194.
+ne 170.
 (pdftex.def)             Requested size: 406.7123pt x 416.34813pt.
- [23] [24 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-
-master (1)/PracaMagisterska-master/Praca magisterska/img/afib-ver-4_przyklad.pn
-g>] [25 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-ma
-ster (1)/PracaMagisterska-master/Praca magisterska/img/ckd-simplified-ver-5_prz
-yklad.png>]
-<img/rozwiazanie1afib-ver-4_przyklad.png, id=113, 470.75874pt x 685.56125pt>
+ [26] [27 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-
+master/Praca magisterska/img/afib-ver-4_przyklad.png>] [28 <C:/Users/Darek/Desk
+top/PracaMagisterska-master (1)/PracaMagisterska-master/Praca magisterska/img/c
+kd-simplified-ver-5_przyklad.png>]
+<img/rozwiazanie1afib-ver-4_przyklad.png, id=122, 470.75874pt x 685.56125pt>
 File: img/rozwiazanie1afib-ver-4_przyklad.png Graphic file (type png)
 
 <use img/rozwiazanie1afib-ver-4_przyklad.png>
 Package pdftex.def Info: img/rozwiazanie1afib-ver-4_przyklad.png used on input 
-line 220.
+line 194.
 (pdftex.def)             Requested size: 235.3788pt x 342.77979pt.
 
-<img/rozwiazanie1ckd-simplified-ver-5_przyklad.png, id=114, 1016.79875pt x 1040
+<img/rozwiazanie1ckd-simplified-ver-5_przyklad.png, id=123, 1016.79875pt x 1040
 .88875pt>
 File: img/rozwiazanie1ckd-simplified-ver-5_przyklad.png Graphic file (type png)
 
  <use img/rozwiazanie1ckd-simplified-ver-5_przyklad.png>
 Package pdftex.def Info: img/rozwiazanie1ckd-simplified-ver-5_przyklad.png used
- on input line 226.
+ on input line 200.
 (pdftex.def)             Requested size: 406.7123pt x 416.34813pt.
- [26])
-[27 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-master
- (1)/PracaMagisterska-master/Praca magisterska/img/rozwiazanie1afib-ver-4_przyk
-lad.png>] [28 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagister
-ska-master (1)/PracaMagisterska-master/Praca magisterska/img/rozwiazanie1ckd-si
-mplified-ver-5_przyklad.png>]
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\rozdzial6.tex"
+ [29])
+[30 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-master
+/Praca magisterska/img/rozwiazanie1afib-ver-4_przyklad.png>] [31 <C:/Users/Dare
+k/Desktop/PracaMagisterska-master (1)/PracaMagisterska-master/Praca magisterska
+/img/rozwiazanie1ckd-simplified-ver-5_przyklad.png>]
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\rozdzial6.tex"
 Rozdzia\l  6.
-<img/asthma.png, id=126, 603.25375pt x 771.88374pt>
+<img/asthma.png, id=136, 603.25375pt x 771.88374pt>
 File: img/asthma.png Graphic file (type png)
  <use img/asthma.png>
 Package pdftex.def Info: img/asthma.png used on input line 9.
 (pdftex.def)             Requested size: 271.46167pt x 347.34447pt.
 
-[29
+[32
 
 
 
-] <img/peptic-ulcer.png, id=131, 571.13374pt x 767.86874pt>
+] <img/peptic-ulcer.png, id=140, 571.13374pt x 767.86874pt>
 File: img/peptic-ulcer.png Graphic file (type png)
 
 <use img/peptic-ulcer.png>
 Package pdftex.def Info: img/peptic-ulcer.png used on input line 16.
 (pdftex.def)             Requested size: 257.00781pt x 345.53773pt.
- [30 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-maste
-r (1)/PracaMagisterska-master/Praca magisterska/img/asthma.png>] <img/rozwiazan
-ie1asthma.png, id=136, 568.1225pt x 801.99625pt>
+ [33 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-maste
+r/Praca magisterska/img/asthma.png>]
+<img/rozwiazanie1asthma.png, id=145, 568.1225pt x 801.99625pt>
 File: img/rozwiazanie1asthma.png Graphic file (type png)
 
 <use img/rozwiazanie1asthma.png>
-Package pdftex.def Info: img/rozwiazanie1asthma.png used on input line 48.
+Package pdftex.def Info: img/rozwiazanie1asthma.png used on input line 44.
 (pdftex.def)             Requested size: 255.65276pt x 360.89497pt.
- [31 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-maste
-r (1)/PracaMagisterska-master/Praca magisterska/img/peptic-ulcer.png>] [32 <C:/
-Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-master (1)/Pra
-caMagisterska-master/Praca magisterska/img/rozwiazanie1asthma.png>] <img/afib-v
-er-4.png, id=145, 408.52625pt x 685.56125pt>
+ [34 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-maste
+r/Praca magisterska/img/peptic-ulcer.png>]
+[35 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-master
+/Praca magisterska/img/rozwiazanie1asthma.png>]
+<img/afib-ver-4.png, id=155, 408.52625pt x 685.56125pt>
 File: img/afib-ver-4.png Graphic file (type png)
 
 <use img/afib-ver-4.png>
-Package pdftex.def Info: img/afib-ver-4.png used on input line 59.
+Package pdftex.def Info: img/afib-ver-4.png used on input line 54.
 (pdftex.def)             Requested size: 183.83511pt x 308.49971pt.
 
-<img/ckd-simplified-ver-5.png, id=146, 1016.79875pt x 1040.88875pt>
+<img/ckd-simplified-ver-5.png, id=156, 1016.79875pt x 1040.88875pt>
 File: img/ckd-simplified-ver-5.png Graphic file (type png)
 
 <use img/ckd-simplified-ver-5.png>
-Package pdftex.def Info: img/ckd-simplified-ver-5.png used on input line 67.
+Package pdftex.def Info: img/ckd-simplified-ver-5.png used on input line 62.
 (pdftex.def)             Requested size: 406.7123pt x 416.34813pt.
- [33 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-maste
-r (1)/PracaMagisterska-master/Praca magisterska/img/afib-ver-4.png>] <img/htn-v
-er-3.png, id=151, 648.4225pt x 1113.15875pt>
+ [36 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-maste
+r/Praca magisterska/img/afib-ver-4.png>]
+<img/htn-ver-3.png, id=161, 648.4225pt x 1113.15875pt>
 File: img/htn-ver-3.png Graphic file (type png)
-
-<use img/htn-ver-3.png>
-Package pdftex.def Info: img/htn-ver-3.png used on input line 80.
+ <use img/htn-ver-3.png>
+Package pdftex.def Info: img/htn-ver-3.png used on input line 69.
 (pdftex.def)             Requested size: 291.78743pt x 500.91682pt.
- [34 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-maste
-r (1)/PracaMagisterska-master/Praca magisterska/img/ckd-simplified-ver-5.png>] 
-[35 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-master
- (1)/PracaMagisterska-master/Praca magisterska/img/htn-ver-3.png>] <img/rozwiaz
-anie1afib-ver-4.png, id=161, 470.75874pt x 685.56125pt>
+
+[37 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-master
+/Praca magisterska/img/ckd-simplified-ver-5.png>] [38 <C:/Users/Darek/Desktop/P
+racaMagisterska-master (1)/PracaMagisterska-master/Praca magisterska/img/htn-ve
+r-3.png>] <img/rozwiazanie1afib-ver-4.png, id=170, 470.75874pt x 685.56125pt>
 File: img/rozwiazanie1afib-ver-4.png Graphic file (type png)
 
 <use img/rozwiazanie1afib-ver-4.png>
-Package pdftex.def Info: img/rozwiazanie1afib-ver-4.png used on input line 123.
+Package pdftex.def Info: img/rozwiazanie1afib-ver-4.png used on input line 110.
 
 (pdftex.def)             Requested size: 211.83948pt x 308.49971pt.
 
-<img/rozwiazanie1ckd-simplified-ver-5.png, id=162, 1016.79875pt x 1040.88875pt>
+<img/rozwiazanie1ckd-simplified-ver-5.png, id=171, 1016.79875pt x 1040.88875pt>
 File: img/rozwiazanie1ckd-simplified-ver-5.png Graphic file (type png)
 <use img/rozwiazanie1ckd-simplified-ver-5.png>
 Package pdftex.def Info: img/rozwiazanie1ckd-simplified-ver-5.png used on input
- line 131.
+ line 117.
 (pdftex.def)             Requested size: 406.7123pt x 416.34813pt.
 
-<img/rozwiazanie1htn-ver-3.png, id=163, 469.755pt x 1066.98625pt>
+<img/rozwiazanie1htn-ver-3.png, id=172, 469.755pt x 1066.98625pt>
 File: img/rozwiazanie1htn-ver-3.png Graphic file (type png)
 
 <use img/rozwiazanie1htn-ver-3.png>
-Package pdftex.def Info: img/rozwiazanie1htn-ver-3.png used on input line 137.
+Package pdftex.def Info: img/rozwiazanie1htn-ver-3.png used on input line 123.
 (pdftex.def)             Requested size: 211.3878pt x 480.13939pt.
- [36 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-maste
-r (1)/PracaMagisterska-master/Praca magisterska/img/rozwiazanie1afib-ver-4.png>
-] [37 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-mast
-er (1)/PracaMagisterska-master/Praca magisterska/img/rozwiazanie1ckd-simplified
--ver-5.png>] [38 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagis
-terska-master (1)/PracaMagisterska-master/Praca magisterska/img/rozwiazanie1htn
--ver-3.png>]
-<img/du.png, id=176, 481.8pt x 683.55376pt>
+ [39 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-maste
+r/Praca magisterska/img/rozwiazanie1afib-ver-4.png>] [40 <C:/Users/Darek/Deskto
+p/PracaMagisterska-master (1)/PracaMagisterska-master/Praca magisterska/img/roz
+wiazanie1ckd-simplified-ver-5.png>] [41 <C:/Users/Darek/Desktop/PracaMagistersk
+a-master (1)/PracaMagisterska-master/Praca magisterska/img/rozwiazanie1htn-ver-
+3.png>]
+<img/du.png, id=186, 481.8pt x 683.55376pt>
 File: img/du.png Graphic file (type png)
  <use img/du.png>
-Package pdftex.def Info: img/du.png used on input line 148.
+Package pdftex.def Info: img/du.png used on input line 134.
 (pdftex.def)             Requested size: 216.80798pt x 307.59634pt.
 
-<img/tia.png, id=177, 629.35126pt x 943.525pt>
+<img/tia.png, id=187, 629.35126pt x 943.525pt>
 File: img/tia.png Graphic file (type png)
  <use img/tia.png>
-Package pdftex.def Info: img/tia.png used on input line 156.
+Package pdftex.def Info: img/tia.png used on input line 142.
 (pdftex.def)             Requested size: 283.20544pt x 424.58232pt.
- [39 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-maste
-r (1)/PracaMagisterska-master/Praca magisterska/img/du.png>] [40 <C:/Users/Dare
-k/Desktop/PracaMagisterska-master (1)/PracaMagisterska-master (1)/PracaMagister
-ska-master/Praca magisterska/img/tia.png>]
-<img/rozwiazanie1du.png, id=186, 481.8pt x 717.68124pt>
+ [42 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-maste
+r/Praca magisterska/img/du.png>] [43 <C:/Users/Darek/Desktop/PracaMagisterska-m
+aster (1)/PracaMagisterska-master/Praca magisterska/img/tia.png>]
+<img/rozwiazanie1du.png, id=196, 481.8pt x 717.68124pt>
 File: img/rozwiazanie1du.png Graphic file (type png)
 
 <use img/rozwiazanie1du.png>
-Package pdftex.def Info: img/rozwiazanie1du.png used on input line 189.
+Package pdftex.def Info: img/rozwiazanie1du.png used on input line 174.
 (pdftex.def)             Requested size: 240.8994pt x 358.83974pt.
 
-<img/rozwiazanie1tia.png, id=187, 629.35126pt x 943.525pt>
+<img/rozwiazanie1tia.png, id=197, 629.35126pt x 943.525pt>
 File: img/rozwiazanie1tia.png Graphic file (type png)
 
 <use img/rozwiazanie1tia.png>
-Package pdftex.def Info: img/rozwiazanie1tia.png used on input line 195.
+Package pdftex.def Info: img/rozwiazanie1tia.png used on input line 180.
 (pdftex.def)             Requested size: 314.67485pt x 471.76134pt.
-) [41 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-mast
-er (1)/PracaMagisterska-master/Praca magisterska/img/rozwiazanie1du.png>] [42 <
-C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-master (1)/
-PracaMagisterska-master/Praca magisterska/img/rozwiazanie1tia.png>]
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\rozdzial7.tex"
+) [44 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-mast
+er/Praca magisterska/img/rozwiazanie1du.png>]
+[45 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-master
+/Praca magisterska/img/rozwiazanie1tia.png>]
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\rozdzial7.tex"
 Rozdzia\l  7.
-[43
+[46
 
 
 
-]) [44]
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\praca_magisterska.bbl")
+]) [47]
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\praca_magisterska.bbl" [48
+
+
+
+])
 \providecommand\NAT@force@numbers{}\NAT@force@numbers
-[45
-
-
-
-]
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\praca_magisterska.aux"
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\rozdzial1.aux")
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\rozdzial2.aux")
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\rozdzial3.aux")
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\rozdzial4.aux")
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\rozdzial5.aux")
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\rozdzial6.aux")
-("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master (1
-)\PracaMagisterska-master\Praca magisterska\rozdzial7.aux")) ) 
+[49]
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\praca_magisterska.aux"
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\rozdzial1.aux")
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\rozdzial2.aux")
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\rozdzial3.aux")
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\rozdzial4.aux")
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\rozdzial5.aux")
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\rozdzial6.aux")
+("C:\Users\Darek\Desktop\PracaMagisterska-master (1)\PracaMagisterska-master\Pr
+aca magisterska\rozdzial7.aux")) ) 
 Here is how much of TeX's memory you used:
- 17684 strings out of 493921
- 327244 string characters out of 3144877
- 353467 words of memory out of 3000000
- 20528 multiletter control sequences out of 15000+200000
+ 17704 strings out of 493921
+ 326110 string characters out of 3144877
+ 353621 words of memory out of 3000000
+ 20547 multiletter control sequences out of 15000+200000
  45916 words of font info for 43 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 48i,15n,54p,1852b,676s stack positions out of 5000i,500n,10000p,200000b,50000s
-{D:/Program Files
- (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{D:/Program Files (x86)/MiKTeX 2
-.9/fonts/enc/dvips/lm/lm-mathsy.enc}{D:/Program Files (x86)/MiKTeX 2.9/fonts/en
-c/dvips/lm/lm-ts1.enc}<D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/
-lmbx10.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb>
-<D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><D:/Program 
-Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><D:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><D:/Program Files (x86)/MiKTeX 2.9/
-fonts/type1/public/lm/lmsy10.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/type1
-/public/lm/lmtt10.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/
-lmtti10.pfb>
-Output written on praca_magisterska.pdf (47 pages, 1429122 bytes).
+ 48i,16n,54p,1595b,632s stack positions out of 5000i,500n,10000p,200000b,50000s
+{D:/Program Files (x86)/MiKTeX 2.9/fonts/enc/
+dvips/lm/lm-ec.enc}{D:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1
+.enc}<D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmbx10.pfb><D:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmbx12.pfb><D:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr10.pfb><D:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/lm/lmr12.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/
+type1/public/lm/lmri10.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
+c/lm/lmtt10.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmtti1
+0.pfb>
+Output written on praca_magisterska.pdf (51 pages, 1367869 bytes).
 PDF statistics:
- 238 PDF objects out of 1000 (max. 8388607)
+ 247 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 128 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 133 words of extra memory for PDF output out of 10000 (max. 10000000)
 

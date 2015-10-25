@@ -9,9 +9,9 @@ DO SWDK z pierwszej grupy zalicza się wszelkie systemy służące do zbierania,
 
 Znanym przykładem diagnostycznego SWDK jest system Isabel \cite{Isabel}, który wykorzystuje model decyzyjny w formie odpowiednio poindeksowanych publikacji medycznych. Objawy i cechy charakterystyczne pacjenta są wprowadzane do systemu w formie tekstowej (mogą być także pobierane z elektronicznej karty pacjenta). System dopasowuje je do dostępnych publikacji i na podstawie tego dopasowania tworzy listę możliwych diagnoz dla pacjenta. Dodatkowo, istnieje możliwość przeglądana fragmentów publikacji, które związane są z poszczególnymi diagnozami. 
 
-W praktyce większą popularność zyskują wytyczne postępowania klinicznego (ang. \textit{clinical practice guidelines}, CPG), które pozwalają opisać postępowanie dla pacjenta chorującego na określoną chorobę. Takie wytyczne są coraz częściej formalizowane oraz osadzane w SWDK w celu planowania i nadzorowania wykonywania terapii. Niestety, wytyczne te opisują jedynie jedną przypadłość, co może doprowadzić do konfliktów w przypadku pacjenta chorującego na kilka dolegliwości. W przypadku takich pacjentów konieczne jest dobranie takich terapii, które nie pozostają ze sobą w konflikcie. Niestety, większość wytycznych jest opracowywana przy założeniu, że pacjent cierpi tylko na jedną przypadłość, co jest bardzo dużym ograniczeniem praktycznym. Z uwagi na proces starzenia się społeczeństw wzrasta liczba pacjentów, którzy cierpią jednocześnie na wiele schorzeń. W takich sytuacjach bezkrytyczne jednoczesne stosowanie wielu wytycznych może przynieść efekt odwrotny do zamierzonego, tzn. może pogorszyć jakość oferowanej opieki \cite{Boyd05}. Dlatego też niezwykle istotne jest szybkie wykrywanie możliwych konfliktów (niekorzystnych interakcji) pomiędzy wytycznymi i wprowadzenie takich zmian w wytycznych, aby uniknąć lub osłabić te konflikty. Wprowadzane zmiany mogą polegać na wprowadzeniu zamienników dla konfliktowych leków, przepisaniu dodatkowych leków, zmianie dawek leków lub też rezygnacji z części leków.
+W praktyce większą popularność zyskują wytyczne postępowania klinicznego (ang. \textit{clinical practice guidelines}, CPG), które pozwalają opisać postępowanie dla pacjenta chorującego na określoną chorobę. Takie wytyczne są coraz częściej formalizowane oraz osadzane w SWDK w celu planowania i nadzorowania wykonywania terapii. Niestety, większość wytycznych jest opracowywana przy założeniu, że pacjent cierpi tylko na jedną przypadłość, co jest bardzo dużym ograniczeniem praktycznym. Z uwagi na proces starzenia się społeczeństw wzrasta liczba pacjentów, którzy cierpią jednocześnie na wiele schorzeń. W takich sytuacjach bezkrytyczne jednoczesne stosowanie wielu wytycznych może przynieść efekt odwrotny do zamierzonego, tzn. może pogorszyć jakość oferowanej opieki \cite{Boyd05}. Dlatego też niezwykle istotne jest szybkie wykrywanie możliwych konfliktów (niekorzystnych interakcji) pomiędzy wytycznymi i wprowadzenie takich zmian w wytycznych, aby uniknąć lub osłabić te konflikty. Wprowadzane zmiany mogą polegać na wprowadzeniu zamienników dla konfliktowych leków, przepisaniu dodatkowych leków, zmianie dawek leków lub też rezygnacji z części leków.
 
-O znaczeniu problemu wykrywania i usuwania konfliktów między wytycznymi świadczy to, iż jest on jednym z "wielkich wyzwań" dla wspomagania decyzji klinicznych \cite{Sittig08}. Niniejsza praca jest próbą zmierzenia się z tym wyzwaniem poprzez opracowanie SWDK  wspomagającego jednoczesne stosowanie wielu wytycznych dla jednego pacjenta. 
+O znaczeniu problemu wykrywania i usuwania konfliktów między wytycznymi świadczy to, iż jest on jednym z „wielkich wyzwań” dla wspomagania decyzji klinicznych \cite{Sittig08}. Niniejsza praca jest próbą zmierzenia się z tym wyzwaniem poprzez opracowanie SWDK  wspomagającego jednoczesne stosowanie wielu wytycznych dla jednego pacjenta. 
 
 
 \section{Cel i zakres pracy}
@@ -21,14 +21,12 @@ Cele główne pracy magisterskiej są następujące:
 \item rozszerzenie podejścia do wykrywania i usuwania konfliktów wykorzystującego programowanie logiczne z ograniczeniami i opisanego w \cite{SzWilk2},
 \item implementacja rozszerzonego podejścia w formie samodzielnego SWDK.
 \end{enumerate}
-
 Pierwszy z celów głównych wiąże się z następującymi celami szczegółowymi:
 \begin{enumerate}
 \item umożliwieniem stosowania więcej niż dwóch wytycznych, 
 \item dopuszczeniem stosowania wielu zmian w wytycznych (wielu operacji modyfikujących wytyczne), 
 \item uwzględnieniem stosowania dawek zarówno przy wykrywaniu konfliktów, jak i wprowadzania zmian w wytycznych.
 \end{enumerate}
-
 Drugi z celów głównych jest zdekomponowany na następujące cele szczegółowe:
 \begin{enumerate}
 \item opracowanie reprezentacji dla wytycznych, opisu konfliktów i wprowadzanych zmian,
@@ -39,6 +37,4 @@ Drugi z celów głównych jest zdekomponowany na następujące cele szczegółow
 
 \section{Struktura pracy}
 
-W rozdziale 2 krótko omówiono wytyczne postępowania klinicznego oraz ich rolę w medycynie. W tym rozdziale zaprezentowano także podejścia do wykrywania i usuwania interakcji w wytycznych postępowania klinicznego. Rozdział 3 opisuje paradygmat programowania logicznego z ograniczeniami. Opisano w tym rozdziale podstawowe właściwości podejścia, a także zamieszczono przykład ilustrujący jego wykorzystanie. W rozdziale 4 zaprezentowano narzędzia i biblioteki użyte podczas wykonywania pracy magisterskiej. 
-% SW: Biorąc pod uwagę bardziej precyzyjną specyfikację celów, powiedziałbym, że w rozdziale 5-tym opisuje Pan zarówno rozszerzenie metody, jak i implementację roszszerzenia.
-Rozdział 5 opisuje główną część pracy, czyli rozszerzenie podejścia do wykrywania i usuwania konfliktów oraz implementację systemu. W tym rozdziale przedstawiono poszczególne części systemu. Rozdział 6 prezentuje działanie systemu na wybranych scenariuszach klinicznych. Rozdział 7 stanowi wreszcie podsumowanie pracy. 
+W rozdziale 2 krótko omówiono wytyczne postępowania klinicznego oraz ich rolę w medycynie. W tym rozdziale zaprezentowano także podejścia do wykrywania i usuwania interakcji w wytycznych postępowania klinicznego. Rozdział 3 opisuje paradygmat programowania logicznego z ograniczeniami. Opisano w tym rozdziale podstawowe właściwości podejścia, a także zamieszczono przykład ilustrujący jego wykorzystanie. W rozdziale 4 zaprezentowano narzędzia i biblioteki użyte podczas wykonywania pracy magisterskiej. Rozdział 5 opisuje główną część pracy, czyli rozszerzenie podejścia do wykrywania i usuwania konfliktów oraz implementację systemu. W tym rozdziale przedstawiono poszczególne części systemu. Rozdział 6 prezentuje działanie systemu na wybranych scenariuszach klinicznych. Rozdział 7 stanowi wreszcie podsumowanie pracy. 
