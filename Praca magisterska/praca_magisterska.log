@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.1)  25 OCT 2015 18:05
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.1)  26 OCT 2015 10:40
 entering extended mode
 **praca_magisterska.tex
 
@@ -1303,7 +1303,7 @@ na si¦ od not), do li-sty \T1/lmtt/m/n/10 constraints-
 File: img/afib-ver-4_przyklad.png Graphic file (type png)
 
 <use img/afib-ver-4_przyklad.png>
-Package pdftex.def Info: img/afib-ver-4_przyklad.png used on input line 164.
+Package pdftex.def Info: img/afib-ver-4_przyklad.png used on input line 163.
 (pdftex.def)             Requested size: 204.26262pt x 342.77979pt.
 
 <img/ckd-simplified-ver-5_przyklad.png, id=110, 1016.79875pt x 1040.88875pt>
@@ -1311,7 +1311,7 @@ File: img/ckd-simplified-ver-5_przyklad.png Graphic file (type png)
 
 <use img/ckd-simplified-ver-5_przyklad.png>
 Package pdftex.def Info: img/ckd-simplified-ver-5_przyklad.png used on input li
-ne 170.
+ne 169.
 (pdftex.def)             Requested size: 406.7123pt x 416.34813pt.
  [26] [27 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-
 master/Praca magisterska/img/afib-ver-4_przyklad.png>] [28 <C:/Users/Darek/Desk
@@ -1322,7 +1322,7 @@ File: img/rozwiazanie1afib-ver-4_przyklad.png Graphic file (type png)
 
 <use img/rozwiazanie1afib-ver-4_przyklad.png>
 Package pdftex.def Info: img/rozwiazanie1afib-ver-4_przyklad.png used on input 
-line 194.
+line 193.
 (pdftex.def)             Requested size: 235.3788pt x 342.77979pt.
 
 <img/rozwiazanie1ckd-simplified-ver-5_przyklad.png, id=123, 1016.79875pt x 1040
@@ -1331,7 +1331,7 @@ File: img/rozwiazanie1ckd-simplified-ver-5_przyklad.png Graphic file (type png)
 
  <use img/rozwiazanie1ckd-simplified-ver-5_przyklad.png>
 Package pdftex.def Info: img/rozwiazanie1ckd-simplified-ver-5_przyklad.png used
- on input line 200.
+ on input line 199.
 (pdftex.def)             Requested size: 406.7123pt x 416.34813pt.
  [29])
 [30 <C:/Users/Darek/Desktop/PracaMagisterska-master (1)/PracaMagisterska-master
@@ -1500,7 +1500,7 @@ X 2.9/fonts/type1/public/lm/lmr12.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/
 type1/public/lm/lmri10.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
 c/lm/lmtt10.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmtti1
 0.pfb>
-Output written on praca_magisterska.pdf (51 pages, 1367869 bytes).
+Output written on praca_magisterska.pdf (51 pages, 1367862 bytes).
 PDF statistics:
  247 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
